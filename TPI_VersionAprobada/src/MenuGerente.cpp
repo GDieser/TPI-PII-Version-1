@@ -9,16 +9,7 @@
 
 using namespace std;
 
-
-MenuGerente::MenuGerente()
-{
-
-}
-
-MenuGerente::MenuGerente(int idGerente)
-{
-    _idGerenete = idGerente;
-}
+MenuGerente::MenuGerente(UsuarioAutenticado usuario) : _usuario(usuario){}
 
 void MenuGerente::mostrarMenuGerente()
 {
@@ -27,7 +18,7 @@ void MenuGerente::mostrarMenuGerente()
     do
     {
         system("cls");
-        cout << " GERENTE: #" << _idGerenete << endl;
+        cout << " GERENTE: #" << _usuario.getIdUsuario()  << endl;
         cout << "----------------------------------------" << endl;
         cout << " 1 - GESTIONAR SOCIOS " << endl;
         cout << " 2 - GESTIONAR ENTRENADORES " << endl;

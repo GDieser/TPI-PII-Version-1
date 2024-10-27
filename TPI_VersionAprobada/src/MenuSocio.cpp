@@ -4,17 +4,50 @@
 #include "ServicioSocio.h"
 #include "ServicioPago.h"
 #include "ServicioReclamo.h"
+#include "ServicioAsistencia.h"
 
 using namespace std;
 
-MenuSocio::MenuSocio()
+MenuSocio::MenuSocio(UsuarioAutenticado usuario) : _usuario(usuario)
+{}
+
+void MenuSocio::mostrarSubmenuSocio()
 {
 
+
+    system("cls");
+    int opcion;
+
+    cout << " -- SELECCION DE INGRESO -- " << endl;
+    cout << endl;
+    cout << " 1 - Ingreso al Gimnasio " << endl;
+    cout << " 2 - Ingreso al Menu Socio " << endl;
+    cout << endl;
+    cout << "Su seleccion: ";
+    cin >> opcion;
+
+    if(opcion == 1)
+    {
+        mostrarMenuIngresoSocio();
+    }
+    else
+    {
+        mostrarMenuSocio();
+    }
 }
 
-MenuSocio::MenuSocio(int idSocio)
+void MenuSocio::mostrarMenuIngresoSocio()
 {
-    _idSocio = idSocio;
+
+    ServicioSocio socio;
+    ServicioAsistencia asistencia;
+
+    system("cls");
+    cout << "Bienvenido" << endl;
+    system("pause");
+
+    asistencia.registrarAsistencia(_usuario.getIdUsuario());
+
 }
 
 void MenuSocio::mostrarMenuSocio()
@@ -25,7 +58,7 @@ void MenuSocio::mostrarMenuSocio()
     do
     {
         system("cls");
-        cout << " MENU SOCIO: #" << _idSocio << endl;
+        cout << " MENU SOCIO: #" << _usuario.getIdUsuario() << endl;
         cout << "-------------------------------" << endl;
         cout << " 1 - PAGOS " << endl;
         cout << " 2 - RUTINAS " << endl;
@@ -266,5 +299,3 @@ void MenuSocio::presentarReclamo()
     while(opcion != 0);
 
 }
-
-

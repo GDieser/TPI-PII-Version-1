@@ -36,6 +36,7 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="include/Actividad.h" />
+		<Unit filename="include/Autenticador.h" />
 		<Unit filename="include/DetalleRutina.h" />
 		<Unit filename="include/Ejercicio.h" />
 		<Unit filename="include/Empleado.h" />
@@ -109,8 +110,10 @@
 		</Unit>
 		<Unit filename="include/Socio.h" />
 		<Unit filename="include/Usuario.h" />
+		<Unit filename="include/UsuarioAutenticado.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Actividad.cpp" />
+		<Unit filename="src/Autenticador.cpp" />
 		<Unit filename="src/DetalleRutina.cpp" />
 		<Unit filename="src/Ejercicio.cpp" />
 		<Unit filename="src/Empleado.cpp" />
@@ -184,6 +187,7 @@
 		</Unit>
 		<Unit filename="src/Socio.cpp" />
 		<Unit filename="src/Usuario.cpp" />
+		<Unit filename="src/UsuarioAutenticado.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

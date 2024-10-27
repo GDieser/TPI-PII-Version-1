@@ -8,15 +8,8 @@
 
 using namespace std;
 
-MenuEntrenador::MenuEntrenador()
-{
 
-}
-
-MenuEntrenador::MenuEntrenador(int idEntrenador)
-{
-    _idEntrenador = idEntrenador;
-}
+MenuEntrenador::MenuEntrenador(UsuarioAutenticado usuario) : _usuario(usuario){}
 
 void MenuEntrenador::mostrarMenuEntrenador()
 {
@@ -26,7 +19,7 @@ void MenuEntrenador::mostrarMenuEntrenador()
     do
     {
         system("cls");
-        cout << " ENTRENADOR: #" << _idEntrenador << endl;
+        cout << " ENTRENADOR: #" << _usuario.getIdUsuario() << endl;
         cout << "-------------------" <<endl;
         cout << " 1 - HORARIOS " << endl;
         cout << " 2 - RUTINAS Y EJERCICIOS" << endl;

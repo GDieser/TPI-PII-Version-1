@@ -2,12 +2,11 @@
 
 #include "MenuPrincipal.h"
 
-class MenuEntrenador : public MenuPrincipal
+class MenuEntrenador
 {
 public:
-    MenuEntrenador();
 
-    MenuEntrenador(int idEntrenador);
+    MenuEntrenador(UsuarioAutenticado usuario);
 
     void mostrarMenuEntrenador();
     void verHorariosYSociosAsignados();
@@ -17,5 +16,5 @@ public:
 
 private:
 
-    int _idEntrenador;
+    UsuarioAutenticado _usuario;
 };

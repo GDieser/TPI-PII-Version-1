@@ -2,30 +2,26 @@
 
 #include "MenuPrincipal.h"
 
-class MenuSocio : public MenuPrincipal
+class MenuSocio
 {
 
 public:
 
-    MenuSocio();
+    MenuSocio(UsuarioAutenticado usuario);
 
-    MenuSocio(int idSocio);
-
+    void mostrarMenuIngresoSocio();
+    void mostrarSubmenuSocio();
     void mostrarMenuSocio();
-    ///deberia llamarse gestionar pagos
     void gestionarPagos();
 
     void verRutina();
     void consultarHorarios();
     void presentarReclamo();
-    ///void modificarContrasenia(); //deberia estar en servicio
 
-    ///Precios
     void mostrarPreciosDePases();
-    ///Por defecto
     void verHorariosGimnasio();
 
 private:
 
-    int _idSocio;
+    UsuarioAutenticado _usuario;
 };

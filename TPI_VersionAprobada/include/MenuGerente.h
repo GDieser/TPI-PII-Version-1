@@ -2,13 +2,11 @@
 
 #include "MenuPrincipal.h"
 
-class MenuGerente : public MenuPrincipal
+class MenuGerente
 {
 public:
 
-    MenuGerente();
-
-    MenuGerente(int idGerente);
+    MenuGerente(UsuarioAutenticado _usuario);
 
     void mostrarMenuGerente();
     void gestionarSocios();
@@ -21,6 +19,6 @@ public:
 
 private:
 
-    int _idGerenete;
+    UsuarioAutenticado _usuario;
 
 };

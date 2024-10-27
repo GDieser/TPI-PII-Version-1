@@ -17,6 +17,7 @@ public:
     int cantidadRegistrosEmpleados();
     void leerRegistrosEmpleados(int cantidadRegistros, Empleado *vectEmpleado);
 
+    Empleado buscarEmpleadoPorIdSocio(int id);
 
 private:
     std::string _nombreArchivo;

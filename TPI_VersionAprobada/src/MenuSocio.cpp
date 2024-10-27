@@ -1,24 +1,21 @@
 #include <iostream>
 
 #include "MenuSocio.h"
-#include "ServicioSocio.h"
 #include "ServicioPago.h"
 #include "ServicioReclamo.h"
 #include "ServicioAsistencia.h"
 
 using namespace std;
 
-MenuSocio::MenuSocio(UsuarioAutenticado usuario) : _usuario(usuario)
-{}
+MenuSocio::MenuSocio(UsuarioAutenticado usuario) : _usuario(usuario), _sSocio()
+{
+}
 
 void MenuSocio::mostrarSubmenuSocio()
 {
-
-
     system("cls");
     int opcion;
-
-    cout << " -- SELECCION DE INGRESO -- " << endl;
+    cout << " -- BIENVENIDO "<< _usuario.getNombre() << " -- " << endl;
     cout << endl;
     cout << " 1 - Ingreso al Gimnasio " << endl;
     cout << " 2 - Ingreso al Menu Socio " << endl;
@@ -47,7 +44,9 @@ void MenuSocio::mostrarMenuIngresoSocio()
     system("pause");
 
     asistencia.registrarAsistencia(_usuario.getIdUsuario());
-
+    system("cls");
+    cout << "Asistencia registrada satifsactoriamente!" << endl;
+    system("pause");
 }
 
 void MenuSocio::mostrarMenuSocio()
@@ -87,7 +86,7 @@ void MenuSocio::mostrarMenuSocio()
             presentarReclamo();
             break;
         case 5:
-
+            _sSocio.modificarContrasenia(_usuario.getIdUsuario());
             break;
         case 0:
             cout << "ADIOS!" << endl;
@@ -100,7 +99,6 @@ void MenuSocio::mostrarMenuSocio()
 
     }
     while(opcion != 0);
-
 }
 
 void MenuSocio::gestionarPagos()
@@ -153,7 +151,6 @@ void MenuSocio::gestionarPagos()
     while(opcion != 0);
 
 }
-
 
 
 void MenuSocio::mostrarPreciosDePases()

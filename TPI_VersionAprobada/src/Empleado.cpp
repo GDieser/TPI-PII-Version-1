@@ -50,7 +50,8 @@ void Empleado::setIdActividadPrincipal(int idActividadPrincipal)
 }
 void Empleado::setDiaSem(bool* diaSem)
 {
-    for(int i=0; i<7; i++){
-            _diaSem[i] = diaSem[i];
+    for(int i=0; i<7; i++)
+    {
+        _diaSem[i] = diaSem[i];
     }
 }

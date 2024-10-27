@@ -16,11 +16,7 @@ public:
     void verMembresia(int idSocio);
     void modificarContrasenia(int idSocio);
 
-    ///Necesario para login en el menu
-    bool buscarSocioLogin(int idSocio, std::string pass);
-
-    ///Necesario para login en el gimanasio y registrar asistencia
-    bool validarLoginAsistenciaSocio(int idSocio, int pin);
+    int obternerUltimoIdSocio();
 
 
 private:

@@ -7,8 +7,7 @@ class ServicioEmpleado
     public:
         ServicioEmpleado();
 
-        ///Necesitamos ambos por que entrenador necesita consultar actividades (podria ser sobrecarga)
-        void agregarGerenete();
+        void agregarGerente();
         void agregarEntrenador();
 
         void verEntrenadores();
@@ -20,8 +19,11 @@ class ServicioEmpleado
         void verHorariosAsignados();
         void modificarContrasenia(int idEmpleado);
 
-        ///Para verificar datos de login
-        bool buscarEmpleadoLogin(int idSocio, std::string pass);
+        int obternerUltimoIdEmpleado();
+        int obternerUltimoId();
+        int obternerUltimoLegajo();
+
+        bool buscarUnEmpleado(int idEmpleado);
 
     private:
 

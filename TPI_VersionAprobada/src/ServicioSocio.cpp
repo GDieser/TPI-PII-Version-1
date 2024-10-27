@@ -59,46 +59,20 @@ void ServicioSocio::modificarContrasenia(int idSocio)
 
 }
 
-bool ServicioSocio::buscarSocioLogin(int idSocio, string pass)
+int ServicioSocio::obternerUltimoIdSocio()
 {
     Socio socio;
 
     int cantidad = _archivoSocio.cantidadRegistrosSocios();
 
-    for(int i=0; i < cantidad; i++)
+    if(cantidad > 0)
     {
-        socio = _archivoSocio.leerRegistroSocio(i);
-
-        if(idSocio == socio.getIdUsuario() && !strcmp(socio.getContrasenia().c_str(), pass.c_str()))
-        {
-            return true;
-        }
+        socio = _archivoSocio.leerRegistroSocio(cantidad - 1);
+        return socio.getIdUsuario();
     }
 
-    return false;
+    return -1;
 }
 
-bool ServicioSocio::validarLoginAsistenciaSocio(int idSocio, int pin)
-{
-    system("cls");
-    Socio socio;
-
-
-    int cantidad = _archivoSocio.cantidadRegistrosSocios();
-
-    for(int i=0; i<cantidad; i++)
-    {
-        socio = _archivoSocio.leerRegistroSocio(i);
-
-        if(socio.getIdUsuario() == idSocio && socio.getPinIngreso() == pin)
-        {
-            return true;
-        }
-    }
-
-    return false;
-
-    system("pause");
-}
 
 

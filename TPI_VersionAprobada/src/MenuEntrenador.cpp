@@ -44,7 +44,7 @@ void MenuEntrenador::mostrarMenuEntrenador()
             verReclamos();
             break;
         case 4:
-
+            entrenador.modificarContrasenia(_usuario.getIdUsuario());
             break;
         case 0:
             break;
@@ -60,6 +60,7 @@ void MenuEntrenador::mostrarMenuEntrenador()
 
 void MenuEntrenador::verHorariosYSociosAsignados()
 {
+    ServicioEmpleado entrenador;
     int opcion;
 
     do
@@ -80,7 +81,7 @@ void MenuEntrenador::verHorariosYSociosAsignados()
         switch(opcion)
         {
         case 1:
-
+            entrenador.verHorariosAsignados(_usuario.getIdUsuario());
             break;
         case 2:
 

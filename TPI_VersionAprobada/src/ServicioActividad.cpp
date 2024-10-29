@@ -91,7 +91,7 @@ void ServicioActividad::modificarActividad()
 
     int posicion = _archivoActividad.buscarActividad(idActividad);
 
-    if(posicion != 0)
+    if(posicion != -1)
     {
         actividad = _archivoActividad.leerRegistroActividad(posicion);
 
@@ -117,8 +117,6 @@ void ServicioActividad::modificarActividad()
 
 void ServicioActividad::buscarActividad(int idActividad)
 {
-    //system("cls");
-
     Actividad actividad;
 
     int pos = _archivoActividad.buscarActividad(idActividad);
@@ -128,7 +126,7 @@ void ServicioActividad::buscarActividad(int idActividad)
         actividad = _archivoActividad.leerRegistroActividad(pos);
 
         cout << " Nombre Actividad: " << actividad.getNombre() << endl;
-        cout << " ID actividad: #" << actividad.getIdActividad() << endl;
+        //cout << " ID actividad: #" << actividad.getIdActividad() << endl;
     }
     else
     {

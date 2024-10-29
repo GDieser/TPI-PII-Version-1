@@ -7,23 +7,31 @@ class ServicioEmpleado
     public:
         ServicioEmpleado();
 
-        void agregarGerente();
-        void agregarEntrenador();
+        void agregarEmpleado(int idRol);
 
-        void verEntrenadores();
-        void verGerentes();
+        void verEmpleados(int idRol);
 
-        void modificarEmpleado();
+        void restaurarUnEmpleado(int idRol);
+
+        void modificarEmpleado(int idRol);
+
         void verSociosAsignados();
+
         void asignarHorarios();
-        void verHorariosAsignados();
+
+        void verHorariosAsignados(int idUsuario);
+
         void modificarContrasenia(int idEmpleado);
 
         int obternerUltimoIdEmpleado();
         int obternerUltimoId();
         int obternerUltimoLegajo();
 
-        bool buscarUnEmpleado(int idEmpleado);
+        void buscarUnEmpleado(int idRol);
+
+        int seleccionarEntrenador();
+
+        int comprobarDniEmpleado(int dni);
 
     private:
 

@@ -9,7 +9,7 @@
 
 using namespace std;
 
-MenuGerente::MenuGerente(UsuarioAutenticado usuario) : _usuario(usuario){}
+MenuGerente::MenuGerente(UsuarioAutenticado usuario) : _usuario(usuario) {}
 
 void MenuGerente::mostrarMenuGerente()
 {
@@ -113,6 +113,8 @@ void MenuGerente::gestionarSocios()
         case 6:
 
             break;
+        case 0:
+            break;
         default:
             cout << "Opcion incorrecta" << endl;
             system("pause");
@@ -156,7 +158,7 @@ void MenuGerente::gestionarEntrenadores()
             entrenador.agregarEmpleado(1);
             break;
         case 3:
-
+            entrenador.modificarEmpleado(1);
             break;
         case 4:
             entrenador.buscarUnEmpleado(1);
@@ -212,7 +214,7 @@ void MenuGerente::gestionarGerentes()
             gerente.agregarEmpleado(0);
             break;
         case 3:
-
+            gerente.modificarContrasenia(0);
             break;
         case 4:
             gerente.buscarUnEmpleado(0);
@@ -222,6 +224,8 @@ void MenuGerente::gestionarGerentes()
             break;
         case 6:
             gerente.modificarContrasenia(_usuario.getIdUsuario());
+            break;
+        case 0:
             break;
         default:
             cout << "Opcion incorrecta" << endl;
@@ -357,6 +361,8 @@ void MenuGerente::verEstadisticas()
             break;
         case 2:
 
+            break;
+        case 0:
             break;
         default:
             cout << "Opcion incorrecta" << endl;

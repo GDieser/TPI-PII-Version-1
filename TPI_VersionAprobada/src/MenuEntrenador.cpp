@@ -9,7 +9,7 @@
 using namespace std;
 
 
-MenuEntrenador::MenuEntrenador(UsuarioAutenticado usuario) : _usuario(usuario){}
+MenuEntrenador::MenuEntrenador(UsuarioAutenticado usuario) : _usuario(usuario) {}
 
 void MenuEntrenador::mostrarMenuEntrenador()
 {
@@ -151,6 +151,8 @@ void MenuEntrenador::crearModificarRutina()
             break;
         case 8:
 
+            break;
+        case 0:
             break;
         default:
             cout << "Opcion incorrecta" << endl;

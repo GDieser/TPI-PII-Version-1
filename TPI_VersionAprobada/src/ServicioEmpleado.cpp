@@ -77,9 +77,10 @@ void ServicioEmpleado::agregarEmpleado(int idRol)
         return;
     }
     cout << " Nombre: ";
-    cin >> nombre;
+    cin.ignore();
+    getline(cin, nombre);
     cout << " Apellido: ";
-    cin >> apellido;
+    getline(cin, apellido);
 
     system("cls");
     cout << "+-----------------------+" << endl;
@@ -238,7 +239,117 @@ void ServicioEmpleado::restaurarUnEmpleado(int idRol)
 
 void ServicioEmpleado::modificarEmpleado(int idRol)
 {
+    string nombre, apellido;
+    int dia, mes, anio;
+    bool estado = true;
+    Fecha fechaNacimiento;
 
+    int idEmpleado, opcion, eliminar;
+    Empleado empleado;
+
+    system("cls");
+    cout << " Ingrese ID: ";
+    cin >> idEmpleado;
+
+    int pos = _archivoEmpleado.buscarEmpleado(idEmpleado);
+
+    if(pos != -1)
+    {
+        empleado = _archivoEmpleado.leerRegistroEmpleado(pos);
+
+        if(empleado.getIdRol() == idRol)
+        {
+            system("cls");
+            cout << "+------------------------------------+" << endl;
+            cout << "| 1 - Modificar Datos Personales     |" << endl;
+            cout << "+------------------------------------+" << endl;
+            cout << "| 2 - Modificar Fecha de Nacimiento  |" << endl;
+            cout << "+------------------------------------+" << endl;
+            cout << "| 3 - Modificar Estado/Eliminar      |" << endl;
+            cout << "+------------------------------------+" << endl;
+            cout << endl;
+            cout << " Su seleccion: ";
+            cin >> opcion;
+
+            system("cls");
+            switch(opcion)
+            {
+            case 1:
+                cout << " Nombre: " << empleado.getNombre() << ", Apellido: " << empleado.getApellido()<< endl;
+                cout << endl;
+                cout << " Ingrese Nombre: ";
+                cin.ignore();
+                getline(cin, nombre);
+                cout << " Ingrese Apellido: ";
+                getline(cin, apellido);
+
+                empleado.setNombre(nombre);
+                empleado.setApellido(apellido);
+
+                break;
+            case 2:
+                cout << " Fecha de Nacimiento: " << empleado.getFechaNacimiento().toString() << endl;
+                cout << endl;
+                cout << " Ingrese Dia: ";
+                cin >> dia;
+                cout << " Ingrese Mes: ";
+                cin >> mes;
+                cout << " Ingrese Anio: ";
+                cin >> anio;
+
+                fechaNacimiento.setDia(dia);
+                fechaNacimiento.setMes(mes);
+                fechaNacimiento.setDia(anio);
+
+                empleado.setFechaNacimiento(fechaNacimiento);
+
+                break;
+            case 3:
+
+                if(empleado.getEstado())
+                {
+                    cout << " Estado Actual: ACTIVO" << endl;
+                    cout << endl;
+                    cout << " Desea eliminar empleado: 1 - Si | 0 - NO" << endl;
+                    cout << " Su seleccion: ";
+                    cin >> eliminar;
+                    if(eliminar == 1)
+                    {
+                        estado = false;
+                        empleado.setEstado(estado);
+                    }
+                }
+
+                break;
+            default:
+                cout << " Opcion Incorrecta..." << endl;
+                break;
+            }
+
+            cout << " Confirmar Cambios?: 1 - Si | 0 - NO" << endl;
+            cin >> opcion;
+
+            if(opcion == 1 && _archivoEmpleado.guardarEmpleado(empleado, pos))
+            {
+                cout << " Datos Actualizados correctamente" << endl;
+            }
+
+        }
+        else
+        {
+            system("cls");
+            if(idRol == 0)
+            {
+                cout << " ID corresponde a un Entrenador, dirijase al gestor correspondiente..." << endl;
+            }
+            else
+            {
+                cout << " ID corresponde a un Gerente, dirijase al gestor correspondiente..." << endl;
+            }
+        }
+    }
+
+    system("pause");
 }
 
 void ServicioEmpleado::asignarHorarios()
@@ -455,38 +566,59 @@ void ServicioEmpleado::modificarContrasenia(int idEmpleado)
     system("cls");
     string pass, pass2;
     Empleado empleado;
+    int intentos = 0;
 
 
     int posicion = _archivoEmpleado.buscarEmpleado(idEmpleado);
 
     empleado = _archivoEmpleado.leerRegistroEmpleado(posicion);
 
-    cout << " MODIFICAR CONTRASENIA" << endl;
-    cout << "-----------------------------" << endl;
-    cout << " Ingrese contrasenia actual: " << endl;
-    cin >> pass;
+    cout << "+---------------------------+" << endl;
+    cout << "|   MODIFICAR CONTRASENIA   |" << endl;
+    cout << "+---------------------------+" << endl;
+    cout << endl;
+    cout << " Ingrese contrasenia actual: ";
+    cin.ignore();
+    getline(cin, pass);
 
     if(!strcmp(empleado.getContrasenia().c_str(), pass.c_str()))
     {
-        cout << " Ingrese la nueva contrasenia: " << endl;
-        cin >> pass;
-        cout << " Repita la nueva contrasenia: " << endl;
-        cin >> pass2;
-        if(!strcmp(pass.c_str(), pass2.c_str()))
+        do
         {
-            empleado.setContrasenia(pass);
-            _archivoEmpleado.guardarEmpleado(empleado, posicion);
+            system("cls");
+            cout << endl;
+            cout << " Ingrese la nueva contrasenia: " ;
+            getline(cin, pass2);
+            cout << " Repita la nueva contrasenia: ";
+            getline(cin, pass);
+
+            if(!strcmp(pass.c_str(), pass2.c_str()))
+            {
+                empleado.setContrasenia(pass);
+                if(_archivoEmpleado.guardarEmpleado(empleado, posicion))
+                {
+                    cout << endl;
+                    cout << " Cambio realizado con exito" << endl;
+                    system("pause");
+                    return;
+                }
+            }
+            else
+            {
+                cout << endl;
+                cout << " Las contrasenias no coinciden, intente nuevamente" << endl;
+                intentos++;
+                system("pause");
+            }
+
         }
-        else
-        {
-            cout << "Las contrasenias no coinciden" << endl;
-            system("pause");
-            return;
+        while(intentos < 3);
+
         }
-    }
     else
     {
-        cout << "Contrasenia incorrecta" << endl;
+        cout << endl;
+        cout << " Contrasenia ingresada es incorrecta" << endl;
         system("pause");
         return;
     }
@@ -627,5 +759,5 @@ int ServicioEmpleado::comprobarDniEmpleado(int dni)
 
 void ServicioEmpleado::verSociosAsignados()
 {
-
+    ///Necesito usar archivoSocios
 }

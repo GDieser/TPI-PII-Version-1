@@ -1,6 +1,7 @@
 #pragma once
 
 #include "GestionArchivoEmpleados.h"
+#include "Empleado.h"
 
 class ServicioEmpleado
 {
@@ -11,7 +12,7 @@ class ServicioEmpleado
         void verEmpleados(int idRol);
         void restaurarUnEmpleado(int idRol);
         void modificarEmpleado(int idRol);
-        void verSociosAsignados();
+        void verSociosAsignados(int idEntrenador);
         void asignarHorarios();
         void verHorariosAsignados(int idUsuario);
         void modificarContrasenia(int idEmpleado);
@@ -19,8 +20,12 @@ class ServicioEmpleado
         int obternerUltimoId();
         int obternerUltimoLegajo();
         void buscarUnEmpleado(int idRol);
-        int seleccionarEntrenador();
+        int elegirEntrenador();
         int comprobarDniEmpleado(int dni);
+        void mostrarHorariosDeEntrenadores();
+
+        void listarEmpleadoPorApellido(int idRol);
+        void ordenarPorApellido(Empleado empleado[], int tam);
 
     private:
 

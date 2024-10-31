@@ -18,6 +18,8 @@ public:
 
     int obternerUltimoIdSocio();
 
+    ///Adicional
+    void mostrarSociosPorEntrenador(int idEntrenador);
 
 private:
 

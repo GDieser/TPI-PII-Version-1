@@ -152,7 +152,9 @@ void MenuGerente::gestionarEntrenadores()
         switch(opcion)
         {
         case 1:
-            entrenador.verEmpleados(1);
+            //entrenador.listarEmpleadoPorApellido(1);
+            entrenador.mostrarHorariosDeEntrenadores();
+            //entrenador.verEmpleados(1);
             break;
         case 2:
             entrenador.agregarEmpleado(1);

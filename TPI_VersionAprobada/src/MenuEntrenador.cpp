@@ -84,7 +84,7 @@ void MenuEntrenador::verHorariosYSociosAsignados()
             entrenador.verHorariosAsignados(_usuario.getIdUsuario());
             break;
         case 2:
-
+            entrenador.verSociosAsignados(_usuario.getIdUsuario());
             break;
         case 0:
             break;

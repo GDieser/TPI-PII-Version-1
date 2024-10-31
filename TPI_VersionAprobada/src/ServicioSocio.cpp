@@ -74,5 +74,20 @@ int ServicioSocio::obternerUltimoIdSocio()
     return -1;
 }
 
+void ServicioSocio::mostrarSociosPorEntrenador(int idEntrenador)
+{
+    Socio socio;
+
+    int cantidad = _archivoSocio.cantidadRegistrosSocios();
+
+    for(int i=0; i<cantidad; i++)
+    {
+        socio = _archivoSocio.leerRegistroSocio(i);
+        if(socio.getIdEntrenadorAsignado() == idEntrenador)
+        {
+            cout << socio.getNombre() << " " << socio.getApellido() << " ID: #" << socio.getIdUsuario() << endl;
+        }
+    }
+}
 
 

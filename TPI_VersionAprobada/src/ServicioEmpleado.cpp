@@ -380,7 +380,7 @@ void ServicioEmpleado::asignarHorarios()
     switch(empleado.getIdTurno())
     {
     case 0:
-        horarios = "8hs a 13hs";
+        horarios = "08hs a 13hs";
         break;
     case 1:
         horarios = "13hs a 18hs";
@@ -391,9 +391,9 @@ void ServicioEmpleado::asignarHorarios()
     }
 
     system("cls");
-    cout << "+----------------------+" << endl;
-    cout << "|   ASIGNAR HORARIOS   |" << endl;
-    cout << "+----------------------+" << endl;
+    cout << "+--------------------------+" << endl;
+    cout << "|     ASIGNAR HORARIOS     |" << endl;
+    cout << "+--------------------------+" << endl;
 
     for(int i=0; i<7; i++)
     {
@@ -464,7 +464,7 @@ void ServicioEmpleado::verHorariosAsignados(int idUsuario)
         switch(empleado.getIdTurno())
         {
         case 0:
-            horarios = "8hs a 13hs";
+            horarios = "08hs a 13hs";
             break;
         case 1:
             horarios = "13hs a 18hs";
@@ -573,9 +573,9 @@ void ServicioEmpleado::modificarContrasenia(int idEmpleado)
 
     empleado = _archivoEmpleado.leerRegistroEmpleado(posicion);
 
-    cout << "+---------------------------+" << endl;
-    cout << "|   MODIFICAR CONTRASENIA   |" << endl;
-    cout << "+---------------------------+" << endl;
+    cout << "+---------------------------------+" << endl;
+    cout << "|      MODIFICAR CONTRASENIA      |" << endl;
+    cout << "+---------------------------------+" << endl;
     cout << endl;
     cout << " Ingrese contrasenia actual: ";
     cin.ignore();
@@ -614,7 +614,7 @@ void ServicioEmpleado::modificarContrasenia(int idEmpleado)
         }
         while(intentos < 3);
 
-        }
+    }
     else
     {
         cout << endl;
@@ -688,7 +688,7 @@ void ServicioEmpleado::buscarUnEmpleado(int idRol)
     system("pause");
 }
 
-int ServicioEmpleado::seleccionarEntrenador()
+int ServicioEmpleado::elegirEntrenador()
 {
     int *vectPosiciones;
     int *vectorID;
@@ -757,7 +757,162 @@ int ServicioEmpleado::comprobarDniEmpleado(int dni)
     return -1;
 }
 
-void ServicioEmpleado::verSociosAsignados()
+void ServicioEmpleado::verSociosAsignados(int idEntrenador)
 {
-    ///Necesito usar archivoSocios
+    system("cls");
+    string horarios;
+    ServicioSocio socio;
+    Empleado entrenador;
+
+    int pos = _archivoEmpleado.buscarEmpleado(idEntrenador);
+    entrenador = _archivoEmpleado.leerRegistroEmpleado(pos);
+
+    switch(entrenador.getIdTurno())
+    {
+    case 0:
+        horarios = "08hs a 13hs";
+        break;
+    case 1:
+        horarios = "13hs a 18hs";
+        break;
+    case 2:
+        horarios = "18hs a 23hs";
+        break;
+    }
+
+    cout << "+--------------------------------------------+" << endl;
+    cout << "|    ENTRENADOR: " << entrenador.getNombre() << " " << entrenador.getApellido() << endl;
+    cout << "+--------------------------------------------+" << endl;
+    cout << "|             HORARIO: " << horarios << "           |" << endl;
+    cout << "+--------------------------------------------+" << endl;
+    socio.mostrarSociosPorEntrenador(idEntrenador);
+    cout << "+--------------------------------------------+" << endl;
+
+    system("pause");
+}
+
+void ServicioEmpleado::mostrarHorariosDeEntrenadores()
+{
+    system("cls");
+    int indice = 1, espacios = 25;
+    string horarios;
+    char nombreCompleto[30];
+    Empleado entrenador;
+
+    int cantidad = _archivoEmpleado.cantidadRegistrosEmpleados();
+
+    cout << "+--------------------------------------------------+" << endl;
+    cout << "|            HORARIOS DE ENTREENADORES             |" << endl;
+    cout << "+--------------------------------------------------+" << endl;
+
+    for(int i=0; i<cantidad; i++)
+    {
+        entrenador = _archivoEmpleado.leerRegistroEmpleado(i);
+        if(entrenador.getIdRol() == 1 && entrenador.getEstado())
+        {
+            switch(entrenador.getIdTurno())
+            {
+            case 0:
+                horarios = "08hs a 13hs";
+                break;
+            case 1:
+                horarios = "13hs a 18hs";
+                break;
+            case 2:
+                horarios = "18hs a 23hs";
+                break;
+            }
+
+            strcpy(nombreCompleto, entrenador.getNombre().c_str());
+            ///strcat dentro de la libreria cstring añade el contenido de una cadena a otra.
+            strcat(nombreCompleto, " ");
+            strcat(nombreCompleto, entrenador.getApellido().c_str());
+
+            ///strlen dentro de la libreria cstring devuelve la cantidad de caracteres de una cadena.
+            espacios = 25 - strlen(nombreCompleto);
+
+            if (espacios < 0)
+            {
+                espacios = 0;
+            }
+
+            cout << " " << indice << ". " << nombreCompleto;
+
+            for (int i = 0; i<espacios; i++)
+            {
+                cout << " ";
+            }
+
+            cout << "| Horario: " << horarios << endl;
+            indice++;
+        }
+    }
+    cout << "+--------------------------------------------------+" << endl;
+    cout << endl;
+    system("pause");
+}
+
+void ServicioEmpleado::listarEmpleadoPorApellido(int idRol)
+{
+    system("cls");
+    Empleado *empleado;
+    int *posEmpleado;
+    int indice = 1;
+
+    int cantidad = _archivoEmpleado.cantidadRegistrosEmpleados();
+    int cantActivos = _archivoEmpleado.cantidadRegistrosEmpleadosPorEstado(cantidad, true, idRol);
+
+    empleado = new Empleado[cantActivos];
+    posEmpleado = new int[cantActivos];
+
+    if(empleado == nullptr || posEmpleado == nullptr)
+    {
+        return;
+    }
+
+    *posEmpleado = _archivoEmpleado.leerRegistrosEmpleadosActivos(cantidad, posEmpleado, cantActivos, idRol);
+
+    for(int i=0; i<cantActivos; i++)
+    {
+        empleado[i] = _archivoEmpleado.leerRegistroEmpleado(posEmpleado[i]);
+    }
+
+    ordenarPorApellido(empleado, cantActivos);
+
+    cout << "+---------------------------------------+" << endl;
+    cout << "|      LISTA ORDENADA POR APELLIDO      |" << endl;
+    cout << "+---------------------------------------+" << endl;
+
+    for(int i=0; i<cantActivos; i++)
+    {
+        cout << " " << indice << ". " << empleado[i].getApellido() << ", " << empleado[i].getNombre() << "   ID #" << empleado[i].getIdUsuario() << endl;
+        cout << "+---------------------------------------+" << endl;
+        indice++;
+    }
+
+    cout << endl;
+
+    delete []empleado;
+    delete []posEmpleado;
+
+    system("pause");
+}
+
+void ServicioEmpleado::ordenarPorApellido(Empleado empleado[], int tam)
+{
+    Empleado aux;
+
+    ///Ordenamiento por intercambio o SWAP, similar al burbujeo, sacado del libro pag 428
+    for(int i=0; i<tam-1; i++)
+    {
+        for(int j=i+1; j<tam; j++)
+        {
+            if(strcmp(empleado[i].getApellido().c_str(), empleado[j].getApellido().c_str()) > 0)
+            {
+                aux = empleado[i];
+                empleado[i] = empleado[j];
+                empleado[j] = aux;
+            }
+        }
+    }
 }

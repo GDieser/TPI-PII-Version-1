@@ -113,6 +113,8 @@ void MenuGerente::gestionarSocios()
         case 6:
 
             break;
+        case 0:
+            break;
         default:
             cout << "Opcion incorrecta" << endl;
             system("pause");
@@ -150,22 +152,24 @@ void MenuGerente::gestionarEntrenadores()
         switch(opcion)
         {
         case 1:
-
+            //entrenador.listarEmpleadoPorApellido(1);
+            entrenador.mostrarHorariosDeEntrenadores();
+            //entrenador.verEmpleados(1);
             break;
         case 2:
-
+            entrenador.agregarEmpleado(1);
             break;
         case 3:
-
+            entrenador.modificarEmpleado(1);
             break;
         case 4:
-
+            entrenador.buscarUnEmpleado(1);
             break;
         case 5:
-
+            entrenador.restaurarUnEmpleado(1);
             break;
         case 6:
-
+            entrenador.asignarHorarios();
             break;
         case 0:
             break;
@@ -206,22 +210,22 @@ void MenuGerente::gestionarGerentes()
         switch(opcion)
         {
         case 1:
-
+            gerente.verEmpleados(0);
             break;
         case 2:
-
+            gerente.agregarEmpleado(0);
             break;
         case 3:
-
+            gerente.modificarContrasenia(0);
             break;
         case 4:
-
+            gerente.buscarUnEmpleado(0);
             break;
         case 5:
-
+            gerente.restaurarUnEmpleado(0);
             break;
         case 6:
-
+            gerente.modificarContrasenia(_usuario.getIdUsuario());
             break;
         case 0:
             break;
@@ -359,6 +363,8 @@ void MenuGerente::verEstadisticas()
             break;
         case 2:
 
+            break;
+        case 0:
             break;
         default:
             cout << "Opcion incorrecta" << endl;

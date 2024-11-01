@@ -44,7 +44,7 @@ void MenuEntrenador::mostrarMenuEntrenador()
             verReclamos();
             break;
         case 4:
-
+            entrenador.modificarContrasenia(_usuario.getIdUsuario());
             break;
         case 0:
             break;
@@ -60,6 +60,7 @@ void MenuEntrenador::mostrarMenuEntrenador()
 
 void MenuEntrenador::verHorariosYSociosAsignados()
 {
+    ServicioEmpleado entrenador;
     int opcion;
 
     do
@@ -80,10 +81,10 @@ void MenuEntrenador::verHorariosYSociosAsignados()
         switch(opcion)
         {
         case 1:
-
+            entrenador.verHorariosAsignados(_usuario.getIdUsuario());
             break;
         case 2:
-
+            entrenador.verSociosAsignados(_usuario.getIdUsuario());
             break;
         case 0:
             break;
@@ -112,7 +113,7 @@ void MenuEntrenador::crearModificarRutina()
         cout << " 1 - VER MIS RUTINAS" << endl;
         cout << " 2 - VER DETALLES RUTINAS" << endl;
         cout << " 3 - CREAR UNA RUTINA " << endl;
-        cout << " 4 - BUSCAR UNA RUTINA " << endl;///Capaz volar
+        cout << " 4 - BUSCAR UNA RUTINA " << endl;
         cout << " 5 - MODIFICAR UNA RUTINA " << endl;
         cout << " 6 - VER EJERCICIOS " << endl;
         cout << " 7 - AGREGAR UN EJERCICIO " << endl;
@@ -128,28 +129,30 @@ void MenuEntrenador::crearModificarRutina()
         switch(opcion)
         {
         case 1:
-
+            rutina.verRutinas(_usuario.getIdUsuario());
             break;
         case 2:
-
+            rutina.verDetallesDeRutina();
             break;
         case 3:
-
+            rutina.crearRutina(_usuario.getIdUsuario());
             break;
         case 4:
-
+            rutina.buscarRutina();
             break;
         case 5:
-
+            rutina.modificarRutina(_usuario.getIdUsuario());
             break;
         case 6:
-
+            ejercicio.verEjercicios();
             break;
         case 7:
-
+            ejercicio.agregarEjercicio();
             break;
         case 8:
-
+            ejercicio.modificarEjercicio();
+            break;
+        case 0:
             break;
         default:
             cout << "Opcion incorrecta" << endl;

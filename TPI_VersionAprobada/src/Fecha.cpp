@@ -88,6 +88,17 @@ void Fecha::validarFecha()
     }
 }
 
+Fecha Fecha::crearFecha(){
+    int dia, mes, anio;
+    cout << "Ingrese dia: ";
+    cin >> dia;
+    cout << "Ingrese mes: ";
+    cin >> mes;
+    cout << "Ingrese año: ";
+    cin >> anio;
+    return Fecha(dia, mes, anio);
+}
+
 void Fecha::setFechaDefecto()
 {
     _dia = 1;

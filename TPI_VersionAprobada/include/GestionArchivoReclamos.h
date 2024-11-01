@@ -8,17 +8,16 @@ class GestionArchivoReclamos
 
         GestionArchivoReclamos();
         GestionArchivoReclamos(std::string nombreArchivo);
+        bool guardarReclamo(const Reclamo &r);
+        Reclamo leerReclamo(int pos);
+        bool leerTodosReclamos(Reclamo r[], int cant);
+        bool modificarReclamo(Reclamo& r), int pos;
+        int getCantidadReclamos();
+        int buscarReclamo(int pos);
 
-        bool guardarReclamo(Reclamo reclamo);
-        bool guardarReclamo(Reclamo reclamo, int posicion);
-        int buscarReclamo(int idReclamo);
-        Reclamo leerRegistroReclamo(int posicion);
-        int cantidadRegistrosReclamos();
-        void leerRegistrosReclamo(int cantidadRegistros, Reclamo *vecReclamo);
-
+        void leerRegistrosReclamo(int cantidadRegistros, Reclamo *vReclamos);
         int cantidadDeRegistrosPorUsuario(int cantidadRegistros, int idUsuario);
         int leerRegistrosPorUsuario(int cantidadRegistros, int vectReclamos[], int tam, int idUsuario);
-
 
     private:
 

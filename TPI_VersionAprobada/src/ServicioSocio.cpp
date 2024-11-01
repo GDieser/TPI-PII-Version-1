@@ -101,4 +101,19 @@ bool ServicioSocio::validarLoginAsistenciaSocio(int idSocio, int pin)
     system("pause");
 }
 
+int ServicioSocio::obternerUltimoIdSocio()
+{
+    Socio socio;
+
+    int cantidad = _archivoSocio.cantidadRegistrosSocios();
+
+    if(cantidad > 0)
+    {
+        socio = _archivoSocio.leerRegistroSocio(cantidad - 1);
+        return socio.getIdUsuario();
+    }
+
+    return -1;
+}
+
 

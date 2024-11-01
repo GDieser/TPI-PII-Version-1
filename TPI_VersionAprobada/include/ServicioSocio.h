@@ -22,6 +22,8 @@ public:
     ///Necesario para login en el gimanasio y registrar asistencia
     bool validarLoginAsistenciaSocio(int idSocio, int pin);
 
+    void obternerUltimoIdSocio();
+
 
 private:
 

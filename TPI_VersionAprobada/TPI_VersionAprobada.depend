@@ -317,7 +317,7 @@
 	<iostream>
 	"DetalleRutina.h"
 
-1729271018 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\ejercicio.cpp
+1730407914 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\ejercicio.cpp
 	<iostream>
 	<cstring>
 	"Ejercicio.h"
@@ -395,7 +395,7 @@
 1729268977 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\socio.h
 	"Usuario.h"
 
-1730329208 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\menuentrenador.cpp
+1730425209 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\menuentrenador.cpp
 	<iostream>
 	"MenuEntrenador.h"
 	"ServicioEmpleado.h"
@@ -406,17 +406,17 @@
 1729990488 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\menuentrenador.h
 	"MenuPrincipal.h"
 
-1730334960 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\servicioempleado.h
+1730407757 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\servicioempleado.h
 	"GestionArchivoEmpleados.h"
 	"Empleado.h"
 
 1729865001 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\servicioreclamo.h
 	"GestionArchivoReclamos.h"
 
-1729864637 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\servicioejercicio.h
+1730425101 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\servicioejercicio.h
 	"GestionArchivoEjercicios.h"
 
-1729865084 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\serviciorutina.h
+1730425101 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\serviciorutina.h
 	"GestionArchivoDetalleRutinas.h"
 	"GestionArchivoRutinas.h"
 	"DetalleRutina.h"
@@ -477,7 +477,7 @@
 	<iostream>
 	"RegistroPago.h"
 
-1729270716 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\rutina.cpp
+1730407914 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\rutina.cpp
 	<iostream>
 	<cstring>
 	"Rutina.h"
@@ -492,7 +492,7 @@
 	"Fecha.h"
 	"RegistroAsistencia.h"
 
-1729864637 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\servicioejercicio.cpp
+1730424468 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\servicioejercicio.cpp
 	<iostream>
 	"ServicioEjercicio.h"
 	"Ejercicio.h"
@@ -514,7 +514,7 @@
 	"Reclamo.h"
 	"Fecha.h"
 
-1729864308 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\serviciorutina.cpp
+1730425617 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\serviciorutina.cpp
 	<iostream>
 	"ServicioRutina.h"
 	"Rutina.h"

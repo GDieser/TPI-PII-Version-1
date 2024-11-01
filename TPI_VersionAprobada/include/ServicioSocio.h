@@ -1,6 +1,7 @@
 #pragma once
 
 #include "GestionArchivoSocios.h"
+#include "GestionArchivoEmpleados.h"
 
 class ServicioSocio
 {
@@ -10,20 +11,24 @@ public:
 
     void verSocios();
     void agregarSocio();
-    void modificarSocio();
+    void modificarSocio(int idSocio);
     void verEntrenadorAsignado(int idSocio);
     void verHorarios();
     void verMembresia(int idSocio);
     void modificarContrasenia(int idSocio);
-
-    int obternerUltimoIdSocio();
-
-    ///Adicional
+    // Agregados como metodos auxiliares
+    int autoGenerarId();
+    std::string membresiaToStr(int idMemb);
+    int seleccionarMembresia();
+    void mostrarTurno(int idTurno);
+    Socio buscarSocioId(int idUsuario);
     void mostrarSociosPorEntrenador(int idEntrenador);
+    void mostrarFechaVencimiento(Fecha fechaIngreso);
 
 private:
 
     GestionArchivoSocios  _archivoSocio;
+    GestionArchivoEmpleados _archivoEmpleado;
 };
 
 

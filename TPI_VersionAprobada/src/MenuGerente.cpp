@@ -9,7 +9,7 @@
 
 using namespace std;
 
-MenuGerente::MenuGerente(UsuarioAutenticado usuario) : _usuario(usuario) {}
+MenuGerente::MenuGerente(UsuarioAutenticado usuario) : _usuario(usuario){}
 
 void MenuGerente::mostrarMenuGerente()
 {

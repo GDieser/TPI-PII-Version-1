@@ -9,7 +9,7 @@
 using namespace std;
 
 
-MenuEntrenador::MenuEntrenador(UsuarioAutenticado usuario) : _usuario(usuario) {}
+MenuEntrenador::MenuEntrenador(UsuarioAutenticado usuario) : _usuario(usuario){}
 
 void MenuEntrenador::mostrarMenuEntrenador()
 {

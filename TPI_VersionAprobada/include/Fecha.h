@@ -24,6 +24,8 @@ public:
     bool validarMes();
     bool validarAnio();
 
+    static Fecha crearFecha();
+
     std::string toString();
 
     bool compararSiFechasSonIguales(Fecha fecha);

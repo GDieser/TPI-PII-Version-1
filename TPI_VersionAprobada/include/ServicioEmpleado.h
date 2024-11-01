@@ -1,27 +1,31 @@
 #pragma once
 
 #include "GestionArchivoEmpleados.h"
+#include "Empleado.h"
 
 class ServicioEmpleado
 {
     public:
         ServicioEmpleado();
 
-        ///Necesitamos ambos por que entrenador necesita consultar actividades (podria ser sobrecarga)
-        void agregarGerenete();
-        void agregarEntrenador();
-
-        void verEntrenadores();
-        void verGerentes();
-
-        void modificarEmpleado();
-        void verSociosAsignados();
+        void agregarEmpleado(int idRol);
+        void verEmpleados(int idRol);
+        void restaurarUnEmpleado(int idRol);
+        void modificarEmpleado(int idRol);
+        void verSociosAsignados(int idEntrenador);
         void asignarHorarios();
-        void verHorariosAsignados();
+        void verHorariosAsignados(int idUsuario);
         void modificarContrasenia(int idEmpleado);
+        int obternerUltimoIdEmpleado();
+        int obternerUltimoId();
+        int obternerUltimoLegajo();
+        void buscarUnEmpleado(int idRol);
+        int elegirEntrenador();
+        int comprobarDniEmpleado(int dni);
+        void mostrarHorariosDeEntrenadores();
 
-        ///Para verificar datos de login
-        bool buscarEmpleadoLogin(int idSocio, std::string pass);
+        void listarEmpleadoPorApellido(int idRol);
+        void ordenarPorApellido(Empleado empleado[], int tam);
 
     private:
 

@@ -312,4 +312,39 @@
 			<Cursor1 position="492" topLine="5" />
 		</Cursor>
 	</File>
+	<File name="src\MenuGerente.cpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3901" topLine="127" />
+		</Cursor>
+	</File>
+	<File name="include\RegistroAsistencia.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="8" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="212" topLine="3" />
+		</Cursor>
+	</File>
+	<File name="src\Empleado.cpp" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1103" topLine="15" />
+		</Cursor>
+	</File>
+	<File name="include\MenuGerente.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="122" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\GestionArchivoActividades.cpp" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="10" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2113" topLine="105" />
+		</Cursor>
+	</File>
+	<File name="src\GestionArchivoReclamos.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1387" topLine="54" />
+		</Cursor>
+	</File>
+	<File name="src\Fecha.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1738" topLine="80" />
+		</Cursor>
+	</File>
 </CodeBlocks_layout_file>

@@ -10,15 +10,17 @@ class ServicioRutina
         ServicioRutina();
 
         void verRutinas(int idEntrenador);
+        void verRutinaAsignada(int idSocio);
         void crearRutina(int idEntrenador);
         void modificarRutina(int idEntrenador);
         void asignarRutina();
-
-        ///Necesitamos para los detalles de rutinas, se crean a la vez que una nueva rutina pero se
-        ///manejan con diferentes registros
+        void verDetallesDeRutina();
+        void mostrarRutinasPorEntrenador(int idEntrenador);
         int obtenerUltimoIdRutina();
         DetalleRutina crearDetalleRutina(int idRutina);
-        void verDetallesDeRutina();
+        void buscarRutina();
+
+        int elegirRutina(int idEntrenador);
 
     private:
 

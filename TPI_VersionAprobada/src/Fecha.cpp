@@ -88,10 +88,6 @@ void Fecha::validarFecha()
     }
 }
 
-Fecha Fecha::hoy(){
-    return Fecha();
-}
-
 Fecha Fecha::crearFecha(){
     int dia, mes, anio;
     cout << "Ingrese dia: ";

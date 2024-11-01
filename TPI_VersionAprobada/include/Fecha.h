@@ -24,7 +24,6 @@ public:
     bool validarMes();
     bool validarAnio();
 
-    static Fecha hoy();
     static Fecha crearFecha();
 
     std::string toString();

@@ -42,6 +42,39 @@ string ServicioSocio::membresiaToStr(int id){
     return memb;
 }
 
+void ServicioSocio::mostrarSociosPorEntrenador(int idEntrenador){
+    int cantReg = _archivoSocio.cantidadRegistrosSocios();
+    Socio socio;
+    cout << "Socios encontrados: " << cantReg << " socios." << endl;
+    cout << string(78, '-') << endl;
+    cout << left << setw(8) << "ID" << "|"
+         << setw(15) << "Apellido" << "|"
+         << setw(15) << "Nombre" << "|"
+         << setw(12) << "Fecha Ing." << "|"
+         << setw(10) << "Membresia" << "|"
+         << setw(14) << "Estado" << endl;
+    cout << string(78, '-') << endl;
+    int j = 0;
+    for (int i = 0; i < cantReg; i++) {
+        socio = _archivoSocio.leerRegistroSocio(i);
+        if(socio.getIdEntrenadorAsignado() == idEntrenador){
+            cout << left << setw(8) <<"#"<< j << " - " << socio.getIdUsuario() << "|"
+                 << setw(15) << socio.getApellido() << "|"
+                 << setw(15) << socio.getNombre() << "|"
+                 << setw(12) << socio.getFechaDeIngreso().toString() << "|"
+                 << setw(10) << membresiaToStr(socio.getMembresia()).c_str() << "|"
+                 << setw(14) << (socio.getEstado() ? "Habilitado" : "Deshabilitado") << endl;
+            if ((i+24)%25 == 0 && i != 1){
+                system("pause");
+            }
+            j++;
+        }
+    }
+    cout << string(78, '-') << endl;
+    system("pause");
+
+}
+
 void ServicioSocio::verSocios()
 {
     int cantReg = _archivoSocio.cantidadRegistrosSocios();
@@ -93,7 +126,7 @@ void ServicioSocio::agregarSocio()
     int dni;
     int idUsuario = autoGenerarId();
     Fecha fechaNacimiento;
-    Fecha fechaIngreso = Fecha::hoy();
+    Fecha fechaIngreso;
     string contrasenia;
     bool estado = true;
     int idRol = 2;
@@ -231,14 +264,27 @@ void ServicioSocio::verEntrenadorAsignado(int idEntrenador)
     }
     ServicioActividad sActividad;
     Empleado emp = _archivoEmpleado.leerRegistroEmpleado(pos);
-    cout << " ------- SU ENTRENADOR ------- " << endl;
-    cout << " Nombre: \t" << emp.getNombre() << endl;
-    cout << " Apellido: \t" << emp.getApellido() << endl;
-    //cout << " Actividad: \t" << sActividad.verActividad(emp.getIdActividadPrincipal()) << endl;
-    cout << " Dias: " << emp.getDiaSem() << endl;
+    cout << "+ -------t SU ENTRENADOR \t------- +" << endl;
+    cout << "| Nombre: \t" << emp.getNombre() <<"\t|" <<  endl;
+    cout << "| Apellido: \t" << emp.getApellido()<<"\t|" << endl;
+    //cout << " Actividad: \t" << sActividad.verActividad(emp.getIdActividadPrincipal()) << endl; -- DESCOMENTAR una vez finalizado
+    cout << "| Dias: " << emp.getDiaSem()<<"\t|" << endl;
+    cout << "+ -------\t ------- \t------- +" << endl;
+
     mostrarTurno(emp.getIdTurno());
 
     system("pause");
+}
+
+Socio ServicioSocio::buscarSocioId(int idUsuario){
+
+    int pos = _archivoSocio.buscarSocio(idUsuario);
+    if (pos = -1){
+        cout << "Socio con ID #" << idUsuario << " no encontrado..." << endl;
+        return Socio();
+    }
+    Socio socio = _archivoSocio.leerRegistroSocio(pos);
+    return socio;
 }
 
 void ServicioSocio::mostrarTurno(int idTurno){
@@ -268,12 +314,21 @@ void ServicioSocio::verHorarios()
 
 }
 
-void ServicioSocio::verMembresia(int idSocio)
+void ServicioSocio::verMembresia(int idUsuario)
 {
+    int pos = _archivoSocio.buscarSocio(idUsuario);
+    if (pos == -1){
+        cout <<"Usuario no existe, intente nuevamente... " << endl;
+        system("pause");
+        return;
+    }
+    Socio socio = _archivoSocio.leerRegistroSocio(pos);
+
+
     system("cls");
-
-
+    cout << "Tu membresia actual es: " << membresiaToStr(socio.getIdRol()) << endl;
     system("pause");
+    system("cls");
 }
 
 void ServicioSocio::modificarContrasenia(int idSocio)
@@ -309,3 +364,22 @@ void ServicioSocio::modificarContrasenia(int idSocio)
     system("cls");
 }
 
+void ServicioSocio::mostrarFechaVencimiento(Fecha fecha) {
+
+    Fecha hoy = Fecha();
+    int dia = fecha.getDia();
+    int mes = fecha.getMes();
+    int anio = fecha.getAnio();
+
+    if (hoy.getDia() > dia) {
+        mes++;
+    }
+
+    if (mes > 12) {
+        mes = 1;
+        anio++;
+    }
+
+    Fecha fechaVencimiento = Fecha(dia, mes, anio);
+    cout << "Su próxima cuota vence el día: " << fechaVencimiento.toString() << endl;
+}

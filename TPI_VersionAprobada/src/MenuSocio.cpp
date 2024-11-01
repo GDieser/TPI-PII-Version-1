@@ -4,6 +4,8 @@
 #include "ServicioPago.h"
 #include "ServicioReclamo.h"
 #include "ServicioAsistencia.h"
+#include "GestionArchivoSocios.h"
+#include "ServicioRutina.h"
 
 using namespace std;
 
@@ -40,13 +42,9 @@ void MenuSocio::mostrarMenuIngresoSocio()
     ServicioAsistencia asistencia;
 
     system("cls");
-    cout << "Bienvenido" << endl;
-    system("pause");
-
+    cout << "Bienvenido" << _usuario.getNombre() << endl;
     asistencia.registrarAsistencia(_usuario.getIdUsuario());
-    system("cls");
-    cout << "Asistencia registrada satifsactoriamente!" << endl;
-    system("pause");
+    mostrarSubmenuSocio();
 }
 
 void MenuSocio::mostrarMenuSocio()
@@ -105,7 +103,7 @@ void MenuSocio::gestionarPagos()
 {
     int opcion;
     ServicioSocio socio;
-    ServicioPago pago;
+    ServicioPago sPago;
 
     do
     {
@@ -128,10 +126,10 @@ void MenuSocio::gestionarPagos()
         switch(opcion)
         {
         case 1:
-
+            //sPago.registrarPago();
             break;
         case 2:
-
+            //sPago.mostrarRegistroPagos(int idSocio);
             break;
         case 3:
 
@@ -140,7 +138,7 @@ void MenuSocio::gestionarPagos()
             mostrarPreciosDePases();
             break;
         case 5:
-
+            _sSocio.verMembresia(_usuario.getIdUsuario());
             break;
         default:
             cout << "Opcion incorrecta" << endl;
@@ -176,8 +174,7 @@ void MenuSocio::verRutina()
         system("cls");
         cout << " RUTINAS " << endl;
         cout << "-------------------------------" << endl;
-        cout << " 1 - VER RUTINAS DISPONIBLES " << endl;
-        cout << " 2 - VER MIS RUTINAS " << endl;
+        cout << " 1 - VER MI RUTINA " << endl;
         cout << "-------------------------------" << endl;
         cout << " 0 - VOLVER ATRAS " << endl;
         cout << endl;
@@ -189,11 +186,13 @@ void MenuSocio::verRutina()
         switch(opcion)
         {
         case 1:
+            {
+                ServicioRutina sRutina;
+                Socio socio = _sSocio.buscarSocioId(_usuario.getIdUsuario());
+                //serRutina.verDetallesDeRutina(_usuario.getIdRutina());
+                break;
+            }
 
-            break;
-        case 2:
-
-            break;
         default:
             cout << "ERROR" << endl;
             break;

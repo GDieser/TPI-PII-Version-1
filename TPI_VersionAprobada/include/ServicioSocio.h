@@ -21,6 +21,9 @@ public:
     std::string membresiaToStr(int idMemb);
     int seleccionarMembresia();
     void mostrarTurno(int idTurno);
+    Socio buscarSocioId(int idUsuario);
+    void mostrarSociosPorEntrenador(int idEntrenador);
+    void mostrarFechaVencimiento(Fecha fechaIngreso);
 
 private:
 

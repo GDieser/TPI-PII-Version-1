@@ -19,30 +19,32 @@ ServicioSocio::ServicioSocio()
     _archivoEmpleado = GestionArchivoEmpleados("archivoEmpleados.dat");
 }
 
-string ServicioSocio::membresiaToStr(int id){
+string ServicioSocio::membresiaToStr(int id)
+{
     string memb;
     switch (id)
-        {
-            case 0:
-                {
-                    memb = "FULL";
-                    break;
-                }
-            case 1:
-                {
-                    memb = "SMART";
-                    break;
-                }
-            case 2:
-                {
-                    memb = "FIT";
-                    break;
-                }
-        }
+    {
+    case 0:
+    {
+        memb = "FULL";
+        break;
+    }
+    case 1:
+    {
+        memb = "SMART";
+        break;
+    }
+    case 2:
+    {
+        memb = "FIT";
+        break;
+    }
+    }
     return memb;
 }
 
-void ServicioSocio::mostrarSociosPorEntrenador(int idEntrenador){
+void ServicioSocio::mostrarSociosPorEntrenador(int idEntrenador)
+{
     int cantReg = _archivoSocio.cantidadRegistrosSocios();
     Socio socio;
     cout << "Socios encontrados: " << cantReg << " socios." << endl;
@@ -55,16 +57,19 @@ void ServicioSocio::mostrarSociosPorEntrenador(int idEntrenador){
          << setw(14) << "Estado" << endl;
     cout << string(78, '-') << endl;
     int j = 0;
-    for (int i = 0; i < cantReg; i++) {
+    for (int i = 0; i < cantReg; i++)
+    {
         socio = _archivoSocio.leerRegistroSocio(i);
-        if(socio.getIdEntrenadorAsignado() == idEntrenador){
+        if(socio.getIdEntrenadorAsignado() == idEntrenador)
+        {
             cout << left << setw(8) <<"#"<< j << " - " << socio.getIdUsuario() << "|"
                  << setw(15) << socio.getApellido() << "|"
                  << setw(15) << socio.getNombre() << "|"
                  << setw(12) << socio.getFechaDeIngreso().toString() << "|"
                  << setw(10) << membresiaToStr(socio.getMembresia()).c_str() << "|"
                  << setw(14) << (socio.getEstado() ? "Habilitado" : "Deshabilitado") << endl;
-            if ((i+24)%25 == 0 && i != 1){
+            if ((i+24)%25 == 0 && i != 1)
+            {
                 system("pause");
             }
             j++;
@@ -89,7 +94,8 @@ void ServicioSocio::verSocios()
          << setw(14) << "Estado" << endl;
     cout << string(78, '-') << endl;
 
-    for (int i = 0; i < cantReg; i++) {
+    for (int i = 0; i < cantReg; i++)
+    {
         socio = _archivoSocio.leerRegistroSocio(i);
 
         cout << left << setw(6) << socio.getIdUsuario() << "|"
@@ -98,7 +104,8 @@ void ServicioSocio::verSocios()
              << setw(12) << socio.getFechaDeIngreso().toString() << "|"
              << setw(10) << membresiaToStr(socio.getMembresia()).c_str() << "|"
              << setw(14) << (socio.getEstado() ? "Habilitado" : "Deshabilitado") << endl;
-        if ((i+24)%25 == 0 && i != 1){
+        if ((i+24)%25 == 0 && i != 1)
+        {
             system("pause");
         }
     }
@@ -106,16 +113,20 @@ void ServicioSocio::verSocios()
     system("pause");
 }
 
-int ServicioSocio::autoGenerarId(){
+int ServicioSocio::autoGenerarId()
+{
     return 1000 + _archivoSocio.cantidadRegistrosSocios() + _archivoEmpleado.cantidadRegistrosEmpleados();
 }
 
-int ServicioSocio::seleccionarMembresia(){
+int ServicioSocio::seleccionarMembresia()
+{
     int opc;
-    do{
+    do
+    {
         cout << "Ingrese 0 para FULL, 1 para SMART, 2 para FIT"<< endl;
         cin >> opc;
-    } while (opc > 2 || opc < 0);
+    }
+    while (opc > 2 || opc < 0);
     return opc;
 }
 
@@ -189,7 +200,8 @@ void ServicioSocio::modificarSocio(int idSocio)
 {
     int pos = _archivoSocio.buscarSocio(idSocio);
 
-    if (pos == -1) {
+    if (pos == -1)
+    {
         cout << "Socio con id #" << idSocio << " no encontrado." << endl;
         system("pause");
         system("cls");
@@ -199,7 +211,8 @@ void ServicioSocio::modificarSocio(int idSocio)
     Socio soc = _archivoSocio.leerRegistroSocio(pos);
     cout << "A continuacion ingrese la opcion deseada: "<< endl;
     int opc;
-    do {
+    do
+    {
         cout << string(78, '-') << endl;
         cout << "1. Modificar membresia" << endl;
         cout << "2. Cambiar rutina" << endl;
@@ -211,53 +224,59 @@ void ServicioSocio::modificarSocio(int idSocio)
         cin >> opc;
 
 
-        switch(opc){
-            case 1:
-                {
-                    soc.setMembresia(seleccionarMembresia());
-                    break;
-                }
-            case 2:
-                {
-                    soc.setIdRutina(1); //Se debe utilizar servicioRutina.elegirRutina())
-                    break;
-                }
-            case 3:
-                {
-                    soc.setIdEntrenadorAsignado(1); //Se debe utilizar servicioEmpleado.elegirEntrenador())
-                    break;
-                }
-            case 4:
-                {
-                    cout << "¿Está seguro de cambiar el estado de este usuario? (S/N): ";
-                    char confirmacion;
-                    cin >> confirmacion;
-                    if (confirmacion == 'S' || confirmacion == 's') {
-                        soc.setEstado(!soc.getEstado());
-                        cout << "Estado de usuario cambiado." << endl;
-                    } else {
-                        cout << "Cambio de estado cancelado." << endl;
-                    }
-                    break;
-                }
-            case 0:
-                {
-                    break;
-                }
-            default:
-                {
-                    cout << "Debe ingresar una opcion valida" << endl;
-                    break;
-                }
+        switch(opc)
+        {
+        case 1:
+        {
+            soc.setMembresia(seleccionarMembresia());
+            break;
         }
-    } while (opc != 0);
+        case 2:
+        {
+            soc.setIdRutina(1); //Se debe utilizar servicioRutina.elegirRutina())
+            break;
+        }
+        case 3:
+        {
+            soc.setIdEntrenadorAsignado(1); //Se debe utilizar servicioEmpleado.elegirEntrenador())
+            break;
+        }
+        case 4:
+        {
+            cout << "¿Está seguro de cambiar el estado de este usuario? (S/N): ";
+            char confirmacion;
+            cin >> confirmacion;
+            if (confirmacion == 'S' || confirmacion == 's')
+            {
+                soc.setEstado(!soc.getEstado());
+                cout << "Estado de usuario cambiado." << endl;
+            }
+            else
+            {
+                cout << "Cambio de estado cancelado." << endl;
+            }
+            break;
+        }
+        case 0:
+        {
+            break;
+        }
+        default:
+        {
+            cout << "Debe ingresar una opcion valida" << endl;
+            break;
+        }
+        }
+    }
+    while (opc != 0);
 }
 
 void ServicioSocio::verEntrenadorAsignado(int idEntrenador)
 {
     system("cls");
     int pos = _archivoEmpleado.buscarEmpleado(idEntrenador);
-    if (pos == -1){
+    if (pos == -1)
+    {
         cout << "No se encuentra entrenador con ID #" << idEntrenador << endl;
         system("pause");
         return;
@@ -276,10 +295,12 @@ void ServicioSocio::verEntrenadorAsignado(int idEntrenador)
     system("pause");
 }
 
-Socio ServicioSocio::buscarSocioId(int idUsuario){
+Socio ServicioSocio::buscarSocioId(int idUsuario)
+{
 
     int pos = _archivoSocio.buscarSocio(idUsuario);
-    if (pos = -1){
+    if (pos = -1)
+    {
         cout << "Socio con ID #" << idUsuario << " no encontrado..." << endl;
         return Socio();
     }
@@ -287,24 +308,26 @@ Socio ServicioSocio::buscarSocioId(int idUsuario){
     return socio;
 }
 
-void ServicioSocio::mostrarTurno(int idTurno){
+void ServicioSocio::mostrarTurno(int idTurno)
+{
     cout << " Turno: ";
-    switch(idTurno){
+    switch(idTurno)
+    {
     case 0:
-        {
-            cout << "Mañana";
-            break;
-        }
+    {
+        cout << "Mañana";
+        break;
+    }
     case 1:
-        {
-            cout << "Tarde";
-            break;
-        }
+    {
+        cout << "Tarde";
+        break;
+    }
     case 2:
-        {
-            cout << "Noche";
-            break;
-        }
+    {
+        cout << "Noche";
+        break;
+    }
     }
     cout << endl;
 }
@@ -317,7 +340,8 @@ void ServicioSocio::verHorarios()
 void ServicioSocio::verMembresia(int idUsuario)
 {
     int pos = _archivoSocio.buscarSocio(idUsuario);
-    if (pos == -1){
+    if (pos == -1)
+    {
         cout <<"Usuario no existe, intente nuevamente... " << endl;
         system("pause");
         return;
@@ -334,7 +358,8 @@ void ServicioSocio::verMembresia(int idUsuario)
 void ServicioSocio::modificarContrasenia(int idSocio)
 {
     int pos = _archivoSocio.buscarSocio(idSocio);
-    if (pos == -1) {
+    if (pos == -1)
+    {
         cout << "Socio con id #" << idSocio << " no encontrado." << endl;
         return;
     }
@@ -350,32 +375,41 @@ void ServicioSocio::modificarContrasenia(int idSocio)
     contra1[sizeof(contra1)-1] = '\0';
     contra2[sizeof(contra2)-1] = '\0';
 
-    if (strcmp(contra1, contra2)==0){
+    if (strcmp(contra1, contra2)==0)
+    {
         soc.setContrasenia(contra1);
-         if (_archivoSocio.guardarSocio(soc, pos)) {
+        if (_archivoSocio.guardarSocio(soc, pos))
+        {
             cout << "Contraseña modificada y guardada correctamente." << endl;
-        } else {
+        }
+        else
+        {
             cout << "Error al guardar los cambios. Contacte al administrador del sistema..." << endl;
         }
-    } else {
+    }
+    else
+    {
         cout << "Contraseñas no coinciden, intente nuevamente ..." << endl;
     }
     system("pause");
     system("cls");
 }
 
-void ServicioSocio::mostrarFechaVencimiento(Fecha fecha) {
+void ServicioSocio::mostrarFechaVencimiento(Fecha fecha)
+{
 
     Fecha hoy = Fecha();
     int dia = fecha.getDia();
     int mes = fecha.getMes();
     int anio = fecha.getAnio();
 
-    if (hoy.getDia() > dia) {
+    if (hoy.getDia() > dia)
+    {
         mes++;
     }
 
-    if (mes > 12) {
+    if (mes > 12)
+    {
         mes = 1;
         anio++;
     }

@@ -535,14 +535,7 @@ int ServicioEmpleado::obternerUltimoId()
 {
     ServicioSocio socio;
 
-    if(socio.obternerUltimoIdSocio() > obternerUltimoIdEmpleado())
-    {
-        return socio.obternerUltimoIdSocio()+1;
-    }
-    else
-    {
-        return obternerUltimoIdEmpleado()+1;
-    }
+    return socio.autoGenerarId();
 }
 
 int ServicioEmpleado::obternerUltimoLegajo()

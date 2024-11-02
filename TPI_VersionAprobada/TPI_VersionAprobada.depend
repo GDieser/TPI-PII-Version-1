@@ -657,21 +657,21 @@
 	<iostream>
 	"GestionArchivoEmpleados.h"
 
-1730345620 source:d:\flacorandom\desktop\tp_integrador\tpi-pii-version-1\tpi_versionaprobada\src\gestionarchivopagos.cpp
+1730517954 source:d:\flacorandom\desktop\tp_integrador\tpi-pii-version-1\tpi_versionaprobada\src\gestionarchivopagos.cpp
 	<iostream>
 	"GestionArchivoPagos.h"
 
-1730345620 d:\flacorandom\desktop\tp_integrador\tpi-pii-version-1\tpi_versionaprobada\include\gestionarchivopagos.h
+1730518154 d:\flacorandom\desktop\tp_integrador\tpi-pii-version-1\tpi_versionaprobada\include\gestionarchivopagos.h
 	"RegistroPago.h"
 
 1730345620 d:\flacorandom\desktop\tp_integrador\tpi-pii-version-1\tpi_versionaprobada\include\registropago.h
 	"Fecha.h"
 
-1730429863 source:d:\flacorandom\desktop\tp_integrador\tpi-pii-version-1\tpi_versionaprobada\src\gestionarchivoreclamos.cpp
+1730518188 source:d:\flacorandom\desktop\tp_integrador\tpi-pii-version-1\tpi_versionaprobada\src\gestionarchivoreclamos.cpp
 	<iostream>
 	"GestionArchivoReclamos.h"
 
-1730432536 d:\flacorandom\desktop\tp_integrador\tpi-pii-version-1\tpi_versionaprobada\include\gestionarchivoreclamos.h
+1730519308 d:\flacorandom\desktop\tp_integrador\tpi-pii-version-1\tpi_versionaprobada\include\gestionarchivoreclamos.h
 	"Reclamo.h"
 
 1730345620 d:\flacorandom\desktop\tp_integrador\tpi-pii-version-1\tpi_versionaprobada\include\reclamo.h
@@ -704,7 +704,7 @@
 1730345620 d:\flacorandom\desktop\tp_integrador\tpi-pii-version-1\tpi_versionaprobada\include\servicioempleado.h
 	"GestionArchivoEmpleados.h"
 
-1730432636 d:\flacorandom\desktop\tp_integrador\tpi-pii-version-1\tpi_versionaprobada\include\servicioreclamo.h
+1730433028 d:\flacorandom\desktop\tp_integrador\tpi-pii-version-1\tpi_versionaprobada\include\servicioreclamo.h
 	"GestionArchivoReclamos.h"
 
 1730345620 d:\flacorandom\desktop\tp_integrador\tpi-pii-version-1\tpi_versionaprobada\include\servicioejercicio.h
@@ -726,10 +726,10 @@
 1730345620 d:\flacorandom\desktop\tp_integrador\tpi-pii-version-1\tpi_versionaprobada\include\menugerente.h
 	"MenuPrincipal.h"
 
-1730392092 d:\flacorandom\desktop\tp_integrador\tpi-pii-version-1\tpi_versionaprobada\include\serviciosocio.h
+1730519175 d:\flacorandom\desktop\tp_integrador\tpi-pii-version-1\tpi_versionaprobada\include\serviciosocio.h
 	"GestionArchivoSocios.h"
 
-1730345620 d:\flacorandom\desktop\tp_integrador\tpi-pii-version-1\tpi_versionaprobada\include\serviciopago.h
+1730517799 d:\flacorandom\desktop\tp_integrador\tpi-pii-version-1\tpi_versionaprobada\include\serviciopago.h
 	"GestionArchivoPagos.h"
 
 1730345620 source:d:\flacorandom\desktop\tp_integrador\tpi-pii-version-1\tpi_versionaprobada\src\menuprincipal.cpp
@@ -801,8 +801,11 @@
 	"ServicioSocio.h"
 	"ServicioActividad.h"
 
-1730345620 source:d:\flacorandom\desktop\tp_integrador\tpi-pii-version-1\tpi_versionaprobada\src\serviciopago.cpp
+1730518216 source:d:\flacorandom\desktop\tp_integrador\tpi-pii-version-1\tpi_versionaprobada\src\serviciopago.cpp
 	<iostream>
+	"ServicioPago.h"
+	"RegistroPago.h"
+	"GestionArchivoPagos.h"
 	"ServicioPago.h"
 
 1730345620 source:d:\flacorandom\desktop\tp_integrador\tpi-pii-version-1\tpi_versionaprobada\src\servicioreclamo.cpp
@@ -816,7 +819,7 @@
 	"ServicioRutina.h"
 	"Rutina.h"
 
-1730345620 source:d:\flacorandom\desktop\tp_integrador\tpi-pii-version-1\tpi_versionaprobada\src\serviciosocio.cpp
+1730519179 source:d:\flacorandom\desktop\tp_integrador\tpi-pii-version-1\tpi_versionaprobada\src\serviciosocio.cpp
 	<iostream>
 	<cstring>
 	"ServicioSocio.h"

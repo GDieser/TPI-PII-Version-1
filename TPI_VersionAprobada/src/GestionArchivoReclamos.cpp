@@ -4,10 +4,7 @@
 
 using namespace std;
 
-GestionArchivoReclamos::GestionArchivoReclamos()
-{
-
-}
+GestionArchivoReclamos::GestionArchivoReclamos(){}
 
 GestionArchivoReclamos::GestionArchivoReclamos(string nombreArchivo)
 {
@@ -83,8 +80,9 @@ bool GestionArchivoReclamos::leerTodosReclamos(Reclamo r[], int cantReclamos) {
 }
 
 bool GestionArchivoReclamos::modificarReclamo(Reclamo &r, int pos)
+{
 
-	FILE* pfile;
+	FILE *pfile;
 	bool result;
 
 	pfile = fopen(_nombreArchivo.c_str(), "rb+");

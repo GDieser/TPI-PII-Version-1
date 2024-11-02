@@ -11,7 +11,8 @@ ServicioReclamo::ServicioReclamo() {
     _archivoReclamos = GestionArchivoReclamos("GestionArchivoReclamos.dat");
 }
 
-void ServicioReclamo::cargarReclamo(int idUsuario) {
+void ServicioReclamo::cargarReclamo(int idUsuario)
+{
 
     system("cls");
     ServicioSocio ss;
@@ -19,17 +20,17 @@ void ServicioReclamo::cargarReclamo(int idUsuario) {
 	Fecha fechaActual;
 	std::string detalle;
 
-    idReclamo = obtenerUltimoIdReclamo();
+    int idReclamo = obtenerUltimoIdReclamo();
 
-    std::cout << "              ||| NUEVO RECLAMO |||               " << std::endl;
-    std::cout << " -- Por favor ingrese su reclamo -- " << std::endl;
+    std::cout << "           ||| NUEVO RECLAMO |||           " << std::endl;
+    std::cout << "    --- Por favor ingrese su reclamo ---     " << std::endl;
     std::cin >> detalle;
     cin.ignore();
-    getline(cin, detalles);
+    getline(cin, detalle);
 
 	//fecha.setFechaActual();
 
-    Reclamo reclamo(idReclamo, idUsuario, false, detalles, fechaActual);
+    Reclamo reclamo(idReclamo, idUsuario, false, detalle, fechaActual);
 
     if(_archivoReclamos.guardarReclamo(reclamo))
     {
@@ -55,9 +56,9 @@ void ServicioReclamo::mostrarReclamo(bool resuelto) {
     {
         for(int i=0; i<cantidad; i++)
         {
-            reclamo = _archivoReclamos.leerReclamo(i);
+            r = _archivoReclamos.leerReclamo(i);
 
-            if(reclamo.getEstaResuelto() == resuelto)
+            if(r.getEstaResuelto() == resuelto)
             {
                 cout << "-----------------------------------------" << endl;
                 cout << " ID Reclamo #" << r.getIdReclamo() << endl;
@@ -78,20 +79,20 @@ void ServicioReclamo::mostrarReclamo(bool resuelto) {
 
 void ServicioReclamo::verReclamosUsuario(int idUsuario){
 
-	int idUsuario;
-	Reclamo r;
+	system("cls");
+    Reclamo reclamo;
+    int *vectReclamos;
 
-	int cantReclamos = _archivoReclamos.getCantidadReclamos();
-	int tam = _archivoReclamos.cantidadDeRegistrosPorUsuario(cantReclamos, idUsuario);
+    int cantidad = _archivoReclamos.getCantidadReclamos();
+    int tam = _archivoReclamos.cantidadDeRegistrosPorUsuario(cantidad, idUsuario);
 
-	Reclamo *vReclamos;
-	vReclamos = new Reclamo[tam];
+    vectReclamos = new int[tam];
 
-	*vReclamos = _archivoReclamos.leerRegistrosPorUsuario(cantReclamos, vReclamos, tam, idUsuario);
+    *vectReclamos = _archivoReclamos.leerRegistrosPorUsuario(cantidad, vectReclamos, tam, idUsuario);
 
-	 for(int i = 0; i < tam; i++)
+    for(int i=0; i<tam; i++)
     {
-        reclamo = _archivoReclamos.leerRegistrosReclamo(vReclamos[i]);
+        reclamo = _archivoReclamos.leerRegistrosReclamo(vectReclamos[i]);
 
         cout << "-------------------------------------------" << endl;
         if(reclamo.getEstaResuelto())
@@ -105,10 +106,8 @@ void ServicioReclamo::verReclamosUsuario(int idUsuario){
         cout << " ID #" << reclamo.getIdReclamo() << endl;
         cout << " Detalle: " << reclamo.getDetalle() << endl;
     }
-
+    delete[]vectReclamos;
     system("pause");
-
-	delete[] vReclamos;
 }
 
 void ServicioReclamo::cambiarEstadoReclamo() {
@@ -162,7 +161,7 @@ void ServicioReclamo::cambiarEstadoReclamo() {
 
 int ServicioReclamo::obtenerUltimoIdReclamo()
 {
-    int cantidad = _archivoReclamos.cantidadRegistrosReclamos();
+    int cantidad = _archivoReclamos.getCantidadReclamos();
 
     if(cantidad != -1)
     {

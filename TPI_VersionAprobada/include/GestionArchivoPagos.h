@@ -5,24 +5,21 @@
 
 class GestionArchivoPagos
 {
-public:
+    private:
+        std::string _nombreArchivo;
 
-    GestionArchivoPagos();
-    GestionArchivoPagos(std::string nombreArchivo);
+    public:
+        GestionArchivoPagos();
+        GestionArchivoPagos(std::string nombreArchivo);
+        bool guardarPago(const RegistroPago &p);
+        RegistroPago leerPago(int pos);
+        bool modificarPago(RegistroPago &p, int pos);
+        void leerTodosPagos(RegistroPago *p, int);
+        int getCantidadPagos();
+        int buscarPago(int idUsuario);
 
-    bool guardarPago(RegistroPago pago);
-    bool guardarPago(RegistroPago pago, int posicion);
-    int buscarPago(int idUsuario);
-    RegistroPago leerRegistroPago(int posicion);
-    int cantidadRegistrosPagos();
-    void leerRegistrosPagos(int cantidadRegistros, RegistroPago *vectPago);
-
-    int cantidadDeRegistrosSocios(int cantidadRegistros, int idUsuario);
-    int leerRegistrosPagosSocios(int cantidadRegistros, int vectPagos[], int tam, int idUsuario);
-    int ultimoRegistroSocio(int cantidadRegistros, int idUsuario);
-
-
-private:
-
-    std::string _nombreArchivo;
+        /// filtros por socio
+        int cantidadPagosXSocio(int cantidadRegistros, int idUsuario);
+        int leerPagosXSocio(int cantidadRegistros, int vectPagos[], int tam, int idUsuario);
+        int ultimoPagoSocio(int cantidadRegistros, int idUsuario);
 };

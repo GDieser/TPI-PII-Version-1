@@ -11,7 +11,7 @@ class GestionArchivoReclamos
         bool guardarReclamo(const Reclamo &r);
         Reclamo leerReclamo(int pos);
         bool leerTodosReclamos(Reclamo r[], int cant);
-        bool modificarReclamo(Reclamo& r), int pos;
+        bool modificarReclamo(Reclamo& r, int pos);
         int getCantidadReclamos();
         int buscarReclamo(int pos);
 

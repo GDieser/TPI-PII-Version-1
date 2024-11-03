@@ -385,7 +385,7 @@
 
 1729270716 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\rutina.h
 
-1729290712 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\gestionarchivosocios.cpp
+1730644339 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\gestionarchivosocios.cpp
 	<iostream>
 	"GestionArchivoSocios.h"
 
@@ -395,7 +395,7 @@
 1729268977 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\socio.h
 	"Usuario.h"
 
-1730466291 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\menuentrenador.cpp
+1730645372 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\menuentrenador.cpp
 	<iostream>
 	"MenuEntrenador.h"
 	"ServicioEmpleado.h"
@@ -413,15 +413,15 @@
 1729865001 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\servicioreclamo.h
 	"GestionArchivoReclamos.h"
 
-1730466291 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\servicioejercicio.h
+1730601924 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\servicioejercicio.h
 	"GestionArchivoEjercicios.h"
 
-1730466291 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\serviciorutina.h
+1730638517 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\serviciorutina.h
 	"GestionArchivoDetalleRutinas.h"
 	"GestionArchivoRutinas.h"
 	"DetalleRutina.h"
 
-1730466291 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\menugerente.cpp
+1730647792 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\menugerente.cpp
 	<iostream>
 	"MenuGerente.h"
 	"ServicioSocio.h"
@@ -485,8 +485,9 @@
 	<cstring>
 	"Rutina.h"
 
-1730466291 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\servicioactividad.cpp
+1730515660 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\servicioactividad.cpp
 	<iostream>
+	<iomanip>
 	"ServicioActividad.h"
 
 1730466291 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\servicioasistencia.cpp
@@ -496,14 +497,15 @@
 	"Fecha.h"
 	"RegistroAsistencia.h"
 
-1730466291 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\servicioejercicio.cpp
+1730598952 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\servicioejercicio.cpp
 	<iostream>
 	"ServicioEjercicio.h"
 	"Ejercicio.h"
 
-1730466728 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\servicioempleado.cpp
+1730597117 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\servicioempleado.cpp
 	<iostream>
 	<cstring>
+	<iomanip>
 	"ServicioEmpleado.h"
 	"ServicioSocio.h"
 	"ServicioActividad.h"
@@ -518,9 +520,10 @@
 	"Reclamo.h"
 	"Fecha.h"
 
-1730466291 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\serviciorutina.cpp
+1730648037 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\serviciorutina.cpp
 	<iostream>
 	"ServicioRutina.h"
+	"ServicioEjercicio.h"
 	"Rutina.h"
 
 1730467396 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\serviciosocio.cpp

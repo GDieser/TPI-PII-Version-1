@@ -14,13 +14,13 @@ void ServicioEjercicio::verEjercicios()
 {
     system("cls");
     Ejercicio ejercicio;
+    int contador = 0;
 
     int cantidad = _archivoEjercicio.cantidadRegistrosEjercicios();
 
-    cout << "+------------------------------------------+" << endl;
-    cout << "|                EJERCICIOS                |" << endl;
-    cout << "+------------------------------------------+" << endl;
-    cout << endl;
+    cout << "+------------------------------------------------------------------------------------------+" << endl;
+    cout << "|                                        EJERCICIOS                                        |" << endl;
+    cout << "+------------------------------------------------------------------------------------------+" << endl;
 
     for(int i=0; i<cantidad; i++)
     {
@@ -29,12 +29,36 @@ void ServicioEjercicio::verEjercicios()
         cout << " " << i+1 << ". Nombre     : " << ejercicio.getNombreEjercicio() << endl;
         cout << "   ID          : #" << ejercicio.getIdEjercicio() << endl;
         cout << "   Descripcion : " << ejercicio.getDescripcion() << endl;
-        cout << "+------------------------------------------+" << endl;
+        cout << "+------------------------------------------------------------------------------------------+" << endl;
+        contador++;
+        if(contador%5 == 0)
+        {
+            cout << endl;
+            cout << "Siguiente pagina..." << endl;
+            system("pause");
+            system("cls");
+        }
     }
 
     cout << endl;
     system("pause");
 }
+
+void ServicioEjercicio::verEjercicio(int IdEjercicio)
+{
+    Ejercicio ejercicio;
+
+    int pos = _archivoEjercicio.buscarEjercicio(IdEjercicio);
+
+    ejercicio = _archivoEjercicio.leerRegistroEjercicio(pos);
+
+    cout << " ID           : #" << ejercicio.getIdEjercicio() << endl;
+    cout << " Nombre       : " << ejercicio.getNombreEjercicio() << endl;
+    //cout << "   Descripcion : " << ejercicio.getDescripcion() << endl;
+
+
+}
+
 void ServicioEjercicio::agregarEjercicio()
 {
     system("cls");

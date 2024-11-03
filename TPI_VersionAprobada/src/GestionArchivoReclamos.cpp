@@ -4,131 +4,132 @@
 
 using namespace std;
 
-GestionArchivoReclamos::GestionArchivoReclamos()
-{
-
-}
+GestionArchivoReclamos::GestionArchivoReclamos(){}
 
 GestionArchivoReclamos::GestionArchivoReclamos(string nombreArchivo)
 {
     _nombreArchivo = nombreArchivo;
 }
 
-bool GestionArchivoReclamos::guardarReclamo(Reclamo reclamo)
-{
-    bool guardo;
-    FILE *pArchivo;
+bool GestionArchivoReclamos::guardarReclamo(const Reclamo& r) {
 
-    pArchivo = fopen(_nombreArchivo.c_str(), "ab");
+	FILE* pfile;
+	pfile = fopen(_nombreArchivo.c_str(), "ab");
+	if (pfile == nullptr) {
+		std::cout << " ->- No se pudo abrir el archivo -<- ";
+		return false;
+	}
 
-    if(pArchivo == nullptr)
-    {
-        return false;
-    }
+	bool result = fwrite(&r, sizeof(Reclamo), 1, pfile) == 1;
+	fclose(pfile);
 
-    guardo = fwrite(&reclamo, sizeof(Reclamo), 1, pArchivo);
-
-    fclose(pArchivo);
-
-    return guardo;
+	return result;
 }
 
-bool GestionArchivoReclamos::guardarReclamo(Reclamo reclamo, int posicion)
-{
-    bool guardo;
-    FILE *pArchivo;
+Reclamo GestionArchivoReclamos::leerReclamo(int pos) {
 
-    pArchivo = fopen(_nombreArchivo.c_str(), "rb+");
+	Reclamo r;
+	FILE* pfile;
+	pfile = fopen(_nombreArchivo.c_str(), "rb");
+	if (pfile == nullptr)
+	{
+		std::cout << " ->- No se pudo abrir el archivo -<- ";
+		return r;
+	}
 
-    if(pArchivo == nullptr)
-    {
-        return false;
-    }
+	fseek(pfile, 0, SEEK_SET);
+	fread(&r, sizeof(Reclamo) * pos, 1, pfile);
+	fclose(pfile);
 
-    fseek(pArchivo, sizeof(Reclamo) * posicion, SEEK_SET);
-
-    guardo = fwrite(&reclamo, sizeof(Reclamo), 1, pArchivo);
-
-    fclose(pArchivo);
-
-    return guardo;
+	return r;
 }
 
-int GestionArchivoReclamos::buscarReclamo(int idReclamo)
-{
-    int posicion = 0;
-    Reclamo reclamo;
+int GestionArchivoReclamos::getCantidadReclamos() {
 
-    FILE *pArchivo;
+	int totalBytes, cantReg;
+	Reclamo r;
+	FILE *pfile;
+	pfile = fopen(_nombreArchivo.c_str(), "rb");
+	if (pfile == nullptr)
+	{
+		std::cout << " ->- No se pudo abrir el archivo -<- ";
+		return 0;
+	}
 
-    pArchivo = fopen(_nombreArchivo.c_str(), "rb+");
+	fseek(pfile, 0, SEEK_END);
 
-    if(pArchivo == nullptr)
-    {
-        return -1;
-    }
+	totalBytes = ftell(pfile);
 
-    while(fread(&reclamo, sizeof(Reclamo), 1, pArchivo))
-    {
-        if(reclamo.getIdReclamo() == idReclamo)
-        {
-            fclose(pArchivo);
-            return posicion;
-        }
-        posicion++;
-    }
-
-    fclose(pArchivo);
-
-    return -1;
+	return cantReg = totalBytes / sizeof(Reclamo);
 }
 
-Reclamo GestionArchivoReclamos::leerRegistroReclamo(int posicion)
-{
-    Reclamo reclamo;
+bool GestionArchivoReclamos::leerTodosReclamos(Reclamo r[], int cantReclamos) {
 
-    FILE *pArchivo;
+	FILE* pfile;
+	pfile = fopen(_nombreArchivo.c_str(), "rb");
 
-    pArchivo = fopen(_nombreArchivo.c_str(), "rb");
+	if (pfile == nullptr) {
+		std::cout << " ->- No se pudo abrir el archivo -<- ";
+		return false;
+	}
 
-    if(pArchivo == nullptr)
-    {
-        return Reclamo();
-    }
+	bool result = fread(r, sizeof(Reclamo), cantReclamos, pfile) == 1;
+	fclose(pfile);
 
-    fseek(pArchivo, sizeof(Reclamo) * posicion, SEEK_SET);
-
-    fread(&reclamo, sizeof(Reclamo), 1, pArchivo);
-
-    fclose(pArchivo);
-
-    return reclamo;
+	return result;
 }
 
-int GestionArchivoReclamos::cantidadRegistrosReclamos()
+bool GestionArchivoReclamos::modificarReclamo(Reclamo &r, int pos)
 {
-    int cantidad;
 
-    FILE *pArchivo;
+	FILE *pfile;
+	bool result;
 
-    pArchivo = fopen(_nombreArchivo.c_str(), "rb");
+	pfile = fopen(_nombreArchivo.c_str(), "rb+");
+	if (pfile == nullptr) {
+		std::cout << " ->- No se pudo abrir el archivo -<- ";
+		return false;
+	}
 
-    if(pArchivo == nullptr)
-    {
-        return -1;
-    }
+	fseek(pfile, pos, SEEK_SET);
 
-    fseek(pArchivo, 0, SEEK_END);
+	result = fwrite(&r, sizeof(Reclamo), 1, pfile) == 1;
 
-    cantidad = ftell(pArchivo) / sizeof(Reclamo);
-
-    fclose(pArchivo);
-
-    return cantidad;
+	fclose(pfile);
+	return result;
 }
 
-void GestionArchivoReclamos::leerRegistrosReclamo(int cantidadRegistros, Reclamo *vecReclamo)
-{
+int GestionArchivoReclamos::buscarReclamo(int id) {
+
+	Reclamo r;
+	int pos = 0;
+	FILE *pfile;
+	pfile = fopen(_nombreArchivo.c_str(), "rb");
+	if (pfile == nullptr) {
+		std::cout << " ->- No se pudo abrir el archivo -<- ";
+		return 0;
+	}
+
+	while (fread(&r, sizeof(Reclamo), 1, pfile) == 1)
+	{
+		if (r.getIdReclamo() == id) {
+			break;
+		}
+		pos++;
+	}
+
+	fclose(pfile);
+
+	if (r.getIdReclamo() == id) {
+		return pos;
+	}
+	else {
+		return -1;
+	}
+}
+
+
+void GestionArchivoReclamos::leerRegistrosReclamo(int cantidadRegistros, Reclamo *vecReclamo){
     FILE *pArchivo;
 
     pArchivo = fopen(_nombreArchivo.c_str(), "rb");
@@ -146,8 +147,7 @@ void GestionArchivoReclamos::leerRegistrosReclamo(int cantidadRegistros, Reclamo
     fclose(pArchivo);
 }
 
-int GestionArchivoReclamos::cantidadDeRegistrosPorUsuario(int cantidadRegistros, int idUsuario)
-{
+int GestionArchivoReclamos::cantidadDeRegistrosPorUsuario(int cantidadRegistros, int idUsuario){
     int cont = 0;
     FILE *pArchivo;
 
@@ -175,8 +175,7 @@ int GestionArchivoReclamos::cantidadDeRegistrosPorUsuario(int cantidadRegistros,
 
 }
 
-int GestionArchivoReclamos::leerRegistrosPorUsuario(int cantidadRegistros, int vectReclamos[], int tam, int idUsuario)
-{
+int GestionArchivoReclamos::leerRegistrosPorUsuario(int cantidadRegistros, int vectReclamos[], int tam, int idUsuario){
     int cont = 0, indice = 0;
     FILE *pArchivo;
 
@@ -203,3 +202,5 @@ int GestionArchivoReclamos::leerRegistrosPorUsuario(int cantidadRegistros, int v
 
     return *vectReclamos;
 }
+
+

@@ -4,7 +4,7 @@
 
 using namespace std;
 
-//GestionArchivoPagos::GestionArchivoPagos() {}
+GestionArchivoPagos::GestionArchivoPagos() {}
 
 GestionArchivoPagos::GestionArchivoPagos(std::string nombreArchivo) {
 	_nombreArchivo = nombreArchivo;

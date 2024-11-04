@@ -92,7 +92,7 @@ void ServicioReclamo::verReclamosUsuario(int idUsuario){
 
     for(int i=0; i<tam; i++)
     {
-        reclamo = _archivoReclamos.leerRegistrosReclamo(vectReclamos[i]);
+        reclamo = _archivoReclamos.leerReclamo(vectReclamos[i]);
 
         cout << "-------------------------------------------" << endl;
         if(reclamo.getEstaResuelto())

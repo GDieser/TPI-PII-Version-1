@@ -327,13 +327,13 @@ void MenuGerente::gestionarReclamos()
         switch(opcion)
         {
         case 1:
-
+            reclamo.mostrarReclamo(false);
             break;
         case 2:
-
+            reclamo.mostrarReclamo(true);
             break;
         case 3:
-
+            reclamo.cambiarEstadoReclamo();
             break;
         case 0:
             break;
@@ -372,10 +372,10 @@ void MenuGerente::verEstadisticas()
         switch(opcion)
         {
         case 1:
-
+            pago.verIngresosAnuales();
             break;
         case 2:
-
+            pago.verIngresosMensuales();
             break;
         case 0:
             break;

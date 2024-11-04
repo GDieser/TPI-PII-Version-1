@@ -184,7 +184,7 @@ void MenuEntrenador::verReclamos()
         cout << "|              RECLAMOS             |" << endl;
         cout << "+-----------------------------------+" << endl;
         cout << "| 1 - REALIZAR UN RECLAMO           |" << endl;
-        cout << "| 2 - VER ESTADO DE LOS RECLAMOS    |" << endl;
+        cout << "| 2 - VER ESTADO DE RECLAMOS        |" << endl;
         cout << "+-----------------------------------+" << endl;
         cout << "| 0 - VOLVER ATRAS                  |" << endl;
         cout << "+-----------------------------------+" << endl;
@@ -197,10 +197,10 @@ void MenuEntrenador::verReclamos()
         switch(opcion)
         {
         case 1:
-
+            reclamo.cargarReclamo(_usuario.getIdUsuario());
             break;
         case 2:
-
+            reclamo.verReclamosUsuario(_usuario.getIdUsuario());
             break;
         case 0:
             break;

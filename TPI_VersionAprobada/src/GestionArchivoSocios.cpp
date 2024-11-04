@@ -62,7 +62,7 @@ int GestionArchivoSocios::buscarSocio(int idSocio)
 
     FILE *pArchivo;
 
-    pArchivo = fopen(_nombreArchivo.c_str(), "rb+");
+    pArchivo = fopen(_nombreArchivo.c_str(), "rb");
 
     if(pArchivo == nullptr)
     {

@@ -59,17 +59,6 @@ void MenuSocio::mostrarMenuSocio()
     do
     {
         system("cls");
-<<<<<<< Updated upstream
-        cout << " SOCIO: #" << _usuario.getIdUsuario() << endl;
-        cout << "----------------------------" << endl;
-        cout << " 1 - PAGOS                  " << endl;
-        cout << " 2 - RUTINAS                " << endl;
-        cout << " 3 - HORARIOS               " << endl;
-        cout << " 4 - RECLAMOS               " << endl;
-        cout << " 5 - CAMBIAR CONTRASENIA    " << endl;
-        cout << "----------------------------" << endl;
-        cout << " 0 - SALIR " << endl;
-=======
         cout << "+--------------------------------------+" << endl;
         cout << "|            MENU SOCIO                |" << endl;
         cout << "+--------------------------------------+" << endl;
@@ -81,7 +70,7 @@ void MenuSocio::mostrarMenuSocio()
         cout << "+--------------------------------------+" << endl;
         cout << "| 0 - SALIR                            |" << endl;
         cout << "+--------------------------------------+" << endl;
->>>>>>> Stashed changes
+
         cout << endl;
         cout << " Su seleccion: ";
         cin >> opcion;
@@ -291,14 +280,7 @@ void MenuSocio::presentarReclamo()
     do
     {
         system("cls");
-<<<<<<< Updated upstream
-        cout << " RECLAMOS" << endl;
-        cout << "-------------------------------" << endl;
-        cout << " 1 - REALIZAR UN RECLAMO " << endl;
-        cout << " 2 - VER ESTADO DE UN RECLAMOS " << endl;
-        cout << "-------------------------------" << endl;
-        cout << " 0 - VOLVER ATRAS " << endl;
-=======
+
         cout << "+--------------------------------------+" << endl;
         cout << "|              RECLAMOS                |" << endl;
         cout << "+--------------------------------------+" << endl;
@@ -307,7 +289,6 @@ void MenuSocio::presentarReclamo()
         cout << "+--------------------------------------+" << endl;
         cout << "| 0 - VOLVER ATRAS                     |" << endl;
         cout << "+--------------------------------------+" << endl;
->>>>>>> Stashed changes
         cout << endl;
         cout << " Su seleccion: ";
         cin >> opcion;

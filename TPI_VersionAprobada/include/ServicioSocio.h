@@ -27,6 +27,10 @@ public:
     void mostrarSociosPorEntrenador(int idEntrenador);
     void mostrarFechaVencimiento(Fecha fechaIngreso);
 
+    bool buscarSocioPorDni(int dni);
+
+    void listarSocios(Socio socios[], int cantReg);
+
 private:
 
     GestionArchivoSocios  _archivoSocio;

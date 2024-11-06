@@ -147,3 +147,4 @@ void GestionArchivoSocios::leerRegistrosSocios(int cantidadRegistros, Socio *vec
 
     fclose(pArchivo);
 }
+

@@ -749,7 +749,7 @@
 1730034011 c:\sgg\tpi-pii-version-1\tpi_versionaprobada\include\menugerente.h
 	"MenuPrincipal.h"
 
-1730758425 c:\sgg\tpi-pii-version-1\tpi_versionaprobada\include\serviciosocio.h
+1730853252 c:\sgg\tpi-pii-version-1\tpi_versionaprobada\include\serviciosocio.h
 	"GestionArchivoSocios.h"
 	"GestionArchivoEmpleados.h"
 
@@ -775,7 +775,7 @@
 1730758425 c:\sgg\tpi-pii-version-1\tpi_versionaprobada\include\servicioasistencia.h
 	"GestionArchivoAsistencias.h"
 
-1730758425 source:c:\sgg\tpi-pii-version-1\tpi_versionaprobada\src\menusocio.cpp
+1730760794 source:c:\sgg\tpi-pii-version-1\tpi_versionaprobada\src\menusocio.cpp
 	<iostream>
 	"MenuSocio.h"
 	"ServicioPago.h"

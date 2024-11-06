@@ -16,7 +16,7 @@ class GestionArchivoSocios
         Socio leerRegistroSocio(int posicion);
         int cantidadRegistrosSocios();
         void leerRegistrosSocios(int cantidadRegistros, Socio *vecSocio);
-
+:
 
     private:
         std::string _nombreArchivo;

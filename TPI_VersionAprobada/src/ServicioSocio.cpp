@@ -130,6 +130,17 @@ int ServicioSocio::seleccionarMembresia()
     return opc;
 }
 
+bool ServicioSocio::buscarSocioPorDni(int dni){
+
+    int cantReg = _archivoSocio.cantidadRegistrosSocios();
+    for(int i = 0; i < cantReg; i++){
+        if(_archivoSocio.leerRegistroSocio(i).getDni() == dni){
+            return true;
+        }
+    }
+    return false;
+}
+
 void ServicioSocio::agregarSocio()
 {
     string nombre;
@@ -152,16 +163,22 @@ void ServicioSocio::agregarSocio()
 
     cout << "A continuacion lo guiaremos en el proceso para agregar un nuevo socio..." << endl;
     cout << string(70, '-') << endl;
+
+    cout << "Dni: ";
+    cin >> dni;
+    if(buscarSocioPorDni(dni)){
+        cout << "El usuario con DNI " << dni << " ya existe..." << endl;
+        system("pause");
+        return;
+    }
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Para limpiar buffer de cin
+
     cout << "Nombre: ";
     cin >> nombre;
     cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Para limpiar buffer de cin
 
     cout << "Apellido: ";
     cin >> apellido;
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Para limpiar buffer de cin
-
-    cout << "Dni: ";
-    cin >> dni;
     cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Para limpiar buffer de cin
 
     cout << "Ingrese fecha nacimiento: " << endl;
@@ -375,9 +392,9 @@ void ServicioSocio::verSociosPorApellido()
     Socio aux;
 
     ///Ordenamiento por intercambio o SWAP, similar al burbujeo, sacado del libro pag 428
-    for(i=0; i<tam-1; i++)
+    for(int i=0; i<cantReg-1; i++)
     {
-        for(int j=i+1; j<tam; j++)
+        for(int j=i+1; j<cantReg; j++)
         {
             if(strcmp(socios[i].getApellido().c_str(), socios[j].getApellido().c_str()) > 0)
             {
@@ -387,7 +404,7 @@ void ServicioSocio::verSociosPorApellido()
             }
         }
     }
-    mostrarSocios(socios, cantReg);
+    listarSocios(socios, cantReg);
     delete[] socios;
 
 }
@@ -412,9 +429,9 @@ void ServicioSocio::verSociosPorDni()
     Socio aux;
 
     ///Ordenamiento por intercambio o SWAP, similar al burbujeo, sacado del libro pag 428
-    for(i=0; i<tam-1; i++)
+    for(int i=0; i<cantReg-1; i++)
     {
-        for(int j=i+1; j<tam; j++)
+        for(int j=i+1; j<cantReg; j++)
         {
             if(socios[i].getDni() > socios[j].getDni())
             {
@@ -424,7 +441,7 @@ void ServicioSocio::verSociosPorDni()
             }
         }
     }
-    mostrarSocios(socios, cantReg);
+    listarSocios(socios, cantReg);
     delete[] socios;
 
 }
@@ -492,7 +509,7 @@ void ServicioSocio::mostrarFechaVencimiento(Fecha fecha)
     cout << "Su próxima cuota vence el día: " << fechaVencimiento.toString() << endl;
 }
 
-void listarSocios(Socio socios[], int cantReg)
+void ServicioSocio::listarSocios(Socio socios[], int cantReg)
 {
     Socio socio;
 

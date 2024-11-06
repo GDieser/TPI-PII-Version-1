@@ -18,7 +18,6 @@ bool GestionArchivoReclamos::guardarReclamo(const Reclamo& r)
     pfile = fopen(_nombreArchivo.c_str(), "ab");
     if (pfile == nullptr)
     {
-        //std::cout << " ->- No se pudo abrir el archivo -<- ";
         return false;
     }
 
@@ -37,15 +36,10 @@ Reclamo GestionArchivoReclamos::leerReclamo(int pos)
     pfile = fopen(_nombreArchivo.c_str(), "rb");
     if (pfile == nullptr)
     {
-        //std::cout << " ->- No se pudo abrir el archivo -<- ";
         return r;
     }
 
-    //fseek(pfile, 0, SEEK_SET);///???
-
     fseek(pfile, sizeof(Reclamo) * pos, SEEK_SET);
-
-    //fread(&r, sizeof(Reclamo) * pos, 1, pfile);///???
 
     fread(&r, sizeof(Reclamo), 1, pfile);
 
@@ -63,7 +57,6 @@ int GestionArchivoReclamos::getCantidadReclamos()
     pfile = fopen(_nombreArchivo.c_str(), "rb");
     if (pfile == nullptr)
     {
-        //std::cout << " ->- No se pudo abrir el archivo -<- ";
         return 0;
     }
 
@@ -73,11 +66,11 @@ int GestionArchivoReclamos::getCantidadReclamos()
 
     fclose(pfile);
 
-    return cantReg = totalBytes / sizeof(Reclamo);///Falta fclose
+    return cantReg = totalBytes / sizeof(Reclamo);
 
 }
 
-bool GestionArchivoReclamos::leerTodosReclamos(Reclamo r[], int cantReclamos)///??
+bool GestionArchivoReclamos::leerTodosReclamos(Reclamo r[], int cantReclamos)
 {
 
     FILE* pfile;
@@ -85,7 +78,6 @@ bool GestionArchivoReclamos::leerTodosReclamos(Reclamo r[], int cantReclamos)///
 
     if (pfile == nullptr)
     {
-        //std::cout << " ->- No se pudo abrir el archivo -<- ";
         return false;
     }
 
@@ -105,11 +97,8 @@ bool GestionArchivoReclamos::modificarReclamo(Reclamo &r, int pos)
     pfile = fopen(_nombreArchivo.c_str(), "rb+");
     if (pfile == nullptr)
     {
-        //std::cout << " ->- No se pudo abrir el archivo -<- ";
         return false;
     }
-
-    //fseek(pfile, pos, SEEK_SET);/// falta sizeof
 
     fseek(pfile, sizeof(Reclamo) * pos, SEEK_SET);
 
@@ -119,6 +108,8 @@ bool GestionArchivoReclamos::modificarReclamo(Reclamo &r, int pos)
     return result;
 }
 
+
+///filtros
 int GestionArchivoReclamos::buscarReclamo(int id)
 {
 
@@ -131,7 +122,6 @@ int GestionArchivoReclamos::buscarReclamo(int id)
 
     if (pfile == nullptr)
     {
-        //std::cout << " ->- No se pudo abrir el archivo -<- ";
         return 0;
     }
 
@@ -155,7 +145,6 @@ int GestionArchivoReclamos::buscarReclamo(int id)
         return -1;
     }
 }
-
 
 void GestionArchivoReclamos::leerRegistrosReclamo(int cantidadRegistros, Reclamo *vecReclamo)
 {
@@ -207,7 +196,7 @@ int GestionArchivoReclamos::cantidadDeRegistrosPorUsuario(int cantidadRegistros,
 
 int GestionArchivoReclamos::leerRegistrosPorUsuario(int cantidadRegistros, int vectReclamos[], int tam, int idUsuario)
 {
-    int cont = 0, indice = 0;
+    int indice = 0;
     FILE *pArchivo;
 
     Reclamo reclamo;

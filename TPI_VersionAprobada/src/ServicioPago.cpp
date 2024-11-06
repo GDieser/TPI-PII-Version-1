@@ -12,6 +12,8 @@ ServicioPago::ServicioPago()
     _archivoPago = GestionArchivoPagos("archivoPago.dat");
 }
 
+
+
 bool ServicioPago::verificarUltimoPago(int idSocio)
 {
 
@@ -42,9 +44,6 @@ bool ServicioPago::verificarUltimoPago(int idSocio)
 
 void ServicioPago::registrarPago(int idSocio, int idMembresia, Fecha periodo)
 {
-
-    // validar si esta hecho el pago, con respecto a la ultima fecha de pago
-    // consultar si desea mantener la membresia o no
     system("cls");
 
     Fecha fechaActual;
@@ -52,7 +51,7 @@ void ServicioPago::registrarPago(int idSocio, int idMembresia, Fecha periodo)
 
     if (verificarUltimoPago(idSocio))
     {
-        cout << " --- Pago al dia. --- " << endl;
+        cout << " --- Pago al dia --- " << endl;
         return;
     }
 

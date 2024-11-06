@@ -56,14 +56,14 @@ void MenuSocio::mostrarMenuSocio()
     do
     {
         system("cls");
-        cout << " MENU SOCIO: #" << _usuario.getIdUsuario() << endl;
-        cout << "-------------------------------" << endl;
-        cout << " 1 - PAGOS " << endl;
-        cout << " 2 - RUTINAS " << endl;
-        cout << " 3 - HORARIOS " << endl;
-        cout << " 4 - RECLAMOS " << endl;
-        cout << " 5 - CAMBIAR CONTRASENIA " << endl;
-        cout << "-------------------------------" << endl;
+        cout << " SOCIO: #" << _usuario.getIdUsuario() << endl;
+        cout << "----------------------------" << endl;
+        cout << " 1 - PAGOS                  " << endl;
+        cout << " 2 - RUTINAS                " << endl;
+        cout << " 3 - HORARIOS               " << endl;
+        cout << " 4 - RECLAMOS               " << endl;
+        cout << " 5 - CAMBIAR CONTRASENIA    " << endl;
+        cout << "----------------------------" << endl;
         cout << " 0 - SALIR " << endl;
         cout << endl;
         cout << " Su seleccion: ";
@@ -88,11 +88,12 @@ void MenuSocio::mostrarMenuSocio()
             _sSocio.modificarContrasenia(_usuario.getIdUsuario());
             break;
         case 0:
-            cout << "ADIOS!" << endl;
+            cout << " Adios! " << endl;
             system("pause");
             break;
         default:
-            cout << "Opcion incorrecta" << endl;
+            cout << " Opcion incorrecta, volve a intentarlo. " << endl;
+            system("pause");
             break;
         }
 
@@ -103,8 +104,8 @@ void MenuSocio::mostrarMenuSocio()
 void MenuSocio::gestionarPagos()
 {
     int opcion;
-    ServicioSocio socio;
-    ServicioPago sPago;
+    Socio socio;
+    ServicioPago sp;
 
     do
     {
@@ -127,13 +128,14 @@ void MenuSocio::gestionarPagos()
         switch(opcion)
         {
         case 1:
-            //sPago.registrarPago();
+            sp.registrarPago(_usuario.getIdUsuario(), socio.getMembresia(), socio.getFechaDeIngreso());
+            system("pause");
             break;
         case 2:
-            //sPago.mostrarRegistroPagos(int idSocio);
+            sp.verPago(_usuario.getIdUsuario());
             break;
         case 3:
-
+            //chequar con german
             break;
         case 4:
             mostrarPreciosDePases();
@@ -142,7 +144,8 @@ void MenuSocio::gestionarPagos()
             _sSocio.verMembresia(_usuario.getIdUsuario());
             break;
         default:
-            cout << "Opcion incorrecta" << endl;
+            cout << "Opcion incorrecta, proba de nuevo." << endl;
+            system("pause");
             break;
         }
 
@@ -150,7 +153,6 @@ void MenuSocio::gestionarPagos()
     while(opcion != 0);
 
 }
-
 
 void MenuSocio::mostrarPreciosDePases()
 {
@@ -258,11 +260,10 @@ void MenuSocio::verHorariosGimnasio()
     system("pause");
 }
 
-
 void MenuSocio::presentarReclamo()
 {
     int opcion;
-    ServicioReclamo reclamo;
+    ServicioReclamo sr;
 
     do
     {
@@ -272,7 +273,7 @@ void MenuSocio::presentarReclamo()
         cout << " 1 - REALIZAR UN RECLAMO " << endl;
         cout << " 2 - VER ESTADO DE UN RECLAMOS " << endl;
         cout << "-------------------------------" << endl;
-        cout << "0 - VOLVER ATRAS " << endl;
+        cout << " 0 - VOLVER ATRAS " << endl;
         cout << endl;
         cout << " Su seleccion: ";
         cin >> opcion;
@@ -282,13 +283,15 @@ void MenuSocio::presentarReclamo()
         switch(opcion)
         {
         case 1:
-
+            sr.cargarReclamo(_usuario.getIdUsuario());
+            //system("pause");
             break;
         case 2:
-
+            sr.verReclamosUsuario(_usuario.getIdUsuario());
             break;
         default:
-            cout << "ERROR" << endl;
+            cout << " Opcion incorrecta, proba de nuevo" << endl;
+            system("pause");
             break;
         }
 

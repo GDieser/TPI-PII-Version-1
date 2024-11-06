@@ -16,14 +16,14 @@ void ServicioReclamo::cargarReclamo(int idUsuario)
 {
     system("cls");
 
-    //ServicioSocio ss;
     bool resuelto = false;
     Fecha fechaActual;
     string detalle;
 
     cout << "           ||| NUEVO RECLAMO |||           " << endl;
     cout << "    --- Por favor ingrese su reclamo ---     " << endl;
-    //cin >> detalle; ///??
+    cout << "" << endl;
+
     cin.ignore();
     getline(cin, detalle);
 
@@ -33,8 +33,10 @@ void ServicioReclamo::cargarReclamo(int idUsuario)
 
     if(_archivoReclamos.guardarReclamo(reclamo))
     {
-        cout << " --- Reclamo realizado con exito, ID #" << idReclamo << " --- " << endl;
-        cout << " Fecha: " << fechaActual.toString() << endl;
+        cout << "----------------------------------------"<< endl;
+        cout << "   Reclamo realizado con exito, ID #" << idReclamo << " --- " << endl;
+        cout << "   Fecha: " << fechaActual.toString() << endl;
+        cout << "----------------------------------------"<< endl;
     }
     else
     {
@@ -111,6 +113,7 @@ void ServicioReclamo::verReclamosUsuario(int idUsuario)
         cout << " ID #" << reclamo.getIdReclamo() << endl;
         cout << " Detalle: " << reclamo.getDetalle() << endl;
     }
+
     delete[]vectReclamos;
     system("pause");
 }

@@ -12,24 +12,24 @@ GestionArchivoPagos::GestionArchivoPagos(std::string nombreArchivo)
     _nombreArchivo = nombreArchivo;
 }
 
-bool GestionArchivoPagos::guardarPago(const RegistroPago& rp)
+bool GestionArchivoPagos::guardarPago(const RegistroPago& pago)
 {
 
     FILE* pfile;
     pfile = fopen(_nombreArchivo.c_str(), "ab");
     if (pfile == nullptr)
     {
-        //std::cout << " ->- No se pudo abrir el archivo -<- ";
         return false;
     }
 
-    bool result = fwrite(&rp, sizeof(RegistroPago), 1, pfile) == 1;
+    bool result = fwrite(&pago, sizeof(RegistroPago), 1, pfile) == 1;
+
     fclose(pfile);
 
     return result;
 }
 
-bool GestionArchivoPagos::modificarPago(RegistroPago& rp, int pos)
+bool GestionArchivoPagos::modificarPago(RegistroPago &pago, int pos)
 {
 
     FILE* pfile;
@@ -38,13 +38,12 @@ bool GestionArchivoPagos::modificarPago(RegistroPago& rp, int pos)
     pfile = fopen(_nombreArchivo.c_str(), "rb+");
     if (pfile == nullptr)
     {
-        //std::cout << " ->- No se pudo abrir el archivo -<- ";
         return false;
     }
 
-    fseek(pfile, pos, SEEK_SET);///falta sizeof
+    fseek(pfile, sizeof(RegistroPago) * pos, SEEK_SET);///falta sizeof
 
-    result = fwrite(&rp, sizeof(RegistroPago), 1, pfile) == 1;
+    result = fwrite(&pago, sizeof(RegistroPago), 1, pfile) == 1;
 
     fclose(pfile);
     return result;
@@ -58,13 +57,12 @@ RegistroPago GestionArchivoPagos::leerPago(int pos)
     pfile = fopen(_nombreArchivo.c_str(), "rb");
     if (pfile == nullptr)
     {
-        //std::cout << " ->- No se pudo abrir el archivo -<- ";
         return rp;
     }
 
-    fseek(pfile, 0, SEEK_SET);///falta sizeof
+    fseek(pfile, sizeof(RegistroPago) * pos, SEEK_SET);
 
-    fread(&rp, sizeof(RegistroPago) * pos, 1, pfile);
+    fread(&rp, sizeof(RegistroPago), 1, pfile);
 
     fclose(pfile);
 
@@ -80,13 +78,14 @@ int GestionArchivoPagos::getCantidadPagos()
     pfile = fopen(_nombreArchivo.c_str(), "rb");
     if (pfile == nullptr)
     {
-        //std::cout << " ->- No se pudo abrir el archivo -<- ";
         return 0;
     }
 
     fseek(pfile, 0, SEEK_END);
 
     totalBytes = ftell(pfile);
+
+    fclose(pfile);
 
     return cantReg = totalBytes / sizeof(RegistroPago);
 }
@@ -99,7 +98,6 @@ void GestionArchivoPagos::leerTodosPagos(RegistroPago *vPagos, int cantPagos)
 
     if (pfile == nullptr)
     {
-        //std::cout << " ->- No se pudo abrir el archivo -<- ";
         return;
     }
 
@@ -111,32 +109,33 @@ void GestionArchivoPagos::leerTodosPagos(RegistroPago *vPagos, int cantPagos)
     fclose(pfile);
 }
 
+
+///filtros
 int GestionArchivoPagos::buscarPago(int id)
 {
 
-    RegistroPago rp;
+    RegistroPago pago;
     int pos = 0;
+
     FILE* pfile;
     pfile = fopen(_nombreArchivo.c_str(), "rb");
     if (pfile == nullptr)
     {
-        //std::cout << " ->- No se pudo abrir el archivo -<- ";
         return 0;
     }
 
-    while (fread(&rp, sizeof(RegistroPago), 1, pfile) == 1)
+    while (fread(&pago, sizeof(RegistroPago), 1, pfile) == 1)
     {
-        if (rp.getIdUsuario() == id)
+        if (pago.getIdUsuario() == id)
         {
             break;
-            //return pos;
         }
         pos++;
     }
 
     fclose(pfile);
 
-    if (rp.getIdUsuario() == id)   // dos posibilidades, o que haya llegado al final porque lo encontro e hizo el break o porque trato de leer y no pudo
+    if (pago.getIdUsuario() == id)   // dos posibilidades, o que haya llegado al final porque lo encontro e hizo el break o porque trato de leer y no pudo
     {
         return pos;
     }
@@ -149,9 +148,9 @@ int GestionArchivoPagos::buscarPago(int id)
 int GestionArchivoPagos::cantidadPagosXSocio(int cantPagos, int idUsuario)
 {
 
-    RegistroPago pago; // es la clase pago
-
+    RegistroPago pago;
     int cont = 0;
+
     FILE* pfile;
     pfile = fopen(_nombreArchivo.c_str(), "rb");
 
@@ -176,9 +175,9 @@ int GestionArchivoPagos::cantidadPagosXSocio(int cantPagos, int idUsuario)
 int GestionArchivoPagos::leerPagosXSocio(int cantPagos, int vPagos[], int tam, int idUsuario)
 {
 
-    RegistroPago pago; // es la clase pago
+    RegistroPago pago;
+    int index = 0;
 
-    int cont = 0, index = 0;
     FILE* pfile;
     pfile = fopen(_nombreArchivo.c_str(), "rb");
 

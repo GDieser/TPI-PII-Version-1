@@ -32,6 +32,8 @@ public:
 
     Fecha calcularFechaVencimientoPorMeses();
 
+    static Fecha crearFecha();
+
     std::string toString();
 
 

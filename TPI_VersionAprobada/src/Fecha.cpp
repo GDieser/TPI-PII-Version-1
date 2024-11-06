@@ -105,14 +105,22 @@ void Fecha::validarFecha()
     }
 }
 
+<<<<<<< HEAD
 Fecha Fecha::crearFecha()
 {
+=======
+Fecha Fecha::crearFecha(){
+>>>>>>> 61682c56dbefe582e24cfc300e37a2353cffb607
     int dia, mes, anio;
     cout << "Ingrese dia: ";
     cin >> dia;
     cout << "Ingrese mes: ";
     cin >> mes;
+<<<<<<< HEAD
     cout << "Ingrese anio: ";
+=======
+    cout << "Ingrese año: ";
+>>>>>>> 61682c56dbefe582e24cfc300e37a2353cffb607
     cin >> anio;
     return Fecha(dia, mes, anio);
 }

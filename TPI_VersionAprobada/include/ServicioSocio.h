@@ -26,10 +26,13 @@ public:
     Socio buscarSocioId(int idUsuario);
     void mostrarSociosPorEntrenador(int idEntrenador);
     void mostrarFechaVencimiento(Fecha fechaIngreso);
+<<<<<<< HEAD
 
     bool buscarSocioPorDni(int dni);
 
     void listarSocios(Socio socios[], int cantReg);
+=======
+>>>>>>> 61682c56dbefe582e24cfc300e37a2353cffb607
 
 private:
 

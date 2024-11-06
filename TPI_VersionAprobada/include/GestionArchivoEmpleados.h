@@ -19,9 +19,12 @@ public:
 
     Empleado buscarEmpleadoPorIdSocio(int id);
 
+<<<<<<< HEAD
     int cantidadRegistrosEmpleadosPorEstado(int cantidadRegistros, bool estado, int idRol);
     int leerRegistrosEmpleadosActivos(int cantidadRegistros, int vectEmpleados[], int tam, int idRol);
 
+=======
+>>>>>>> 61682c56dbefe582e24cfc300e37a2353cffb607
 private:
     std::string _nombreArchivo;
 };

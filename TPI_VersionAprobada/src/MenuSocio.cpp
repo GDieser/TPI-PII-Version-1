@@ -9,15 +9,21 @@
 
 using namespace std;
 
+<<<<<<< HEAD
 MenuSocio::MenuSocio(UsuarioAutenticado usuario) : _usuario(usuario)
 {
     ServicioSocio _sSocio();
+=======
+MenuSocio::MenuSocio(UsuarioAutenticado usuario) : _usuario(usuario), _sSocio()
+{
+>>>>>>> 61682c56dbefe582e24cfc300e37a2353cffb607
 }
 
 void MenuSocio::mostrarSubmenuSocio()
 {
     system("cls");
     int opcion;
+<<<<<<< HEAD
 
     cout << "+--------------------------------------+" << endl;
     cout << "       BIENVENIDO "<< _usuario.getNombre() << endl;
@@ -25,6 +31,9 @@ void MenuSocio::mostrarSubmenuSocio()
     cout << "| 1 - INGRESO AL GIMNASIO              |" << endl;
     cout << "| 2 - INGRESO AL MENU SOCIO            |" << endl;
     cout << "+--------------------------------------+" << endl;
+=======
+    cout << " -- BIENVENIDO "<< _usuario.getNombre() << " -- " << endl;
+>>>>>>> 61682c56dbefe582e24cfc300e37a2353cffb607
     cout << endl;
     cout << " Su seleccion: ";
     cin >> opcion;
@@ -110,8 +119,13 @@ void MenuSocio::mostrarMenuSocio()
 void MenuSocio::gestionarPagos()
 {
     int opcion;
+<<<<<<< HEAD
     Socio socio;
     ServicioPago sp;
+=======
+    ServicioSocio socio;
+    ServicioPago sPago;
+>>>>>>> 61682c56dbefe582e24cfc300e37a2353cffb607
 
     do
     {
@@ -136,11 +150,18 @@ void MenuSocio::gestionarPagos()
         switch(opcion)
         {
         case 1:
+<<<<<<< HEAD
             sp.registrarPago(_usuario.getIdUsuario(), socio.getMembresia(), socio.getFechaDeIngreso());
             system("pause");
             break;
         case 2:
             sp.verPago(_usuario.getIdUsuario());
+=======
+            //sPago.registrarPago();
+            break;
+        case 2:
+            //sPago.mostrarRegistroPagos(int idSocio);
+>>>>>>> 61682c56dbefe582e24cfc300e37a2353cffb607
             break;
         case 3:
             //chequar con german
@@ -162,6 +183,10 @@ void MenuSocio::gestionarPagos()
 
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 61682c56dbefe582e24cfc300e37a2353cffb607
 void MenuSocio::mostrarPreciosDePases()
 {
     system("cls");
@@ -183,6 +208,7 @@ void MenuSocio::verRutina()
     do
     {
         system("cls");
+<<<<<<< HEAD
         cout << "+--------------------------------------+" << endl;
         cout << "|               RUTINAS                |" << endl;
         cout << "+--------------------------------------+" << endl;
@@ -190,6 +216,13 @@ void MenuSocio::verRutina()
         cout << "+--------------------------------------+" << endl;
         cout << "| 0 - VOLVER ATRAS                     |" << endl;
         cout << "+--------------------------------------+" << endl;
+=======
+        cout << " RUTINAS " << endl;
+        cout << "-------------------------------" << endl;
+        cout << " 1 - VER MI RUTINA " << endl;
+        cout << "-------------------------------" << endl;
+        cout << " 0 - VOLVER ATRAS " << endl;
+>>>>>>> 61682c56dbefe582e24cfc300e37a2353cffb607
         cout << endl;
         cout << " Su seleccion: ";
         cin >> opcion;
@@ -199,12 +232,21 @@ void MenuSocio::verRutina()
         switch(opcion)
         {
         case 1:
+<<<<<<< HEAD
         {
             ServicioRutina sRutina;
             Socio socio = _sSocio.buscarSocioId(_usuario.getIdUsuario());
             //serRutina.verDetallesDeRutina(_usuario.getIdRutina());
             break;
         }
+=======
+            {
+                ServicioRutina sRutina;
+                Socio socio = _sSocio.buscarSocioId(_usuario.getIdUsuario());
+                //serRutina.verDetallesDeRutina(_usuario.getIdRutina());
+                break;
+            }
+>>>>>>> 61682c56dbefe582e24cfc300e37a2353cffb607
 
         default:
             cout << "ERROR" << endl;

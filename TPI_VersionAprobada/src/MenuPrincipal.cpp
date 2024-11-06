@@ -18,7 +18,11 @@ using namespace std;
 MenuPrincipal::MenuPrincipal()
 {
     ServicioSocio sSocio;
+<<<<<<< HEAD
     //sSocio.verSocios();
+=======
+    sSocio.verSocios();
+>>>>>>> 61682c56dbefe582e24cfc300e37a2353cffb607
     Autenticador autenticador;
     _usuario = autenticador.autenticar();
 }

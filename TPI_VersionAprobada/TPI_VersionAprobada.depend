@@ -616,7 +616,7 @@
 1730034011 c:\sgg\tpi-pii-version-1\tpi_versionaprobada\include\empleado.h
 	"Usuario.h"
 
-1729946108 c:\sgg\tpi-pii-version-1\tpi_versionaprobada\include\gestionarchivosocios.h
+1730854220 c:\sgg\tpi-pii-version-1\tpi_versionaprobada\include\gestionarchivosocios.h
 	"Socio.h"
 
 1729946108 c:\sgg\tpi-pii-version-1\tpi_versionaprobada\include\socio.h
@@ -749,7 +749,7 @@
 1730034011 c:\sgg\tpi-pii-version-1\tpi_versionaprobada\include\menugerente.h
 	"MenuPrincipal.h"
 
-1730853252 c:\sgg\tpi-pii-version-1\tpi_versionaprobada\include\serviciosocio.h
+1730853890 c:\sgg\tpi-pii-version-1\tpi_versionaprobada\include\serviciosocio.h
 	"GestionArchivoSocios.h"
 	"GestionArchivoEmpleados.h"
 

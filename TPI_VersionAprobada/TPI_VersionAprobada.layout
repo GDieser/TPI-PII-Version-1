@@ -2,319 +2,64 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="include\MenuEntrenador.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="6" zoom_2="0">
+	<File name="src\Fecha.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="66" topLine="0" />
+			<Cursor1 position="1739" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="main.cpp" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
+	<File name="src\Autenticador.cpp" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="192" topLine="0" />
+			<Cursor1 position="2410" topLine="7" />
 		</Cursor>
 	</File>
-	<File name="src\Usuario.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include\Fecha.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="345" topLine="43" />
+			<Cursor1 position="635" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src\MenuPrincipal.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+	<File name="src\GestionArchivoReclamos.cpp" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="382" topLine="12" />
+			<Cursor1 position="0" topLine="183" />
 		</Cursor>
 	</File>
-	<File name="include\GestionArchivoDetalleRutinas.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
+	<File name="src\ServicioPago.cpp" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="100" topLine="0" />
+			<Cursor1 position="0" topLine="150" />
 		</Cursor>
 	</File>
-	<File name="include\ServicioPago.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="7" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="426" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\ServicioEjercicio.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1283" topLine="6" />
-		</Cursor>
-	</File>
-	<File name="src\GestionArchivoEmpleados.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1236" topLine="47" />
-		</Cursor>
-	</File>
-	<File name="include\RegistroAsistencia.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="8" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="212" topLine="3" />
-		</Cursor>
-	</File>
-	<File name="src\MenuSocio.cpp" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="201" topLine="3" />
-		</Cursor>
-	</File>
-	<File name="include\GestionArchivoReclamos.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="217" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include\Socio.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="379" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\ServicioRutina.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="14215" topLine="486" />
-		</Cursor>
-	</File>
-	<File name="src\GestionArchivoSocios.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2173" topLine="122" />
-		</Cursor>
-	</File>
-	<File name="include\Fecha.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="486" topLine="15" />
-		</Cursor>
-	</File>
-	<File name="include\ServicioAsistencia.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="6" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="133" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\Rutina.cpp" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="7" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="19" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\GestionArchivoAsistencias.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1318" topLine="56" />
-		</Cursor>
-	</File>
-	<File name="include\MenuPrincipal.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="8" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="207" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include\MenuGerente.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="122" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\UsuarioAutenticado.cpp" open="0" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="592" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include\GestionArchivoEjercicios.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="7" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="92" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include\ServicioReclamo.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="7" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="345" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\ServicioEmpleado.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2098" topLine="89" />
-		</Cursor>
-	</File>
-	<File name="src\GestionArchivoPagos.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2621" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include\DetalleRutina.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="252" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include\RegistroPago.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
+	<File name="include\MenuPrincipal.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="0" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src\Empleado.cpp" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\MenuGerente.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1103" topLine="15" />
+			<Cursor1 position="373" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="include\GestionArchivoRutinas.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
+	<File name="src\MenuPrincipal.cpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="506" topLine="0" />
+			<Cursor1 position="0" topLine="11" />
 		</Cursor>
 	</File>
-	<File name="include\Usuario.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1042" topLine="4" />
-		</Cursor>
-	</File>
-	<File name="src\ServicioSocio.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="10002" topLine="351" />
-		</Cursor>
-	</File>
-	<File name="src\MenuEntrenador.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="5613" topLine="160" />
-		</Cursor>
-	</File>
-	<File name="include\ServicioEjercicio.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="7" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="315" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\ServicioActividad.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2980" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\GestionArchivoDetalleRutinas.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1301" topLine="54" />
-		</Cursor>
-	</File>
-	<File name="include\MenuSocio.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="511" topLine="1" />
-		</Cursor>
-	</File>
-	<File name="src\Autenticador.cpp" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1448" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include\GestionArchivoEmpleados.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="649" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include\ServicioRutina.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="6" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="761" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\ServicioPago.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2882" topLine="159" />
-		</Cursor>
-	</File>
-	<File name="src\GestionArchivoReclamos.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="6" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1595" topLine="106" />
-		</Cursor>
-	</File>
-	<File name="include\Ejercicio.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="430" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include\Rutina.h" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
+	<File name="include\ServicioSocio.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="0" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src\RegistroAsistencia.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
+	<File name="src\MenuSocio.cpp" open="1" top="1" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="558" topLine="7" />
+			<Cursor1 position="7532" topLine="53" />
 		</Cursor>
 	</File>
-	<File name="src\Fecha.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
+	<File name="src\ServicioSocio.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1738" topLine="80" />
+			<Cursor1 position="4384" topLine="462" />
 		</Cursor>
 	</File>
-	<File name="include\GestionArchivoSocios.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+	<File name="src\GestionArchivoPagos.cpp" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="82" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include\UsuarioAutenticado.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="304" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\Socio.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="488" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\MenuGerente.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="10341" topLine="302" />
-		</Cursor>
-	</File>
-	<File name="include\GestionArchivoAsistencias.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="6" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="12" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include\ServicioEmpleado.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="601" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\ServicioAsistencia.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="492" topLine="5" />
-		</Cursor>
-	</File>
-	<File name="src\GestionArchivoEjercicios.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="7" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1247" topLine="48" />
-		</Cursor>
-	</File>
-	<File name="include\Reclamo.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="597" topLine="2" />
-		</Cursor>
-	</File>
-	<File name="src\DetalleRutina.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1010" topLine="37" />
-		</Cursor>
-	</File>
-	<File name="include\GestionArchivoPagos.h" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="650" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include\ServicioSocio.h" open="0" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="307" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\ServicioReclamo.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2425" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\GestionArchivoRutinas.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1180" topLine="19" />
-		</Cursor>
-	</File>
-	<File name="include\Empleado.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="353" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include\ServicioActividad.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="7" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="225" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\RegistroPago.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="317" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\GestionArchivoActividades.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1253" topLine="48" />
+			<Cursor1 position="0" topLine="186" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

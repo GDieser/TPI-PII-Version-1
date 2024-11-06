@@ -18,12 +18,15 @@ void MenuSocio::mostrarSubmenuSocio()
 {
     system("cls");
     int opcion;
-    cout << " -- BIENVENIDO "<< _usuario.getNombre() << " -- " << endl;
+
+    cout << "+--------------------------------------+" << endl;
+    cout << "       BIENVENIDO "<< _usuario.getNombre() << endl;
+    cout << "+--------------------------------------+" << endl;
+    cout << "| 1 - INGRESO AL GIMNASIO              |" << endl;
+    cout << "| 2 - INGRESO AL MENU SOCIO            |" << endl;
+    cout << "+--------------------------------------+" << endl;
     cout << endl;
-    cout << " 1 - Ingreso al Gimnasio " << endl;
-    cout << " 2 - Ingreso al Menu Socio " << endl;
-    cout << endl;
-    cout << "Su seleccion: ";
+    cout << " Su seleccion: ";
     cin >> opcion;
 
     if(opcion == 1)
@@ -56,6 +59,7 @@ void MenuSocio::mostrarMenuSocio()
     do
     {
         system("cls");
+<<<<<<< Updated upstream
         cout << " SOCIO: #" << _usuario.getIdUsuario() << endl;
         cout << "----------------------------" << endl;
         cout << " 1 - PAGOS                  " << endl;
@@ -65,6 +69,19 @@ void MenuSocio::mostrarMenuSocio()
         cout << " 5 - CAMBIAR CONTRASENIA    " << endl;
         cout << "----------------------------" << endl;
         cout << " 0 - SALIR " << endl;
+=======
+        cout << "+--------------------------------------+" << endl;
+        cout << "|            MENU SOCIO                |" << endl;
+        cout << "+--------------------------------------+" << endl;
+        cout << "| 1 - PAGOS                            |" << endl;
+        cout << "| 2 - RUTINAS                          |" << endl;
+        cout << "| 3 - HORARIOS                         |" << endl;
+        cout << "| 4 - RECLAMOS                         |" << endl;
+        cout << "| 5 - CAMBIAR CONTRASENIA              |" << endl;
+        cout << "+--------------------------------------+" << endl;
+        cout << "| 0 - SALIR                            |" << endl;
+        cout << "+--------------------------------------+" << endl;
+>>>>>>> Stashed changes
         cout << endl;
         cout << " Su seleccion: ";
         cin >> opcion;
@@ -110,15 +127,17 @@ void MenuSocio::gestionarPagos()
     do
     {
         system("cls");
-        cout << " PAGOS" << endl;
-        cout << "-------------------------------" << endl;
-        cout << " 1 - REALIZAR UN PAGO " << endl;
-        cout << " 2 - VER PAGOS ANTERIORES " << endl;
-        cout << " 3 - VER FECHA DE VENCIMIENTO " << endl;
-        cout << " 4 - VER PRECIOS DIFERENTES PASES " << endl;
-        cout << " 5 - VER MI MEMBRESIA" << endl;
-        cout << "-------------------------------" << endl;
-        cout << " 0 - VOLVER ATRAS " << endl;
+        cout << "+--------------------------------------+" << endl;
+        cout << "|               PAGOS                  |" << endl;
+        cout << "+--------------------------------------+" << endl;
+        cout << "| 1 - REALIZAR UN PAGO                 |" << endl;
+        cout << "| 2 - VER PAGOS ANTERIORES             |" << endl;
+        cout << "| 3 - VER FECHA DE VENCIMIENTO         |" << endl;
+        cout << "| 4 - VER PRECIOS DIFERENTES PASES     |" << endl;
+        cout << "| 5 - VER MI MEMBRESIA                 |" << endl;
+        cout << "+--------------------------------------+" << endl;
+        cout << "| 0 - VOLVER ATRAS                     |" << endl;
+        cout << "+--------------------------------------+" << endl;
         cout << endl;
         cout << " Su seleccion: ";
         cin >> opcion;
@@ -175,11 +194,13 @@ void MenuSocio::verRutina()
     do
     {
         system("cls");
-        cout << " RUTINAS " << endl;
-        cout << "-------------------------------" << endl;
-        cout << " 1 - VER MI RUTINA " << endl;
-        cout << "-------------------------------" << endl;
-        cout << " 0 - VOLVER ATRAS " << endl;
+        cout << "+--------------------------------------+" << endl;
+        cout << "|               RUTINAS                |" << endl;
+        cout << "+--------------------------------------+" << endl;
+        cout << "| 1 - VER MI RUTINA                    |" << endl;
+        cout << "+--------------------------------------+" << endl;
+        cout << "| 0 - VOLVER ATRAS                     |" << endl;
+        cout << "+--------------------------------------+" << endl;
         cout << endl;
         cout << " Su seleccion: ";
         cin >> opcion;
@@ -189,12 +210,12 @@ void MenuSocio::verRutina()
         switch(opcion)
         {
         case 1:
-            {
-                ServicioRutina sRutina;
-                Socio socio = _sSocio.buscarSocioId(_usuario.getIdUsuario());
-                //serRutina.verDetallesDeRutina(_usuario.getIdRutina());
-                break;
-            }
+        {
+            ServicioRutina sRutina;
+            Socio socio = _sSocio.buscarSocioId(_usuario.getIdUsuario());
+            //serRutina.verDetallesDeRutina(_usuario.getIdRutina());
+            break;
+        }
 
         default:
             cout << "ERROR" << endl;
@@ -214,15 +235,17 @@ void MenuSocio::consultarHorarios()
     do
     {
         system("cls");
-        cout << " HORARIOS" << endl;
-        cout << "-----------------------------------------" << endl;
-        cout << " 1 - VER HORARIOS DE ENTRENAMIENTOS " << endl;
-        cout << " 2 - VER MIS INSCRIPCIONES " << endl;
-        cout << " 3 - VER HORARIOS DE APERTURA Y CIERRE " << endl;
-        cout << "-----------------------------------------" << endl;
-        cout << " 0 - VOLVER ATRAS " << endl;
+        cout << "+--------------------------------------+" << endl;
+        cout << "|              HORARIOS                |" << endl;
+        cout << "+--------------------------------------+" << endl;
+        cout << "| 1 - VER HORARIOS DE ENTRENAMIENTOS   |" << endl;
+        cout << "| 2 - VER MIS INSCRIPCIONES            |" << endl;
+        cout << "| 3 - VER HORARIOS DE APERTURA Y CIERRE|" << endl;
+        cout << "+--------------------------------------+" << endl;
+        cout << "| 0 - VOLVER ATRAS                     |" << endl;
+        cout << "+--------------------------------------+" << endl;
         cout << endl;
-        cout << "Su seleccion: ";
+        cout << " Su seleccion: ";
         cin >> opcion;
 
 
@@ -268,12 +291,23 @@ void MenuSocio::presentarReclamo()
     do
     {
         system("cls");
+<<<<<<< Updated upstream
         cout << " RECLAMOS" << endl;
         cout << "-------------------------------" << endl;
         cout << " 1 - REALIZAR UN RECLAMO " << endl;
         cout << " 2 - VER ESTADO DE UN RECLAMOS " << endl;
         cout << "-------------------------------" << endl;
         cout << " 0 - VOLVER ATRAS " << endl;
+=======
+        cout << "+--------------------------------------+" << endl;
+        cout << "|              RECLAMOS                |" << endl;
+        cout << "+--------------------------------------+" << endl;
+        cout << "| 1 - REALIZAR UN RECLAMO              |" << endl;
+        cout << "| 2 - VER ESTADO DE UN RECLAMO         |" << endl;
+        cout << "+--------------------------------------+" << endl;
+        cout << "| 0 - VOLVER ATRAS                     |" << endl;
+        cout << "+--------------------------------------+" << endl;
+>>>>>>> Stashed changes
         cout << endl;
         cout << " Su seleccion: ";
         cin >> opcion;

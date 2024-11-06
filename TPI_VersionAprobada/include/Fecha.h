@@ -23,12 +23,17 @@ public:
     bool validarDia();
     bool validarMes();
     bool validarAnio();
+    bool esBisiesto(int anio);
+    bool compararSiFechasSonIguales(Fecha fecha);
+
+    int diasPorMes(int mes, int anio);
 
     static Fecha crearFecha();
 
+    Fecha calcularFechaVencimientoPorMeses();
+
     std::string toString();
 
-    bool compararSiFechasSonIguales(Fecha fecha);
 
 private:
 

@@ -2,6 +2,7 @@
 #include <limits>
 #include <cstring>
 #include <iomanip>
+
 #include "ServicioSocio.h"
 #include "Socio.h"
 #include "Fecha.h"
@@ -171,32 +172,32 @@ void ServicioSocio::agregarSocio()
         system("pause");
         return;
     }
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Para limpiar buffer de cin
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
     cout << "Nombre: ";
     cin >> nombre;
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Para limpiar buffer de cin
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
     cout << "Apellido: ";
     cin >> apellido;
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Para limpiar buffer de cin
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
     cout << "Ingrese fecha nacimiento: " << endl;
     fechaNacimiento = Fecha::crearFecha();
 
-    cout << "Contraseña: ";
+    cout << "Contrasenia: ";
     cin >> contrasenia;
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Para limpiar buffer de cin
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
     cout << "Pin: ";
     cin >> pinIngreso;
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Para limpiar buffer de cin
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
     idMembresia = seleccionarMembresia();
 
     cout << "Estado fisico: ";
     cin >> estadoFisico;
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Para limpiar buffer de cin
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
     idRutina = 1; //servicioRutina.elegirRutina();
     idEntrenadorAsignado = 1; //servicioEmpleado.elegirEntrenador();
@@ -332,7 +333,7 @@ void ServicioSocio::mostrarTurno(int idTurno)
     {
     case 0:
     {
-        cout << "Mañana";
+        cout << "Maniana";
         break;
     }
     case 1:
@@ -391,7 +392,6 @@ void ServicioSocio::verSociosPorApellido()
     }
     Socio aux;
 
-    ///Ordenamiento por intercambio o SWAP, similar al burbujeo, sacado del libro pag 428
     for(int i=0; i<cantReg-1; i++)
     {
         for(int j=i+1; j<cantReg; j++)
@@ -428,7 +428,6 @@ void ServicioSocio::verSociosPorDni()
     }
     Socio aux;
 
-    ///Ordenamiento por intercambio o SWAP, similar al burbujeo, sacado del libro pag 428
     for(int i=0; i<cantReg-1; i++)
     {
         for(int j=i+1; j<cantReg; j++)

@@ -63,11 +63,28 @@ void Fecha::establecerFechaActual()
 
 }
 
+bool Fecha::esBisiesto(int anio)
+{
+    return (anio % 4 == 0 && anio % 100 != 0) || (anio % 400 == 0);
+}
+
+int Fecha::diasPorMes(int mes, int anio)
+{
+    int diasPorMeses[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+    if (mes == 2 && esBisiesto(anio))
+    {
+        return 29;
+    }
+    else
+    {
+        return diasPorMeses[mes - 1];
+    }
+}
+
 bool Fecha::validarDia()
 {
-    int diasPorMeses[12] = {31,28,31,30,31,30,31,31,30,31,30,31};
-
-    return _dia >= 1 && _dia <= diasPorMeses[_mes-1];
+    return _dia >= 1 && _dia <= diasPorMes(_mes, _anio);
 }
 
 bool Fecha::validarMes()
@@ -88,13 +105,14 @@ void Fecha::validarFecha()
     }
 }
 
-Fecha Fecha::crearFecha(){
+Fecha Fecha::crearFecha()
+{
     int dia, mes, anio;
     cout << "Ingrese dia: ";
     cin >> dia;
     cout << "Ingrese mes: ";
     cin >> mes;
-    cout << "Ingrese año: ";
+    cout << "Ingrese anio: ";
     cin >> anio;
     return Fecha(dia, mes, anio);
 }
@@ -113,12 +131,27 @@ string Fecha::toString()
 
 bool Fecha::compararSiFechasSonIguales(Fecha fecha)
 {
-    Fecha fechaActual;
+    return (_anio == fecha.getAnio() && _mes == fecha.getMes() && _dia == fecha.getDia());
+}
 
-    if(fechaActual.getAnio() == fecha.getAnio() && fechaActual.getMes() == fecha.getMes() && fechaActual.getDia() == fecha.getDia())
+Fecha  Fecha::calcularFechaVencimientoPorMeses()
+{
+    int nuevoMes = _mes + 1;
+    int nuevoAnio = _anio;
+    int nuevoDia = _dia;
+
+    if (nuevoMes > 12)
     {
-        return true;
+        nuevoMes = 1;
+        nuevoAnio++;
     }
 
-    return false;
+    int diasEnNuevoMes = diasPorMes(nuevoMes, nuevoAnio);
+
+    if (_dia > diasEnNuevoMes)
+    {
+        nuevoDia = diasEnNuevoMes;
+    }
+
+    return Fecha(nuevoDia, nuevoMes, nuevoAnio);
 }

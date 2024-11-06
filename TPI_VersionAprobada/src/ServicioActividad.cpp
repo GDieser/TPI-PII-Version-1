@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 
 #include "ServicioActividad.h"
 
@@ -121,16 +122,16 @@ void ServicioActividad::buscarActividad(int idActividad)
 
     int pos = _archivoActividad.buscarActividad(idActividad);
 
-    if(pos != -1)
+    if (pos != -1)
     {
         actividad = _archivoActividad.leerRegistroActividad(pos);
 
-        cout << " Nombre Actividad: " << actividad.getNombre() << endl;
-        //cout << " ID actividad: #" << actividad.getIdActividad() << endl;
+        cout << setw(19) << " Nombre Actividad: " << actividad.getNombre() << endl;
+        // cout << setw(18) << " ID Actividad:" << "#" << actividad.getIdActividad() << endl;
     }
     else
     {
-        cout << "Actvidad no encontrada..." << endl;
+        cout << " Actividad no encontrada..." << endl;
     }
 
 }

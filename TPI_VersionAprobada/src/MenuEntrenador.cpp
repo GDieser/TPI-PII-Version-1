@@ -19,14 +19,17 @@ void MenuEntrenador::mostrarMenuEntrenador()
     do
     {
         system("cls");
-        cout << " ENTRENADOR: #" << _usuario.getIdUsuario() << endl;
-        cout << "-------------------" <<endl;
-        cout << " 1 - HORARIOS " << endl;
-        cout << " 2 - RUTINAS Y EJERCICIOS" << endl;
-        cout << " 3 - RECLAMOS " << endl;
-        cout << " 4 - CAMBIAR CONTRASENIA " << endl;
-        cout << "-------------------" <<endl;
-        cout << " 0 - SALIR " << endl;
+        cout << "  ENTRENADOR: #" << _usuario.getIdUsuario() << endl;
+        cout << "+-----------------------------+" << endl;
+        cout << "|        MENU ENTRENADOR      |" << endl;
+        cout << "+-----------------------------+" << endl;
+        cout << "| 1 - HORARIOS                |" << endl;
+        cout << "| 2 - RUTINAS Y EJERCICIOS    |" << endl;
+        cout << "| 3 - RECLAMOS                |" << endl;
+        cout << "| 4 - CAMBIAR CONTRASENIA     |" << endl;
+        cout << "+-----------------------------+" << endl;
+        cout << "| 0 - SALIR                   |" << endl;
+        cout << "+-----------------------------+" << endl;
         cout << endl;
         cout << " Su seleccion: ";
         cin >> opcion;
@@ -49,7 +52,7 @@ void MenuEntrenador::mostrarMenuEntrenador()
         case 0:
             break;
         default:
-            cout << "ERROR" << endl;
+            cout << "Opcion incorrecta" << endl;
             break;
         }
 
@@ -66,12 +69,14 @@ void MenuEntrenador::verHorariosYSociosAsignados()
     do
     {
         system("cls");
-        cout << " HORARIOS " << endl;
-        cout << "---------------------------------" <<endl;
-        cout << " 1 - VER HORARIOS ASIGNADOS " << endl;
-        cout << " 2 - VER SOCIOS ASIGNADOS " << endl;
-        cout << "---------------------------------" <<endl;
-        cout << " 0 - VOLVER ATRAS " << endl;
+        cout << "+-----------------------------------+" << endl;
+        cout << "|              HORARIOS             |" << endl;
+        cout << "+-----------------------------------+" << endl;
+        cout << "| 1 - VER HORARIOS ASIGNADOS        |" << endl;
+        cout << "| 2 - VER SOCIOS ASIGNADOS          |" << endl;
+        cout << "+-----------------------------------+" << endl;
+        cout << "| 0 - VOLVER ATRAS                  |" << endl;
+        cout << "+-----------------------------------+" << endl;
         cout << endl;
         cout << " Su seleccion: ";
         cin >> opcion;
@@ -108,18 +113,20 @@ void MenuEntrenador::crearModificarRutina()
     do
     {
         system("cls");
-        cout << " RUTINAS " << endl;
-        cout << "---------------------------------" <<endl;
-        cout << " 1 - VER MIS RUTINAS" << endl;
-        cout << " 2 - VER DETALLES RUTINAS" << endl;
-        cout << " 3 - CREAR UNA RUTINA " << endl;
-        cout << " 4 - BUSCAR UNA RUTINA " << endl;
-        cout << " 5 - MODIFICAR UNA RUTINA " << endl;
-        cout << " 6 - VER EJERCICIOS " << endl;
-        cout << " 7 - AGREGAR UN EJERCICIO " << endl;
-        cout << " 8 - MODIFICAR UN EJERCICIO " << endl;
-        cout << "---------------------------------" <<endl;
-        cout << "0 - VOLVER ATRAS " << endl;
+        cout << "+--------------------------------------+" << endl;
+        cout << "|               RUTINAS                |" << endl;
+        cout << "+--------------------------------------+" << endl;
+        cout << "| 1 - VER MIS RUTINAS                  |" << endl;
+        cout << "| 2 - VER DETALLES RUTINAS             |" << endl;
+        cout << "| 3 - CREAR UNA RUTINA                 |" << endl;
+        cout << "| 4 - BUSCAR UNA RUTINA                |" << endl;
+        cout << "| 5 - MODIFICAR UNA RUTINA             |" << endl;
+        cout << "| 6 - VER EJERCICIOS                   |" << endl;
+        cout << "| 7 - AGREGAR UN EJERCICIO             |" << endl;
+        cout << "| 8 - MODIFICAR UN EJERCICIO           |" << endl;
+        cout << "+--------------------------------------+" << endl;
+        cout << "| 0 - VOLVER ATRAS                     |" << endl;
+        cout << "+--------------------------------------+" << endl;
         cout << endl;
         cout << " Su seleccion: ";
         cin >> opcion;
@@ -141,7 +148,7 @@ void MenuEntrenador::crearModificarRutina()
             rutina.buscarRutina();
             break;
         case 5:
-            rutina.modificarRutina(_usuario.getIdUsuario());
+            rutina.mostrarOpcionesModificarRutina(_usuario.getIdUsuario());
             break;
         case 6:
             ejercicio.verEjercicios();
@@ -173,12 +180,14 @@ void MenuEntrenador::verReclamos()
     do
     {
         system("cls");
-        cout << " RECLAMOS " << endl;
-        cout << "---------------------------------" <<endl;
-        cout << " 1 - REALIZAR UN RECLAMO " << endl;
-        cout << " 2 - VER ESTADO DE UN RECLAMOS " << endl;
-        cout << "---------------------------------" <<endl;
-        cout << " 0 - VOLVER ATRAS " << endl;
+        cout << "+-----------------------------------+" << endl;
+        cout << "|              RECLAMOS             |" << endl;
+        cout << "+-----------------------------------+" << endl;
+        cout << "| 1 - REALIZAR UN RECLAMO           |" << endl;
+        cout << "| 2 - VER ESTADO DE RECLAMOS        |" << endl;
+        cout << "+-----------------------------------+" << endl;
+        cout << "| 0 - VOLVER ATRAS                  |" << endl;
+        cout << "+-----------------------------------+" << endl;
         cout << endl;
         cout << " Su seleccion: ";
         cin >> opcion;
@@ -188,10 +197,10 @@ void MenuEntrenador::verReclamos()
         switch(opcion)
         {
         case 1:
-
+            reclamo.cargarReclamo(_usuario.getIdUsuario());
             break;
         case 2:
-
+            reclamo.verReclamosUsuario(_usuario.getIdUsuario());
             break;
         case 0:
             break;

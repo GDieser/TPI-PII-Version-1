@@ -268,7 +268,7 @@
 1729820508 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version arpobada 1\tpi_versionfinal1\include\servicioactividad.h
 	"GestionArchivoActividades.h"
 
-1730153400 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\main.cpp
+1730466291 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\main.cpp
 	<iostream>
 	"MenuPrincipal.h"
 	"Fecha.h"
@@ -278,7 +278,7 @@
 1729990488 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\menuprincipal.h
 	"usuarioAutenticado.h"
 
-1729810077 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\fecha.h
+1730904437 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\fecha.h
 
 1729990488 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\empleado.h
 	"Usuario.h"
@@ -286,7 +286,7 @@
 1729268346 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\usuario.h
 	"Fecha.h"
 
-1730121250 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\gestionarchivoempleados.h
+1730466622 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\gestionarchivoempleados.h
 	"Empleado.h"
 
 1729820508 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\servicioactividad.h
@@ -317,66 +317,66 @@
 	<iostream>
 	"DetalleRutina.h"
 
-1730407914 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\ejercicio.cpp
+1730466291 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\ejercicio.cpp
 	<iostream>
 	<cstring>
 	"Ejercicio.h"
 
 1729271018 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\ejercicio.h
 
-1730038770 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\empleado.cpp
+1730466194 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\empleado.cpp
 	<iostream>
 	"Empleado.h"
 
-1729810077 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\fecha.cpp
+1730904437 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\fecha.cpp
 	<iostream>
 	<ctime>
 	"Fecha.h"
 
-1729432544 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\gestionarchivoactividades.cpp
+1730722609 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\gestionarchivoactividades.cpp
 	<iostream>
 	"GestionArchivoActividades.h"
 
-1729808053 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\gestionarchivoasistencias.cpp
+1730726667 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\gestionarchivoasistencias.cpp
 	<iostream>
 	"GestionArchivoAsistencias.h"
 
-1729434060 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\gestionarchivodetallerutinas.cpp
+1730726667 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\gestionarchivodetallerutinas.cpp
 	<iostream>
 	"GestionArchivoDetalleRutinas.h"
 
-1729434114 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\gestionarchivoejercicios.cpp
+1730726667 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\gestionarchivoejercicios.cpp
 	<iostream>
 	"GestionArchivoEjercicios.h"
 
 1729434114 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\gestionarchivoejercicios.h
 	"Ejercicio.h"
 
-1730121282 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\gestionarchivoempleados.cpp
+1730726667 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\gestionarchivoempleados.cpp
 	<iostream>
 	"GestionArchivoEmpleados.h"
 
-1729700507 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\gestionarchivopagos.cpp
+1730904423 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\gestionarchivopagos.cpp
 	<iostream>
 	"GestionArchivoPagos.h"
 
-1729556040 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\gestionarchivopagos.h
+1730681831 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\gestionarchivopagos.h
 	"RegistroPago.h"
 
 1729270587 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\registropago.h
 	"Fecha.h"
 
-1729703663 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\gestionarchivoreclamos.cpp
+1730904423 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\gestionarchivoreclamos.cpp
 	<iostream>
 	"GestionArchivoReclamos.h"
 
-1729703663 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\gestionarchivoreclamos.h
+1730720758 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\gestionarchivoreclamos.h
 	"Reclamo.h"
 
 1729268518 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\reclamo.h
 	"Fecha.h"
 
-1729727365 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\gestionarchivorutinas.cpp
+1730726667 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\gestionarchivorutinas.cpp
 	<iostream>
 	"GestionArchivoRutinas.h"
 
@@ -385,17 +385,17 @@
 
 1729270716 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\rutina.h
 
-1729290712 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\gestionarchivosocios.cpp
+1730896844 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\gestionarchivosocios.cpp
 	<iostream>
 	"GestionArchivoSocios.h"
 
-1729290712 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\gestionarchivosocios.h
+1730896844 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\gestionarchivosocios.h
 	"Socio.h"
 
 1729268977 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\socio.h
 	"Usuario.h"
 
-1730425209 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\menuentrenador.cpp
+1730685045 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\menuentrenador.cpp
 	<iostream>
 	"MenuEntrenador.h"
 	"ServicioEmpleado.h"
@@ -406,22 +406,22 @@
 1729990488 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\menuentrenador.h
 	"MenuPrincipal.h"
 
-1730407757 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\servicioempleado.h
+1730466291 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\servicioempleado.h
 	"GestionArchivoEmpleados.h"
 	"Empleado.h"
 
-1729865001 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\servicioreclamo.h
+1730681831 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\servicioreclamo.h
 	"GestionArchivoReclamos.h"
 
-1730425101 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\servicioejercicio.h
+1730601924 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\servicioejercicio.h
 	"GestionArchivoEjercicios.h"
 
-1730425101 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\serviciorutina.h
+1730638517 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\serviciorutina.h
 	"GestionArchivoDetalleRutinas.h"
 	"GestionArchivoRutinas.h"
 	"DetalleRutina.h"
 
-1730336097 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\menugerente.cpp
+1730851720 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\menugerente.cpp
 	<iostream>
 	"MenuGerente.h"
 	"ServicioSocio.h"
@@ -432,13 +432,14 @@
 1729990488 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\menugerente.h
 	"MenuPrincipal.h"
 
-1730319351 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\serviciosocio.h
+1730896844 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\serviciosocio.h
 	"GestionArchivoSocios.h"
+	"GestionArchivoEmpleados.h"
 
-1729864850 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\serviciopago.h
+1730681831 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\serviciopago.h
 	"GestionArchivoPagos.h"
 
-1730120155 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\menuprincipal.cpp
+1730467353 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\menuprincipal.cpp
 	<iostream>
 	"MenuPrincipal.h"
 	"MenuSocio.h"
@@ -450,19 +451,21 @@
 	"usuarioAutenticado.h"
 	"autenticador.h"
 
-1729990488 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\menusocio.h
+1730466291 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\menusocio.h
 	"MenuPrincipal.h"
+	"ServicioSocio.h"
 
-1729864576 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\servicioasistencia.h
+1730466291 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\servicioasistencia.h
 	"GestionArchivoAsistencias.h"
 
-1729990488 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\menusocio.cpp
+1730904932 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\menusocio.cpp
 	<iostream>
 	"MenuSocio.h"
-	"ServicioSocio.h"
 	"ServicioPago.h"
 	"ServicioReclamo.h"
 	"ServicioAsistencia.h"
+	"GestionArchivoSocios.h"
+	"ServicioRutina.h"
 
 1729268518 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\reclamo.cpp
 	<iostream>
@@ -477,56 +480,68 @@
 	<iostream>
 	"RegistroPago.h"
 
-1730407914 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\rutina.cpp
+1730466291 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\rutina.cpp
 	<iostream>
 	<cstring>
 	"Rutina.h"
 
-1730153315 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\servicioactividad.cpp
+1730515660 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\servicioactividad.cpp
 	<iostream>
+	<iomanip>
 	"ServicioActividad.h"
 
-1729864308 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\servicioasistencia.cpp
+1730466291 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\servicioasistencia.cpp
 	<iostream>
+	<cstring>
 	"ServicioAsistencia.h"
 	"Fecha.h"
 	"RegistroAsistencia.h"
 
-1730424468 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\servicioejercicio.cpp
+1730598952 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\servicioejercicio.cpp
 	<iostream>
 	"ServicioEjercicio.h"
 	"Ejercicio.h"
 
-1730336831 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\servicioempleado.cpp
+1730597117 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\servicioempleado.cpp
 	<iostream>
 	<cstring>
+	<iomanip>
 	"ServicioEmpleado.h"
 	"ServicioSocio.h"
 	"ServicioActividad.h"
 
-1729864857 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\serviciopago.cpp
+1730904423 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\serviciopago.cpp
 	<iostream>
 	"ServicioPago.h"
+	"RegistroPago.h"
+	"GestionArchivoPagos.h"
+	"ServicioPago.h"
 
-1729864308 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\servicioreclamo.cpp
+1730904423 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\servicioreclamo.cpp
 	<iostream>
 	"ServicioReclamo.h"
 	"Reclamo.h"
 	"Fecha.h"
+	"ServicioSocio.h"
 
-1730425617 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\serviciorutina.cpp
+1730648037 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\serviciorutina.cpp
 	<iostream>
 	"ServicioRutina.h"
+	"ServicioEjercicio.h"
 	"Rutina.h"
 
-1730319670 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\serviciosocio.cpp
+1730904437 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\serviciosocio.cpp
 	<iostream>
+	<limits>
 	<cstring>
+	<iomanip>
 	"ServicioSocio.h"
 	"Socio.h"
 	"Fecha.h"
 	"ServicioEmpleado.h"
 	"ServicioPago.h"
+	"ServicioRutina.h"
+	"ServicioActividad.h"
 
 1729268947 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\socio.cpp
 	<iostream>
@@ -541,7 +556,7 @@
 1729990488 c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\include\usuarioautenticado.h
 	"Fecha.h"
 
-1730120155 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\autenticador.cpp
+1730904437 source:c:\users\utn\materias\segundo cuatrimestre\programacion ii\practicas\trabajo practico integrador\tpi version aprobada git\tpi_versionaprobada\src\autenticador.cpp
 	<iostream>
 	<cstring>
 	"autenticador.h"
@@ -557,4 +572,603 @@
 	<iostream>
 	<cstring>
 	"UsuarioAutenticado.h"
+
+1730758425 source:c:\sgg\tpi-pii-version-1\tpi_versionaprobada\main.cpp
+	<iostream>
+	"MenuPrincipal.h"
+	"Fecha.h"
+	"GestionArchivoEmpleados.h"
+	"ServicioActividad.h"
+
+1730034011 c:\sgg\tpi-pii-version-1\tpi_versionaprobada\include\menuprincipal.h
+	"usuarioAutenticado.h"
+
+1730034011 c:\sgg\tpi-pii-version-1\tpi_versionaprobada\include\usuarioautenticado.h
+	"Fecha.h"
+
+1730758425 c:\sgg\tpi-pii-version-1\tpi_versionaprobada\include\fecha.h
+
+1729946108 source:c:\sgg\tpi-pii-version-1\tpi_versionaprobada\src\actividad.cpp
+	<iostream>
+	<cstring>
+	"Actividad.h"
+
+1729946108 c:\sgg\tpi-pii-version-1\tpi_versionaprobada\include\actividad.h
+
+1730034011 source:c:\sgg\tpi-pii-version-1\tpi_versionaprobada\src\autenticador.cpp
+	<iostream>
+	<cstring>
+	"autenticador.h"
+	"Usuario.h"
+	"GestionArchivoEmpleados.h"
+	"GestionArchivoSocios.h"
+
+1730034011 c:\sgg\tpi-pii-version-1\tpi_versionaprobada\include\autenticador.h
+	"usuarioAutenticado.h"
+	"Usuario.h"
+
+1729946108 c:\sgg\tpi-pii-version-1\tpi_versionaprobada\include\usuario.h
+	"Fecha.h"
+
+1730758425 c:\sgg\tpi-pii-version-1\tpi_versionaprobada\include\gestionarchivoempleados.h
+	"Empleado.h"
+
+1730034011 c:\sgg\tpi-pii-version-1\tpi_versionaprobada\include\empleado.h
+	"Usuario.h"
+
+1730854220 c:\sgg\tpi-pii-version-1\tpi_versionaprobada\include\gestionarchivosocios.h
+	"Socio.h"
+
+1729946108 c:\sgg\tpi-pii-version-1\tpi_versionaprobada\include\socio.h
+	"Usuario.h"
+
+1729946108 source:c:\sgg\tpi-pii-version-1\tpi_versionaprobada\src\detallerutina.cpp
+	<iostream>
+	"DetalleRutina.h"
+
+1729946108 c:\sgg\tpi-pii-version-1\tpi_versionaprobada\include\detallerutina.h
+
+1730758425 source:c:\sgg\tpi-pii-version-1\tpi_versionaprobada\src\ejercicio.cpp
+	<iostream>
+	<cstring>
+	"Ejercicio.h"
+
+1729946108 c:\sgg\tpi-pii-version-1\tpi_versionaprobada\include\ejercicio.h
+
+1730034011 source:c:\sgg\tpi-pii-version-1\tpi_versionaprobada\src\empleado.cpp
+	<iostream>
+	"Empleado.h"
+
+1730758425 source:c:\sgg\tpi-pii-version-1\tpi_versionaprobada\src\fecha.cpp
+	<iostream>
+	<ctime>
+	"Fecha.h"
+
+1730758425 source:c:\sgg\tpi-pii-version-1\tpi_versionaprobada\src\gestionarchivoactividades.cpp
+	<iostream>
+	"GestionArchivoActividades.h"
+
+1729946108 c:\sgg\tpi-pii-version-1\tpi_versionaprobada\include\gestionarchivoactividades.h
+	"Actividad.h"
+
+1730758425 source:c:\sgg\tpi-pii-version-1\tpi_versionaprobada\src\gestionarchivoasistencias.cpp
+	<iostream>
+	"GestionArchivoAsistencias.h"
+
+1729946108 c:\sgg\tpi-pii-version-1\tpi_versionaprobada\include\gestionarchivoasistencias.h
+	"RegistroAsistencia.h"
+
+1729946108 c:\sgg\tpi-pii-version-1\tpi_versionaprobada\include\registroasistencia.h
+	"Fecha.h"
+
+1730758425 source:c:\sgg\tpi-pii-version-1\tpi_versionaprobada\src\gestionarchivodetallerutinas.cpp
+	<iostream>
+	"GestionArchivoDetalleRutinas.h"
+
+1729946108 c:\sgg\tpi-pii-version-1\tpi_versionaprobada\include\gestionarchivodetallerutinas.h
+	"DetalleRutina.h"
+
+1730758425 source:c:\sgg\tpi-pii-version-1\tpi_versionaprobada\src\gestionarchivoejercicios.cpp
+	<iostream>
+	"GestionArchivoEjercicios.h"
+
+1729946108 c:\sgg\tpi-pii-version-1\tpi_versionaprobada\include\gestionarchivoejercicios.h
+	"Ejercicio.h"
+
+1730758425 source:c:\sgg\tpi-pii-version-1\tpi_versionaprobada\src\gestionarchivoempleados.cpp
+	<iostream>
+	"GestionArchivoEmpleados.h"
+
+1730758425 source:c:\sgg\tpi-pii-version-1\tpi_versionaprobada\src\gestionarchivopagos.cpp
+	<iostream>
+	"GestionArchivoPagos.h"
+
+1730758425 c:\sgg\tpi-pii-version-1\tpi_versionaprobada\include\gestionarchivopagos.h
+	"RegistroPago.h"
+
+1729946108 c:\sgg\tpi-pii-version-1\tpi_versionaprobada\include\registropago.h
+	"Fecha.h"
+
+1730758425 source:c:\sgg\tpi-pii-version-1\tpi_versionaprobada\src\gestionarchivoreclamos.cpp
+	<iostream>
+	"GestionArchivoReclamos.h"
+
+1730758425 c:\sgg\tpi-pii-version-1\tpi_versionaprobada\include\gestionarchivoreclamos.h
+	"Reclamo.h"
+
+1729946108 c:\sgg\tpi-pii-version-1\tpi_versionaprobada\include\reclamo.h
+	"Fecha.h"
+
+1730758425 source:c:\sgg\tpi-pii-version-1\tpi_versionaprobada\src\gestionarchivorutinas.cpp
+	<iostream>
+	"GestionArchivoRutinas.h"
+
+1729946108 c:\sgg\tpi-pii-version-1\tpi_versionaprobada\include\gestionarchivorutinas.h
+	"Rutina.h"
+
+1729946108 c:\sgg\tpi-pii-version-1\tpi_versionaprobada\include\rutina.h
+
+1730758425 source:c:\sgg\tpi-pii-version-1\tpi_versionaprobada\src\gestionarchivosocios.cpp
+	<iostream>
+	"GestionArchivoSocios.h"
+
+1730758425 source:c:\sgg\tpi-pii-version-1\tpi_versionaprobada\src\menuentrenador.cpp
+	<iostream>
+	"MenuEntrenador.h"
+	"ServicioEmpleado.h"
+	"ServicioReclamo.h"
+	"ServicioEjercicio.h"
+	"ServicioRutina.h"
+
+1730034011 c:\sgg\tpi-pii-version-1\tpi_versionaprobada\include\menuentrenador.h
+	"MenuPrincipal.h"
+
+1730758425 c:\sgg\tpi-pii-version-1\tpi_versionaprobada\include\servicioempleado.h
+	"GestionArchivoEmpleados.h"
+	"Empleado.h"
+
+1730758425 c:\sgg\tpi-pii-version-1\tpi_versionaprobada\include\servicioreclamo.h
+	"GestionArchivoReclamos.h"
+
+1730758425 c:\sgg\tpi-pii-version-1\tpi_versionaprobada\include\servicioejercicio.h
+	"GestionArchivoEjercicios.h"
+
+1730758425 c:\sgg\tpi-pii-version-1\tpi_versionaprobada\include\serviciorutina.h
+	"GestionArchivoDetalleRutinas.h"
+	"GestionArchivoRutinas.h"
+	"DetalleRutina.h"
+
+1730758425 source:c:\sgg\tpi-pii-version-1\tpi_versionaprobada\src\menugerente.cpp
+	<iostream>
+	"MenuGerente.h"
+	"ServicioSocio.h"
+	"ServicioEmpleado.h"
+	"ServicioReclamo.h"
+	"ServicioPago.h"
+
+1730034011 c:\sgg\tpi-pii-version-1\tpi_versionaprobada\include\menugerente.h
+	"MenuPrincipal.h"
+
+1730853890 c:\sgg\tpi-pii-version-1\tpi_versionaprobada\include\serviciosocio.h
+	"GestionArchivoSocios.h"
+	"GestionArchivoEmpleados.h"
+
+1730758425 c:\sgg\tpi-pii-version-1\tpi_versionaprobada\include\serviciopago.h
+	"GestionArchivoPagos.h"
+
+1730758425 source:c:\sgg\tpi-pii-version-1\tpi_versionaprobada\src\menuprincipal.cpp
+	<iostream>
+	"MenuPrincipal.h"
+	"MenuSocio.h"
+	"MenuEntrenador.h"
+	"MenuGerente.h"
+	"ServicioSocio.h"
+	"ServicioEmpleado.h"
+	"ServicioAsistencia.h"
+	"usuarioAutenticado.h"
+	"autenticador.h"
+
+1730043495 c:\sgg\tpi-pii-version-1\tpi_versionaprobada\include\menusocio.h
+	"MenuPrincipal.h"
+	"ServicioSocio.h"
+
+1730758425 c:\sgg\tpi-pii-version-1\tpi_versionaprobada\include\servicioasistencia.h
+	"GestionArchivoAsistencias.h"
+
+1730760794 source:c:\sgg\tpi-pii-version-1\tpi_versionaprobada\src\menusocio.cpp
+	<iostream>
+	"MenuSocio.h"
+	"ServicioPago.h"
+	"ServicioReclamo.h"
+	"ServicioAsistencia.h"
+	"GestionArchivoSocios.h"
+	"ServicioRutina.h"
+
+1729946108 source:c:\sgg\tpi-pii-version-1\tpi_versionaprobada\src\reclamo.cpp
+	<iostream>
+	<cstring>
+	"Reclamo.h"
+
+1729946108 source:c:\sgg\tpi-pii-version-1\tpi_versionaprobada\src\registroasistencia.cpp
+	<iostream>
+	"RegistroAsistencia.h"
+
+1729946108 source:c:\sgg\tpi-pii-version-1\tpi_versionaprobada\src\registropago.cpp
+	<iostream>
+	"RegistroPago.h"
+
+1730758425 source:c:\sgg\tpi-pii-version-1\tpi_versionaprobada\src\rutina.cpp
+	<iostream>
+	<cstring>
+	"Rutina.h"
+
+1730758425 source:c:\sgg\tpi-pii-version-1\tpi_versionaprobada\src\servicioactividad.cpp
+	<iostream>
+	<iomanip>
+	"ServicioActividad.h"
+
+1729946108 c:\sgg\tpi-pii-version-1\tpi_versionaprobada\include\servicioactividad.h
+	"GestionArchivoActividades.h"
+
+1730758425 source:c:\sgg\tpi-pii-version-1\tpi_versionaprobada\src\servicioasistencia.cpp
+	<iostream>
+	<cstring>
+	"ServicioAsistencia.h"
+	"Fecha.h"
+	"RegistroAsistencia.h"
+
+1730758425 source:c:\sgg\tpi-pii-version-1\tpi_versionaprobada\src\servicioejercicio.cpp
+	<iostream>
+	"ServicioEjercicio.h"
+	"Ejercicio.h"
+
+1730758425 source:c:\sgg\tpi-pii-version-1\tpi_versionaprobada\src\servicioempleado.cpp
+	<iostream>
+	<cstring>
+	<iomanip>
+	"ServicioEmpleado.h"
+	"ServicioSocio.h"
+	"ServicioActividad.h"
+
+1730758425 source:c:\sgg\tpi-pii-version-1\tpi_versionaprobada\src\serviciopago.cpp
+	<iostream>
+	"ServicioPago.h"
+	"RegistroPago.h"
+	"GestionArchivoPagos.h"
+	"ServicioPago.h"
+
+1730758425 source:c:\sgg\tpi-pii-version-1\tpi_versionaprobada\src\servicioreclamo.cpp
+	<iostream>
+	"ServicioReclamo.h"
+	"Reclamo.h"
+	"Fecha.h"
+	"ServicioSocio.h"
+
+1730758425 source:c:\sgg\tpi-pii-version-1\tpi_versionaprobada\src\serviciorutina.cpp
+	<iostream>
+	"ServicioRutina.h"
+	"ServicioEjercicio.h"
+	"Rutina.h"
+
+1730758425 source:c:\sgg\tpi-pii-version-1\tpi_versionaprobada\src\serviciosocio.cpp
+	<iostream>
+	<limits>
+	<cstring>
+	<iomanip>
+	"ServicioSocio.h"
+	"Socio.h"
+	"Fecha.h"
+	"ServicioEmpleado.h"
+	"ServicioPago.h"
+	"ServicioRutina.h"
+	"ServicioActividad.h"
+
+1729946108 source:c:\sgg\tpi-pii-version-1\tpi_versionaprobada\src\socio.cpp
+	<iostream>
+	<cstring>
+	"Socio.h"
+
+1729946108 source:c:\sgg\tpi-pii-version-1\tpi_versionaprobada\src\usuario.cpp
+	<iostream>
+	<cstring>
+	"Usuario.h"
+
+1730034011 source:c:\sgg\tpi-pii-version-1\tpi_versionaprobada\src\usuarioautenticado.cpp
+	<iostream>
+	<cstring>
+	"UsuarioAutenticado.h"
+
+1730033967 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\main.cpp
+	<iostream>
+	"MenuPrincipal.h"
+
+1730034011 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\menuprincipal.h
+	"usuarioAutenticado.h"
+
+1730034011 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\usuarioautenticado.h
+	"Fecha.h"
+
+1730321528 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\fecha.h
+
+1729946108 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\actividad.cpp
+	<iostream>
+	<cstring>
+	"Actividad.h"
+
+1729946108 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\actividad.h
+
+1730034011 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\autenticador.cpp
+	<iostream>
+	<cstring>
+	"autenticador.h"
+	"Usuario.h"
+	"GestionArchivoEmpleados.h"
+	"GestionArchivoSocios.h"
+
+1730034011 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\autenticador.h
+	"usuarioAutenticado.h"
+	"Usuario.h"
+
+1729946108 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\usuario.h
+	"Fecha.h"
+
+1730047290 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\gestionarchivoempleados.h
+	"Empleado.h"
+
+1730034011 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\empleado.h
+	"Usuario.h"
+
+1729946108 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\gestionarchivosocios.h
+	"Socio.h"
+
+1729946108 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\socio.h
+	"Usuario.h"
+
+1729946108 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\detallerutina.cpp
+	<iostream>
+	"DetalleRutina.h"
+
+1729946108 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\detallerutina.h
+
+1729946108 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\ejercicio.cpp
+	<iostream>
+	<cstring>
+	"Ejercicio.h"
+
+1729946108 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\ejercicio.h
+
+1730034011 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\empleado.cpp
+	<iostream>
+	"Empleado.h"
+
+1730321577 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\fecha.cpp
+	<iostream>
+	<ctime>
+	"Fecha.h"
+
+1729946108 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\gestionarchivoactividades.cpp
+	<iostream>
+	"GestionArchivoActividades.h"
+
+1729946108 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\gestionarchivoactividades.h
+	"Actividad.h"
+
+1729946108 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\gestionarchivoasistencias.cpp
+	<iostream>
+	"GestionArchivoAsistencias.h"
+
+1729946108 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\gestionarchivoasistencias.h
+	"RegistroAsistencia.h"
+
+1729946108 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\registroasistencia.h
+	"Fecha.h"
+
+1729946108 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\gestionarchivodetallerutinas.cpp
+	<iostream>
+	"GestionArchivoDetalleRutinas.h"
+
+1729946108 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\gestionarchivodetallerutinas.h
+	"DetalleRutina.h"
+
+1729946108 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\gestionarchivoejercicios.cpp
+	<iostream>
+	"GestionArchivoEjercicios.h"
+
+1729946108 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\gestionarchivoejercicios.h
+	"Ejercicio.h"
+
+1729946108 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\gestionarchivoempleados.cpp
+	<iostream>
+	"GestionArchivoEmpleados.h"
+
+1729946108 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\gestionarchivopagos.cpp
+	<iostream>
+	"GestionArchivoPagos.h"
+
+1729946108 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\gestionarchivopagos.h
+	"RegistroPago.h"
+
+1729946108 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\registropago.h
+	"Fecha.h"
+
+1729946108 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\gestionarchivoreclamos.cpp
+	<iostream>
+	"GestionArchivoReclamos.h"
+
+1729946108 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\gestionarchivoreclamos.h
+	"Reclamo.h"
+
+1729946108 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\reclamo.h
+	"Fecha.h"
+
+1729946108 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\gestionarchivorutinas.cpp
+	<iostream>
+	"GestionArchivoRutinas.h"
+
+1729946108 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\gestionarchivorutinas.h
+	"Rutina.h"
+
+1729946108 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\rutina.h
+
+1729946108 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\gestionarchivosocios.cpp
+	<iostream>
+	"GestionArchivoSocios.h"
+
+1730034011 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\menuentrenador.cpp
+	<iostream>
+	"MenuEntrenador.h"
+	"ServicioEmpleado.h"
+	"ServicioReclamo.h"
+	"ServicioEjercicio.h"
+	"ServicioRutina.h"
+
+1730034011 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\menuentrenador.h
+	"MenuPrincipal.h"
+
+1729946108 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\servicioempleado.h
+	"GestionArchivoEmpleados.h"
+
+1729946108 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\servicioreclamo.h
+	"GestionArchivoReclamos.h"
+
+1729946108 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\servicioejercicio.h
+	"GestionArchivoEjercicios.h"
+
+1729946108 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\serviciorutina.h
+	"GestionArchivoDetalleRutinas.h"
+	"GestionArchivoRutinas.h"
+	"DetalleRutina.h"
+
+1730034011 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\menugerente.cpp
+	<iostream>
+	"MenuGerente.h"
+	"ServicioSocio.h"
+	"ServicioEmpleado.h"
+	"ServicioReclamo.h"
+	"ServicioPago.h"
+
+1730034011 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\menugerente.h
+	"MenuPrincipal.h"
+
+1730411359 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\serviciosocio.h
+	"GestionArchivoSocios.h"
+	"GestionArchivoEmpleados.h"
+
+1729946108 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\serviciopago.h
+	"GestionArchivoPagos.h"
+
+1730046050 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\menuprincipal.cpp
+	<iostream>
+	"MenuPrincipal.h"
+	"MenuSocio.h"
+	"MenuEntrenador.h"
+	"MenuGerente.h"
+	"ServicioSocio.h"
+	"ServicioEmpleado.h"
+	"ServicioAsistencia.h"
+	"usuarioAutenticado.h"
+	"autenticador.h"
+
+1730043495 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\menusocio.h
+	"MenuPrincipal.h"
+	"ServicioSocio.h"
+
+1730425802 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\servicioasistencia.h
+	"GestionArchivoAsistencias.h"
+
+1730425597 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\menusocio.cpp
+	<iostream>
+	"MenuSocio.h"
+	"ServicioPago.h"
+	"ServicioReclamo.h"
+	"ServicioAsistencia.h"
+	"GestionArchivoSocios.h"
+	"ServicioRutina.h"
+
+1729946108 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\reclamo.cpp
+	<iostream>
+	<cstring>
+	"Reclamo.h"
+
+1729946108 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\registroasistencia.cpp
+	<iostream>
+	"RegistroAsistencia.h"
+
+1729946108 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\registropago.cpp
+	<iostream>
+	"RegistroPago.h"
+
+1729946108 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\rutina.cpp
+	<iostream>
+	<cstring>
+	"Rutina.h"
+
+1729946108 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\servicioactividad.cpp
+	<iostream>
+	"ServicioActividad.h"
+
+1729946108 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\servicioactividad.h
+	"GestionArchivoActividades.h"
+
+1730425510 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\servicioasistencia.cpp
+	<iostream>
+	<cstring>
+	"ServicioAsistencia.h"
+	"Fecha.h"
+	"RegistroAsistencia.h"
+
+1730033967 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\servicioejercicio.cpp
+	<iostream>
+	"ServicioEjercicio.h"
+	"Ejercicio.h"
+
+1729946108 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\servicioempleado.cpp
+	<iostream>
+	<cstring>
+	"ServicioEmpleado.h"
+	"ServicioSocio.h"
+	"ServicioActividad.h"
+
+1729946108 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\serviciopago.cpp
+	<iostream>
+	"ServicioPago.h"
+
+1730033967 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\servicioreclamo.cpp
+	<iostream>
+	"ServicioReclamo.h"
+	"Reclamo.h"
+	"Fecha.h"
+
+1730033967 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\serviciorutina.cpp
+	<iostream>
+	"ServicioRutina.h"
+	"Rutina.h"
+
+1729946108 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\socio.cpp
+	<iostream>
+	<cstring>
+	"Socio.h"
+
+1729946108 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\usuario.cpp
+	<iostream>
+	<cstring>
+	"Usuario.h"
+
+1730034011 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\usuarioautenticado.cpp
+	<iostream>
+	<cstring>
+	"UsuarioAutenticado.h"
+
+1730424372 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\serviciosocio.cpp
+	<iostream>
+	<limits>
+	<cstring>
+	<iomanip>
+	"ServicioSocio.h"
+	"Socio.h"
+	"Fecha.h"
+	"ServicioEmpleado.h"
+	"ServicioPago.h"
+	"ServicioRutina.h"
+	"ServicioActividad.h"
 

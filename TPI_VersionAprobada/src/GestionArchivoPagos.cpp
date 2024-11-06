@@ -5,228 +5,216 @@
 using namespace std;
 
 GestionArchivoPagos::GestionArchivoPagos()
-{
+{}
 
-}
-
-GestionArchivoPagos::GestionArchivoPagos(string nombreArchivo)
+GestionArchivoPagos::GestionArchivoPagos(std::string nombreArchivo)
 {
     _nombreArchivo = nombreArchivo;
 }
 
-bool GestionArchivoPagos::guardarPago(RegistroPago pago)
+bool GestionArchivoPagos::guardarPago(const RegistroPago& pago)
 {
-    bool guardo;
-    FILE *pArchivo;
 
-    pArchivo = fopen(_nombreArchivo.c_str(), "ab");
-
-    if(pArchivo == nullptr)
+    FILE* pfile;
+    pfile = fopen(_nombreArchivo.c_str(), "ab");
+    if (pfile == nullptr)
     {
         return false;
     }
 
-    guardo = fwrite(&pago, sizeof(RegistroPago), 1, pArchivo);
+    bool result = fwrite(&pago, sizeof(RegistroPago), 1, pfile) == 1;
 
-    fclose(pArchivo);
+    fclose(pfile);
 
-    return guardo;
-
+    return result;
 }
 
-bool GestionArchivoPagos::guardarPago(RegistroPago pago, int posicion)
+bool GestionArchivoPagos::modificarPago(RegistroPago &pago, int pos)
 {
-    bool guardo;
-    FILE *pArchivo;
 
-    pArchivo = fopen(_nombreArchivo.c_str(), "rb+");
+    FILE* pfile;
+    bool result;
 
-    if(pArchivo == nullptr)
+    pfile = fopen(_nombreArchivo.c_str(), "rb+");
+    if (pfile == nullptr)
     {
         return false;
     }
 
-    fseek(pArchivo, sizeof(RegistroPago) * posicion, SEEK_SET);
+    fseek(pfile, sizeof(RegistroPago) * pos, SEEK_SET);///falta sizeof
 
-    guardo = fwrite(&pago, sizeof(RegistroPago), 1, pArchivo);
+    result = fwrite(&pago, sizeof(RegistroPago), 1, pfile) == 1;
 
-    fclose(pArchivo);
-
-    return guardo;
-
+    fclose(pfile);
+    return result;
 }
 
-int GestionArchivoPagos::buscarPago(int idUsuario)
+RegistroPago GestionArchivoPagos::leerPago(int pos)
 {
-    int posicion = 0;
 
-    RegistroPago pago;
-
-    FILE *pArchivo;
-
-    pArchivo = fopen(_nombreArchivo.c_str(), "rb+");
-
-    if(pArchivo == nullptr)
+    RegistroPago rp;
+    FILE* pfile;
+    pfile = fopen(_nombreArchivo.c_str(), "rb");
+    if (pfile == nullptr)
     {
-        return false;
+        return rp;
     }
 
+    fseek(pfile, sizeof(RegistroPago) * pos, SEEK_SET);
 
-    while(fread(&pago, sizeof(RegistroPago), 1, pArchivo))
-    {
-        if(pago.getIdUsuario() == idUsuario)
-        {
-            fclose(pArchivo);
-            return posicion;
-        }
-        posicion++;
-    }
+    fread(&rp, sizeof(RegistroPago), 1, pfile);
 
-    fclose(pArchivo);
+    fclose(pfile);
 
-    return -1;
-
+    return rp;
 }
 
-RegistroPago GestionArchivoPagos::leerRegistroPago(int posicion)
+int GestionArchivoPagos::getCantidadPagos()
 {
-    RegistroPago pago;
 
-    FILE *pArchivo;
-
-    pArchivo = fopen(_nombreArchivo.c_str(), "rb");
-
-    if(pArchivo == nullptr)
+    int totalBytes, cantReg;
+    RegistroPago rp;
+    FILE* pfile;
+    pfile = fopen(_nombreArchivo.c_str(), "rb");
+    if (pfile == nullptr)
     {
-        return RegistroPago();
+        return 0;
     }
 
-    fseek(pArchivo, sizeof(RegistroPago) * posicion, SEEK_SET);
+    fseek(pfile, 0, SEEK_END);
 
-    fread(&pago, sizeof(RegistroPago), 1, pArchivo);
+    totalBytes = ftell(pfile);
 
-    fclose(pArchivo);
+    fclose(pfile);
 
-    return pago;
-
+    return cantReg = totalBytes / sizeof(RegistroPago);
 }
 
-int GestionArchivoPagos::cantidadRegistrosPagos()
+void GestionArchivoPagos::leerTodosPagos(RegistroPago *vPagos, int cantPagos)
 {
-    int cantidad;
 
-    FILE *pArchivo;
+    FILE* pfile;
+    pfile = fopen(_nombreArchivo.c_str(), "rb");
 
-    pArchivo = fopen(_nombreArchivo.c_str(), "rb");
-
-    if(pArchivo == nullptr)
-    {
-        return -1;
-    }
-
-    fseek(pArchivo, 0, SEEK_END);
-
-    cantidad = ftell(pArchivo)/ sizeof(RegistroPago);
-
-    fclose(pArchivo);
-
-    return cantidad;
-
-}
-
-void GestionArchivoPagos::leerRegistrosPagos(int cantidadRegistros, RegistroPago *vectPago)
-{
-    FILE *pArchivo;
-
-    pArchivo = fopen(_nombreArchivo.c_str(), "rb");
-
-    if(pArchivo == nullptr)
+    if (pfile == nullptr)
     {
         return;
     }
 
-    for(int i=0; i < cantidadRegistros; i++)
+    for (int i = 0; i < cantPagos; i++)
     {
-        fread(&vectPago[i], sizeof(RegistroPago), 1, pArchivo);
+        fread(&vPagos[i], sizeof(RegistroPago), cantPagos, pfile);
     }
 
-    fclose(pArchivo);
-
+    fclose(pfile);
 }
 
-int GestionArchivoPagos::cantidadDeRegistrosSocios(int cantidadRegistros, int idUsuario)
+
+///filtros
+int GestionArchivoPagos::buscarPago(int id)
 {
-    int cont = 0;
-    FILE *pArchivo;
 
     RegistroPago pago;
+    int pos = 0;
 
-    pArchivo = fopen(_nombreArchivo.c_str(), "rb");
+    FILE* pfile;
+    pfile = fopen(_nombreArchivo.c_str(), "rb");
+    if (pfile == nullptr)
+    {
+        return 0;
+    }
 
-    if(pArchivo == nullptr)
+    while (fread(&pago, sizeof(RegistroPago), 1, pfile) == 1)
+    {
+        if (pago.getIdUsuario() == id)
+        {
+            break;
+        }
+        pos++;
+    }
+
+    fclose(pfile);
+
+    if (pago.getIdUsuario() == id)   // dos posibilidades, o que haya llegado al final porque lo encontro e hizo el break o porque trato de leer y no pudo
+    {
+        return pos;
+    }
+    else   // no lo encontro
+    {
+        return -1;
+    }
+}
+
+int GestionArchivoPagos::cantidadPagosXSocio(int cantPagos, int idUsuario)
+{
+
+    RegistroPago pago;
+    int cont = 0;
+
+    FILE* pfile;
+    pfile = fopen(_nombreArchivo.c_str(), "rb");
+
+    if (pfile == nullptr)
     {
         return -1;
     }
 
-    for(int i=0; i<cantidadRegistros; i++)
+    for (int i = 0; i < cantPagos; i++)
     {
-        fread(&pago, sizeof(RegistroPago), 1, pArchivo);
-        if(pago.getIdUsuario() == idUsuario)
+        fread(&pago, sizeof(RegistroPago), 1, pfile);
+        if (pago.getIdUsuario() == idUsuario)
         {
             cont++;
         }
     }
 
-    fclose(pArchivo);
-
+    fclose(pfile);
     return cont;
-
 }
 
-int GestionArchivoPagos::leerRegistrosPagosSocios(int cantidadRegistros, int vectPagos[], int tam, int idUsuario)
+int GestionArchivoPagos::leerPagosXSocio(int cantPagos, int vPagos[], int tam, int idUsuario)
 {
-    int cont = 0, indice = 0;
-    FILE *pArchivo;
 
     RegistroPago pago;
+    int index = 0;
 
-    pArchivo = fopen(_nombreArchivo.c_str(), "rb");
+    FILE* pfile;
+    pfile = fopen(_nombreArchivo.c_str(), "rb");
 
-    if(pArchivo == nullptr)
+    if (pfile == nullptr)
     {
         return -1;
     }
 
-    for(int i=0; i<cantidadRegistros; i++)
+    for (int i = 0; i < cantPagos; i++)
     {
-        fread(&pago, sizeof(RegistroPago), 1, pArchivo);
-        if(pago.getIdUsuario() == idUsuario)
+        fread(&pago, sizeof(RegistroPago), 1, pfile);
+        if (pago.getIdUsuario() == idUsuario)
         {
-            vectPagos[indice] = i;
-            indice++;
+            vPagos[index] = i;
+            index++;
         }
     }
 
-    fclose(pArchivo);
-
-    return *vectPagos;
+    fclose(pfile);
+    return *vPagos;
 }
 
-int GestionArchivoPagos::ultimoRegistroSocio(int cantidadRegistros, int idUsuario)
+int GestionArchivoPagos::ultimoPagoSocio(int cantPagos, int idUsuario)
 {
-    int pos = -1;
-    FILE *pArchivo;
 
     RegistroPago pago;
 
+    int pos = -1;
+    FILE *pArchivo;
     pArchivo = fopen(_nombreArchivo.c_str(), "rb");
 
-    if(pArchivo == nullptr)
+    if (pArchivo == nullptr)
     {
         return -1;
     }
 
-    for(int i=0; i<cantidadRegistros; i++)
+    for(int i = 0; i < cantPagos; i++)
     {
         fread(&pago, sizeof(RegistroPago), 1, pArchivo);
         if(pago.getIdUsuario() == idUsuario)

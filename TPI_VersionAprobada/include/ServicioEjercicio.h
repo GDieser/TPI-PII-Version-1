@@ -11,6 +11,7 @@ class ServicioEjercicio
         void agregarEjercicio();
         void modificarEjercicio();
         int obtenerUltimoIdEjercicio();
+        void verEjercicio(int IdEjercicio);
 
     private:
 

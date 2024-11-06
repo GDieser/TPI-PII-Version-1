@@ -16,10 +16,25 @@ UsuarioAutenticado Autenticador::autenticar()
 
     system("cls");
 
-    cout << "INGRESE ID: ";
+    cout << "+--------------------------------------+" << endl;
+    cout << "|         Bienvenido a MetalGYM        |" << endl;
+    cout << "|      El Camino a tu mejor version    |" << endl;
+    cout << "+--------------------------------------+" << endl;
+    cout << endl;
+
+    cout << "       Ingrese sus datos de acceso     " << endl;
+    cout << "+--------------------------------------+" << endl;
+
+    cout << " INGRESE ID: ";
     cin >> idUsuario;
-    cout << "INGRESE PASS: ";
+
+    cout << " INGRESE PASS: ";
     cin >> pass;
+
+    cout << "+--------------------------------------+" << endl;
+    cout << "|   Gracias por ingresar, cargando...  |" << endl;
+    cout << "+--------------------------------------+" << endl;
+    system("pause");
 
     strncpy(_pass, pass.c_str(), 49);
 
@@ -67,7 +82,8 @@ Usuario Autenticador::buscarUsuario(const int idUsuario, const char* pass)
         }
     }
 
-    cout << "Contraseña o usuario inexistente..." << endl;
+    cout << endl;
+    cout << "Contrasenia o usuario incorrectos..." << endl;
 
     return Usuario();
 }

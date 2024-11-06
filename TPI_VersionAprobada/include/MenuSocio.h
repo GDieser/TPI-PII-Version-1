@@ -1,6 +1,7 @@
 #pragma once
 
 #include "MenuPrincipal.h"
+#include "ServicioSocio.h"
 
 class MenuSocio
 {
@@ -24,4 +25,5 @@ public:
 private:
 
     UsuarioAutenticado _usuario;
+    ServicioSocio _sSocio;
 };

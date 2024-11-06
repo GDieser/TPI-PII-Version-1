@@ -1,5 +1,7 @@
 #include <iostream>
 #include <cstring>
+#include <iomanip>
+
 
 #include "ServicioEmpleado.h"
 #include "ServicioSocio.h"
@@ -18,8 +20,22 @@ void ServicioEmpleado::verEmpleados(int idRol)
     system("cls");
     Empleado empleado;
     ServicioActividad actividad;
+    int contador = 0;
 
     int cantidad = _archivoEmpleado.cantidadRegistrosEmpleados();
+
+    if(idRol == 0)
+    {
+        cout << "+----------------------------------+" << endl;
+        cout << "|             GERENTES             |" << endl;
+        cout << "+----------------------------------+" << endl;
+    }
+    else
+    {
+        cout << "+----------------------------------+" << endl;
+        cout << "|           ENTRENADORES           |" << endl;
+        cout << "+----------------------------------+" << endl;
+    }
 
     for(int i=0; i<cantidad; i++)
     {
@@ -27,18 +43,29 @@ void ServicioEmpleado::verEmpleados(int idRol)
 
         if(empleado.getIdRol() == idRol && empleado.getEstado())
         {
-            cout << "---------------------------" << endl;
-            cout << " Nombre: " << empleado.getNombre() << endl;
-            cout << " Apellido: " << empleado.getApellido() << endl;
-            cout << " Fecha de ingreso: " << empleado.getFechaDeIngreso().toString() << endl;
-            cout << " Legajo: " << empleado.getLegajo() << endl;
-            if(empleado.getIdActividadPrincipal() == 0)
+
+            cout << left << setw(19) << " Nombre: " << empleado.getNombre() << endl;
+            cout << setw(19) << " Apellido: " << empleado.getApellido() << endl;
+            cout << setw(19) << " Fecha de ingreso: " << empleado.getFechaDeIngreso().toString() << endl;
+            cout << setw(19) << " Legajo: " << empleado.getLegajo() << endl;
+
+            if (empleado.getIdActividadPrincipal() == 0)
             {
-                cout << " Actividad: Gerente" << endl;
+                cout << setw(18) << " Actividad: " << "Gerente" << endl;
             }
             else
             {
                 actividad.buscarActividad(empleado.getIdActividadPrincipal());
+            }
+
+            cout << "+----------------------------------+" << endl;
+            contador++;
+            if(contador%5 == 0)
+            {
+                cout << endl;
+                cout << "Siguiente pagina..." << endl;
+                system("pause");
+                system("cls");
             }
 
         }
@@ -131,9 +158,9 @@ void ServicioEmpleado::agregarEmpleado(int idRol)
     if(idRol == 1)
     {
         system("cls");
-        cout << "+---------------------+" << endl;
-        cout << "|      ACTIVIDAD:     |" << endl;
-        cout << "+---------------------+" << endl;
+        cout << "+---------------------------------+" << endl;
+        cout << "|            ACTIVIDAD            |" << endl;
+        cout << "+---------------------------------+" << endl;
         cout << endl;
         cout << " 1 - Ver Actividades disponibles " << endl;
         cout << " 2 - Agregar nueva Actividad " << endl;
@@ -535,14 +562,7 @@ int ServicioEmpleado::obternerUltimoId()
 {
     ServicioSocio socio;
 
-    if(socio.obternerUltimoIdSocio() > obternerUltimoIdEmpleado())
-    {
-        return socio.obternerUltimoIdSocio()+1;
-    }
-    else
-    {
-        return obternerUltimoIdEmpleado()+1;
-    }
+    return socio.autoGenerarId();
 }
 
 int ServicioEmpleado::obternerUltimoLegajo()
@@ -709,18 +729,21 @@ int ServicioEmpleado::elegirEntrenador()
 
     *vectPosiciones = _archivoEmpleado.leerRegistrosEmpleadosActivos(cantidad, vectPosiciones, cantEntrenadores, 1);
 
+    cout << "+--------------------------------+" << endl;
+    cout << "|          ENTRENADORES          |"  << endl;
+    cout << "+--------------------------------+" << endl;
+
     for(int i=0; i<cantEntrenadores; i++)
     {
         entrenador = _archivoEmpleado.leerRegistroEmpleado(vectPosiciones[i]);
 
-        cout << "--------------------" << endl;
-        cout << " ENTRENADOR: " << i+1 << endl;
-        cout << "--------------------" << endl;
-        cout << " Nombre: " << entrenador.getNombre() << endl;
-        cout << " Apellido: " << entrenador.getApellido() << endl;
+
+        cout << " " << i+1 << ". Nombre: " << entrenador.getNombre() << endl;
+        cout << "    Apellido: " << entrenador.getApellido() << endl;
         actividad.buscarActividad(entrenador.getIdActividadPrincipal());
 
         vectorID[i] = entrenador.getIdUsuario();
+        cout << "+--------------------------------+" << endl;
     }
 
     cout << endl;

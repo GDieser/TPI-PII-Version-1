@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "ServicioRutina.h"
+#include "ServicioEjercicio.h"
 #include "Rutina.h"
 
 using namespace std;
@@ -31,10 +32,9 @@ void ServicioRutina::verRutinas(int idEntrenador)
 
         *vectPos = _archivoRutina.leerRegistrosRutinasPorEntrenador(cantidad, vectPos, tam, idEntrenador);
 
-        cout << "+------------------------------------------+" << endl;
-        cout << "|                MIS RUTINAS               |" << endl;
-        cout << "+------------------------------------------+" << endl;
-        cout << endl;
+        cout << "+-------------------------------------------------------------------------------------------------------+" << endl;
+        cout << "|                                             MIS RUTINAS                                               |" << endl;
+        cout << "+-------------------------------------------------------------------------------------------------------+" << endl;
 
         for(int i=0; i<tam; i++)
         {
@@ -44,7 +44,7 @@ void ServicioRutina::verRutinas(int idEntrenador)
             cout << "     ID                 : #" << rutina.getIdRutina() << endl;
             cout << "     Descripcion        : " << rutina.getDescripcion() << endl;
             cout << "     Frecuencia Semanal : " << rutina.getFrecuenciaSemanal()<< endl;
-            cout << "+------------------------------------------+" << endl;
+            cout << "+-------------------------------------------------------------------------------------------------------+" << endl;
             indice++;
         }
 
@@ -65,6 +65,7 @@ void ServicioRutina::verDetallesDeRutina()
     int idRutina;
 
     DetalleRutina detalle;
+    ServicioEjercicio ejercicio;
 
     cout << "+--------------------------------------+" << endl;
     cout << "|          DETALLES DE RUTINA          |" << endl;
@@ -89,13 +90,18 @@ void ServicioRutina::verDetallesDeRutina()
         {
             if(idEjercicios[i] != 0)
             {
-                cout << " ID Ejercicio : #" << idEjercicios[i] << endl;
+                ejercicio.verEjercicio(idEjercicios[i]);
+                //cout << " ID Ejercicio : #" << idEjercicios[i] << endl;
                 cout << " Repeticiones : " << repeticiones[i] << endl;
+                if(peso[i] != 0)
+                {
+                    cout << " Peso         : " << peso[i] << endl;
+                }
+                cout << "+--------------------------------------+" << endl;
             }
-            if(peso[i] != 0)
-            {
-                cout << " Peso         : " << peso[i] << endl;
-            }
+
+
+
         }
     }
     else
@@ -256,10 +262,9 @@ void ServicioRutina::verRutinaAsignada(int idRutina)
     rutina = _archivoRutina.leerRegistroRutina(pos);
 
 
-    cout << "+--------------------------------------------+" << endl;
-    cout << "|               RUTINA ASIGNADA              |" << endl;
-    cout << "+--------------------------------------------+" << endl;
-    cout << endl;
+    cout << "+-------------------------------------------------------------------------------------------------------+" << endl;
+    cout << "|                                           RUTINA ASIGNADA                                             |" << endl;
+    cout << "+-------------------------------------------------------------------------------------------------------+" << endl;
 
     if(pos != -1)
     {
@@ -269,7 +274,7 @@ void ServicioRutina::verRutinaAsignada(int idRutina)
         cout << " ID                 : #" << rutina.getIdRutina() << endl;
         cout << " Descripcion        : " << rutina.getDescripcion() << endl;
         cout << " Frecuencia Semanal : " << rutina.getFrecuenciaSemanal()<< endl;
-        cout << "+--------------------------------------------+" << endl;
+        cout << "+-------------------------------------------------------------------------------------------------------+" << endl;
     }
     else
     {
@@ -285,9 +290,9 @@ void ServicioRutina::buscarRutina()
     Rutina rutina;
 
     system("cls");
-    cout << "+------------------------------------------+" << endl;
-    cout << "|               BUSCAR RUTINA              |" << endl;
-    cout << "+------------------------------------------+" << endl;
+    cout << "+-------------------------------------------------------------------------------------------------------+" << endl;
+    cout << "|                                            BUSCAR RUTINA                                              |" << endl;
+    cout << "+-------------------------------------------------------------------------------------------------------+" << endl;
     cout << endl;
     cout << " Ingrese ID de rutina: ";
     cin >> idRutina;
@@ -298,17 +303,11 @@ void ServicioRutina::buscarRutina()
     {
         rutina = _archivoRutina.leerRegistroRutina(pos);
 
-        system("cls");
-        cout << "+------------------------------------------+" << endl;
-        cout << "|               BUSCAR RUTINA              |" << endl;
-        cout << "+------------------------------------------+" << endl;
-        cout << endl;
-
         cout << " Nombre             : " << rutina.getNombreRutina() << endl;
         cout << " ID                 : #" << rutina.getIdRutina() << endl;
         cout << " Descripcion        : " << rutina.getDescripcion() << endl;
         cout << " Frecuencia Semanal : " << rutina.getFrecuenciaSemanal()<< endl;
-        cout << "+------------------------------------------+" << endl;
+        cout << "+-------------------------------------------------------------------------------------------------------+" << endl;
     }
     else
     {
@@ -349,10 +348,9 @@ int ServicioRutina::elegirRutina(int idEntrenador)
 
     *vectRutinas = _archivoRutina.leerRegistrosRutinasPorEntrenador(cantidad, vectRutinas, cantRutina, idEntrenador);
 
-    cout << "+--------------------------------------+" << endl;
-    cout << "|            ELEGIR RUTINA             |" << endl;
-    cout << "+--------------------------------------+" << endl;
-    cout << endl;
+    cout << "+-------------------------------------------------------------------------------------------------------+" << endl;
+    cout << "|                                            ELEGIR RUTINA                                              |" << endl;
+    cout << "+-------------------------------------------------------------------------------------------------------+" << endl;
 
     for(int i=0; i<cantRutina; i++)
     {
@@ -361,7 +359,7 @@ int ServicioRutina::elegirRutina(int idEntrenador)
         cout << " -" << indice << ". Nombre             : " << rutina.getNombreRutina() << endl;
         cout << "     Descripcion        : " << rutina.getDescripcion() << endl;
         cout << "     Frecuencia Semanal : " << rutina.getFrecuenciaSemanal()<< endl;
-        cout << "+--------------------------------------+" << endl;
+        cout << "+-------------------------------------------------------------------------------------------------------+" << endl;
         indice++;
     }
 
@@ -380,15 +378,148 @@ int ServicioRutina::elegirRutina(int idEntrenador)
     return idRutina;
 }
 
-void ServicioRutina::asignarRutina()
+void ServicioRutina::mostrarOpcionesModificarRutina(int idEntrenador)
 {
     system("cls");
+
+    int idRutina, opcion;
+    Rutina rutina;
+    DetalleRutina detalle;
+
+    cout << "Ingrese ID rutina: ";
+    cin >> idRutina;
+
+    int pos = _archivoRutina.buscarRutina(idRutina);
+
+    system("cls");
+    if(pos != -1)
+    {
+        rutina = _archivoRutina.leerRegistroRutina(pos);
+        detalle = _archivoDetallesRutina.leerRegistroDetalleRutina(pos);
+
+        cout << "+----------------------------------------------+" << endl;
+        cout << "|               MODIFICAR RUTINA               |" << endl;
+        cout << "+----------------------------------------------+" << endl;
+        cout << endl;
+
+        if(rutina.getIdEntrenador() == idEntrenador)
+        {
+            cout << " Rutina: " << rutina.getNombreRutina() << endl;
+            cout << endl;
+            cout << " 1 - Cambiar Datos de la Rutina " << endl;
+            cout << " 2 - Cambiar Detalles de la Rutina " << endl;
+            cout << " 3 - Salir " << endl;
+            cout << endl;
+            cout << " Su seleccion: ";
+            cin >> opcion;
+
+            switch(opcion)
+            {
+            case 1:
+                rutina = modificarRutina(rutina);
+                break;
+            case 2:
+                detalle = modificarDetalleRutina(detalle);
+                break;
+            case 3:
+                return;
+                system("pause");
+                break;
+            default:
+                cout << " Opcion incorrecta" << endl;
+                return;
+                system("pause");
+                break;
+            }
+
+            cout << endl;
+            cout << " Confirmar cambios: 1 - SI | 2 - NO " << endl;
+            cout << " Su eleccion: ";
+            cin >> opcion;
+
+            if(opcion == 1)
+            {
+                if(_archivoRutina.guardarRutina(rutina, pos) && _archivoDetallesRutina.guardarDetalleRutina(detalle, pos))
+                {
+                    system("cls");
+                    cout << " Cambios realizados con exito" << endl;
+                }
+                else
+                {
+                    cout << " Error inesaperado, consulte con soporte" << endl;
+                }
+            }
+
+        }
+        else
+        {
+            cout << "La Rutina no puede ser modificada, rutina creada por otro entrenador." << endl;
+        }
+    }
+    else
+    {
+        cout << "Error, ID no encontrado" << endl;
+    }
 
 
     system("pause");
 }
 
-void ServicioRutina::modificarRutina(int idEntrenador)
+Rutina ServicioRutina::modificarRutina(Rutina rutina)
+{
+    string nombre, descripcion;
+    int frecuencia;
+
+    cout << endl;
+    cout << " Nombre de la rutina      : ";
+    cin.ignore();
+    getline(cin, nombre);
+    cout <<  " Descripcion de la rutina : ";
+    getline(cin, descripcion);
+    cout << " Frecuencia semanal       : ";
+    cin >> frecuencia;
+
+    rutina.setNombreRutina(nombre);
+    rutina.setDescripcion(descripcion);
+    rutina.setFrecuenciaSemanal(frecuencia);
+
+    return rutina;
+}
+
+DetalleRutina ServicioRutina::modificarDetalleRutina(DetalleRutina detalle)
+{
+    int opcion = 1, contador = 0;
+    int idEjercicio[10]= {}, repeticiones[10]= {};
+    float peso[10]= {};
+
+    while(contador < 10 && opcion != 0)
+    {
+        cout << " - Ejercicios cargados     : " << contador << endl;
+        cout << endl;
+        cout << " - Ingrese ID de Ejercicio : ";
+        cin >> idEjercicio[contador];
+        cout << " - Repeticiones            : ";
+        cin >> repeticiones[contador];
+        cout << " - Peso (0 si no aplica)   : ";
+        cin >> peso[contador];
+        cout << endl;
+        cout << " Agregar otro ejercicio a la rutina? (Maximo 10) " << endl;
+        cout << "                    1-SI | 0-NO " << endl;
+        cout << endl;
+        cout << " Su eleccion: ";
+        cin >> opcion;
+
+        contador++;
+    }
+
+    detalle.setIdEjercicios(idEjercicio);
+    detalle.setRepeticiones(repeticiones);
+    detalle.setPeso(peso);
+
+    return detalle;
+}
+
+void ServicioRutina::asignarRutina()
 {
     system("cls");
 

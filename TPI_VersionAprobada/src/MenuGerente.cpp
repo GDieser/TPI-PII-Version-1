@@ -18,16 +18,19 @@ void MenuGerente::mostrarMenuGerente()
     do
     {
         system("cls");
-        cout << " GERENTE: #" << _usuario.getIdUsuario()  << endl;
-        cout << "----------------------------------------" << endl;
-        cout << " 1 - GESTIONAR SOCIOS " << endl;
-        cout << " 2 - GESTIONAR ENTRENADORES " << endl;
-        cout << " 3 - GESTIONAR GERENTE" << endl;
-        cout << " 4 - GESTIONAR PAGOS " << endl;
-        cout << " 5 - GESTIONAR RECLAMOS " << endl;
-        cout << " 6 - VER ESTADISTICAS" << endl;
-        cout << "----------------------------------------" << endl;
-        cout << " 0 - SALIR " << endl;
+        cout << "  GERENTE: #" << _usuario.getIdUsuario()  << endl;
+        cout << "+--------------------------------------+" << endl;
+        cout << "|             MENU GERENTE             |" << endl;
+        cout << "+--------------------------------------+" << endl;
+        cout << "| 1 - GESTIONAR SOCIOS                 |" << endl;
+        cout << "| 2 - GESTIONAR ENTRENADORES           |" << endl;
+        cout << "| 3 - GESTIONAR GERENTE                |" << endl;
+        cout << "| 4 - GESTIONAR PAGOS                  |" << endl;
+        cout << "| 5 - GESTIONAR RECLAMOS               |" << endl;
+        cout << "| 6 - VER ESTADISTICAS                 |" << endl;
+        cout << "+--------------------------------------+" << endl;
+        cout << "| 0 - SALIR                            |" << endl;
+        cout << "+--------------------------------------+" << endl;
         cout << endl;
         cout << " Su seleccion: ";
         cin >> opcion;
@@ -77,38 +80,39 @@ void MenuGerente::gestionarSocios()
     do
     {
         system("cls");
-        cout << " SOCIOS" << endl;
-        cout << "----------------------------------------" << endl;
-        cout << " 1 - VER LISTA DE SOCIOS ACTIVOS " << endl;
-        cout << " 2 - AGREGAR NUEVO SOCIO " << endl;
-        cout << " 3 - MODIFICAR SOCIO " << endl;
-        cout << " 4 - BUSCAR SOCIO " << endl;
-        cout << " 5 - RESTAURAR SOCIO " << endl;
-        cout << " 6 - ASIGNAR ENTRENADOR " << endl;
-        cout << "----------------------------------------" << endl;
-        cout << " 0 - VOLVER ATRAS " << endl;
+        cout << "+----------------------------------------+" << endl;
+        cout << "|                SOCIOS                  |" << endl;
+        cout << "+----------------------------------------+" << endl;
+        cout << "| 1 - VER LISTA DE SOCIOS ACTIVOS        |" << endl;
+        cout << "| 2 - AGREGAR NUEVO SOCIO                |" << endl;
+        cout << "| 3 - MODIFICAR SOCIO                    |" << endl;
+        cout << "| 4 - BUSCAR SOCIO                       |" << endl;
+        cout << "| 5 - RESTAURAR SOCIO                    |" << endl;///Dentro de modificar?
+        cout << "| 6 - ASIGNAR ENTRENADOR                 |" << endl;
+        cout << "+----------------------------------------+" << endl;
+        cout << "| 0 - VOLVER ATRAS                       |" << endl;
+        cout << "+----------------------------------------+" << endl;
         cout << endl;
         cout << " Su seleccion: ";
         cin >> opcion;
-
 
         system("cls");
         switch(opcion)
         {
         case 1:
-
+            socio.verSocios();
             break;
         case 2:
-
+            socio.agregarSocio();
             break;
         case 3:
-
+            ///socio.modificarSocio(); //Deberia pedir el ID dentro
             break;
         case 4:
-
+            ///socio.buscarSocioId(); //Deberia pedir el ID dentro
             break;
         case 5:
-
+            ///Dentro de modificar?
             break;
         case 6:
 
@@ -133,16 +137,18 @@ void MenuGerente::gestionarEntrenadores()
     do
     {
         system("cls");
-        cout << " ENTRENADORES" << endl;
-        cout << "--------------------------------------------" << endl;
-        cout << " 1 - VER LISTA DE ENTRENADORES ACTIVOS " << endl;
-        cout << " 2 - AGREGAR NUEVO ENTRENADOR " << endl;
-        cout << " 3 - MODIFICAR ENTRENADOR " << endl;
-        cout << " 4 - BUSCAR ENTRENADOR " << endl;
-        cout << " 5 - RESTAURAR ENTRENADOR " << endl;
-        cout << " 6 - ASIGNAR HORARIOS " << endl;
-        cout << "--------------------------------------------" << endl;
-        cout << " 0 - VOLVER ATRAS " << endl;
+        cout << "+--------------------------------------------+" << endl;
+        cout << "|                ENTRENADORES                |" << endl;
+        cout << "+--------------------------------------------+" << endl;
+        cout << "| 1 - VER LISTA DE ENTRENADORES ACTIVOS      |" << endl;
+        cout << "| 2 - AGREGAR NUEVO ENTRENADOR               |" << endl;
+        cout << "| 3 - MODIFICAR ENTRENADOR                   |" << endl;
+        cout << "| 4 - BUSCAR ENTRENADOR                      |" << endl;
+        cout << "| 5 - RESTAURAR ENTRENADOR                   |" << endl;
+        cout << "| 6 - ASIGNAR HORARIOS                       |" << endl;
+        cout << "+--------------------------------------------+" << endl;
+        cout << "| 0 - VOLVER ATRAS                           |" << endl;
+        cout << "+--------------------------------------------+" << endl;
         cout << endl;
         cout << " Su seleccion: ";
         cin >> opcion;
@@ -153,8 +159,8 @@ void MenuGerente::gestionarEntrenadores()
         {
         case 1:
             //entrenador.listarEmpleadoPorApellido(1);
-            entrenador.mostrarHorariosDeEntrenadores();
-            //entrenador.verEmpleados(1);
+            //entrenador.mostrarHorariosDeEntrenadores();
+            entrenador.verEmpleados(1);
             break;
         case 2:
             entrenador.agregarEmpleado(1);
@@ -191,16 +197,18 @@ void MenuGerente::gestionarGerentes()
     do
     {
         system("cls");
-        cout << " GERENTES" << endl;
-        cout << "----------------------------------------" << endl;
-        cout << " 1 - VER LISTA DE GERENTES " << endl;
-        cout << " 2 - AGREGAR NUEVO GERENTE " << endl;
-        cout << " 3 - MODIFICAR GERENTE " << endl;
-        cout << " 4 - BUSCAR GERENTE " << endl;
-        cout << " 5 - RESTAURAR GERENTE " << endl;
-        cout << " 6 - CAMBIAR CONTRASENIA " << endl;
-        cout << "----------------------------------------" << endl;
-        cout << " 0 - VOLVER ATRAS " << endl;
+        cout << "+----------------------------------------+" << endl;
+        cout << "|                GERENTES                |" << endl;
+        cout << "+----------------------------------------+" << endl;
+        cout << "| 1 - VER LISTA DE GERENTES              |" << endl;
+        cout << "| 2 - AGREGAR NUEVO GERENTE              |" << endl;
+        cout << "| 3 - MODIFICAR GERENTE                  |" << endl;
+        cout << "| 4 - BUSCAR GERENTE                     |" << endl;
+        cout << "| 5 - RESTAURAR GERENTE                  |" << endl;
+        cout << "| 6 - CAMBIAR CONTRASENIA                |" << endl;
+        cout << "+----------------------------------------+" << endl;
+        cout << "| 0 - VOLVER ATRAS                       |" << endl;
+        cout << "+----------------------------------------+" << endl;
         cout << endl;
         cout << " Su seleccion: ";
         cin >> opcion;
@@ -247,19 +255,20 @@ void MenuGerente::gestionarPagos()
     do
     {
         system("cls");
-        cout << " PAGOS DE SOCIOS " << endl;
-        cout << "------------------------------------" << endl;
-        cout << " 1 - VER LISTA DE PAGOS PENDIENTES" << endl;
-        cout << " 2 - VER LISTA DE PAGOS POR MES" << endl;
-        cout << " 3 - VER LISTA DE PAGOS POR ANIO" << endl;
-        cout << " 4 - VER LISTA POR TIPOS DE PASES " << endl;
-        cout << " 5 - LISTA DE DEUDORES" << endl;
-        cout << "------------------------------------" << endl;
-        cout << " 0 - VOLVER ATRAS " << endl;
+        cout << "+----------------------------------------+" << endl;
+        cout << "|            PAGOS DE SOCIOS             |" << endl;
+        cout << "+----------------------------------------+" << endl;
+        ///cout << "| 1 - VER LISTA DE PAGOS PENDIENTES      |" << endl; /// Capaz volar
+        cout << "| 1 - VER LISTA DE PAGOS POR MES         |" << endl;
+        cout << "| 2 - VER LISTA DE PAGOS POR ANIO        |" << endl;
+        cout << "| 3 - VER LISTA POR TIPOS DE PASES       |" << endl;
+        ///cout << "| 5 - LISTA DE DEUDORES                  |" << endl; /// Capaz volar
+        cout << "+----------------------------------------+" << endl;
+        cout << "| 0 - VOLVER ATRAS                       |" << endl;
+        cout << "+----------------------------------------+" << endl;
         cout << endl;
         cout << " Su seleccion: ";
         cin >> opcion;
-
 
         system("cls");
         switch(opcion)
@@ -300,13 +309,15 @@ void MenuGerente::gestionarReclamos()
     do
     {
         system("cls");
-        cout << " RECLAMOS" << endl;
-        cout << "-------------------------------------------" << endl;
-        cout << " 1 - VER LISTA DE RECLAMOS ACTIVOS" << endl;
-        cout << " 2 - VER LISTA DE RECLAMOS RESUELTOS" << endl;
-        cout << " 3 - MODIFICAR RECLAMO" << endl;
-        cout << "-------------------------------------------" << endl;
-        cout << " 0 - VOLVER ATRAS " << endl;
+        cout << "+-------------------------------------------+" << endl;
+        cout << "|                 RECLAMOS                  |" << endl;
+        cout << "+-------------------------------------------+" << endl;
+        cout << "| 1 - VER LISTA DE RECLAMOS ACTIVOS         |" << endl;
+        cout << "| 2 - VER LISTA DE RECLAMOS RESUELTOS       |" << endl;
+        cout << "| 3 - MODIFICAR RECLAMO                     |" << endl;
+        cout << "+-------------------------------------------+" << endl;
+        cout << "| 0 - VOLVER ATRAS                          |" << endl;
+        cout << "+-------------------------------------------+" << endl;
         cout << endl;
         cout << " Su seleccion: ";
         cin >> opcion;
@@ -316,13 +327,13 @@ void MenuGerente::gestionarReclamos()
         switch(opcion)
         {
         case 1:
-
+            reclamo.mostrarReclamo(false);
             break;
         case 2:
-
+            reclamo.mostrarReclamo(true);
             break;
         case 3:
-
+            reclamo.cambiarEstadoReclamo();
             break;
         case 0:
             break;
@@ -344,12 +355,14 @@ void MenuGerente::verEstadisticas()
     do
     {
         system("cls");
-        cout << " ESTADISTICAS " << endl;
-        cout << "---------------------------------------------" << endl;
-        cout << " 1 - VER ESTADISICAS DE INGRESOS POR ANIO" << endl;
-        cout << " 2 - VER ESTADISTICA DE INGRESOS POR MES" << endl;
-        cout << "---------------------------------------------" << endl;
-        cout << " 0 - VOLVER ATRAS " << endl;
+        cout << "+---------------------------------------------+" << endl;
+        cout << "|                 ESTADISTICAS                |" << endl;
+        cout << "+---------------------------------------------+" << endl;
+        cout << "| 1 - VER ESTADISTICAS DE INGRESOS POR ANIO   |" << endl;
+        cout << "| 2 - VER ESTADISTICA DE INGRESOS POR MES     |" << endl;
+        cout << "+---------------------------------------------+" << endl;
+        cout << "| 0 - VOLVER ATRAS                            |" << endl;
+        cout << "+---------------------------------------------+" << endl;
         cout << endl;
         cout << " Su seleccion: ";
         cin >> opcion;
@@ -359,10 +372,10 @@ void MenuGerente::verEstadisticas()
         switch(opcion)
         {
         case 1:
-
+            pago.verIngresosAnuales();
             break;
         case 2:
-
+            pago.verIngresosMensuales();
             break;
         case 0:
             break;

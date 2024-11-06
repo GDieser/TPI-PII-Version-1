@@ -4,22 +4,19 @@
 
 class ServicioPago
 {
+    private:
+        GestionArchivoPagos _archivoPago;
+
     public:
         ServicioPago();
 
-        ///Ya que pago es solo para socios ahora
-        void verRegistroPagosPorSocio(int idSocio);
-
+        bool verificarUltimoPago(int idSocio);
         void registrarPago(int idSocio, int idMembresia, Fecha periodo);
+        void verPago(int idSocio);
+        void listarTotalPagos();
+        void verPagosPorMes();
+        void verPagosPorAnio();
         void verIngresosAnuales();
         void verIngresosMensuales();
-
-        ///Vamos a necesitar para las listas del informe
-        void verRegistroPagosPorMes();
-        void verRegistroPagosPorAnio();
-
-    private:
-
-        GestionArchivoPagos _archivoPago;
 };
 

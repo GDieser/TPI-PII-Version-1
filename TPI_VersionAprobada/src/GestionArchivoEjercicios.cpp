@@ -61,7 +61,7 @@ int GestionArchivoEjercicios::buscarEjercicio(int idEjercicio)
 
     FILE *pArchivo;
 
-    pArchivo = fopen(_nombreArchivo.c_str(), "rb+");
+    pArchivo = fopen(_nombreArchivo.c_str(), "rb");
 
     if(pArchivo == nullptr)
     {

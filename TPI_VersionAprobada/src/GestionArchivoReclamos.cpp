@@ -4,127 +4,146 @@
 
 using namespace std;
 
-GestionArchivoReclamos::GestionArchivoReclamos()
-{
-
-}
+GestionArchivoReclamos::GestionArchivoReclamos() {}
 
 GestionArchivoReclamos::GestionArchivoReclamos(string nombreArchivo)
 {
     _nombreArchivo = nombreArchivo;
 }
 
-bool GestionArchivoReclamos::guardarReclamo(Reclamo reclamo)
+bool GestionArchivoReclamos::guardarReclamo(const Reclamo& r)
 {
-    bool guardo;
-    FILE *pArchivo;
+    FILE* pfile;
 
-    pArchivo = fopen(_nombreArchivo.c_str(), "ab");
-
-    if(pArchivo == nullptr)
+    pfile = fopen(_nombreArchivo.c_str(), "ab");
+    if (pfile == nullptr)
     {
         return false;
     }
 
-    guardo = fwrite(&reclamo, sizeof(Reclamo), 1, pArchivo);
+    bool result = fwrite(&r, sizeof(Reclamo), 1, pfile) == 1;
+    fclose(pfile);
 
-    fclose(pArchivo);
-
-    return guardo;
+    return result;
 }
 
-bool GestionArchivoReclamos::guardarReclamo(Reclamo reclamo, int posicion)
+Reclamo GestionArchivoReclamos::leerReclamo(int pos)
 {
-    bool guardo;
-    FILE *pArchivo;
+    Reclamo r;
 
-    pArchivo = fopen(_nombreArchivo.c_str(), "rb+");
+    FILE* pfile;
 
-    if(pArchivo == nullptr)
+    pfile = fopen(_nombreArchivo.c_str(), "rb");
+    if (pfile == nullptr)
+    {
+        return r;
+    }
+
+    fseek(pfile, sizeof(Reclamo) * pos, SEEK_SET);
+
+    fread(&r, sizeof(Reclamo), 1, pfile);
+
+    fclose(pfile);
+
+    return r;
+}
+
+int GestionArchivoReclamos::getCantidadReclamos()
+{
+
+    int totalBytes, cantReg;
+    Reclamo r;
+    FILE *pfile;
+    pfile = fopen(_nombreArchivo.c_str(), "rb");
+    if (pfile == nullptr)
+    {
+        return 0;
+    }
+
+    fseek(pfile, 0, SEEK_END);
+
+    totalBytes = ftell(pfile);
+
+    fclose(pfile);
+
+    return cantReg = totalBytes / sizeof(Reclamo);
+
+}
+
+bool GestionArchivoReclamos::leerTodosReclamos(Reclamo r[], int cantReclamos)
+{
+
+    FILE* pfile;
+    pfile = fopen(_nombreArchivo.c_str(), "rb");
+
+    if (pfile == nullptr)
     {
         return false;
     }
 
-    fseek(pArchivo, sizeof(Reclamo) * posicion, SEEK_SET);
+    bool result = fread(&r, sizeof(Reclamo), cantReclamos, pfile) == 1;
 
-    guardo = fwrite(&reclamo, sizeof(Reclamo), 1, pArchivo);
+    fclose(pfile);
 
-    fclose(pArchivo);
-
-    return guardo;
+    return result;
 }
 
-int GestionArchivoReclamos::buscarReclamo(int idReclamo)
+bool GestionArchivoReclamos::modificarReclamo(Reclamo &r, int pos)
 {
-    int posicion = 0;
-    Reclamo reclamo;
 
-    FILE *pArchivo;
+    FILE *pfile;
+    bool result;
 
-    pArchivo = fopen(_nombreArchivo.c_str(), "rb+");
-
-    if(pArchivo == nullptr)
+    pfile = fopen(_nombreArchivo.c_str(), "rb+");
+    if (pfile == nullptr)
     {
-        return -1;
+        return false;
     }
 
-    while(fread(&reclamo, sizeof(Reclamo), 1, pArchivo))
+    fseek(pfile, sizeof(Reclamo) * pos, SEEK_SET);
+
+    result = fwrite(&r, sizeof(Reclamo), 1, pfile) == 1;
+
+    fclose(pfile);
+    return result;
+}
+
+
+///filtros
+int GestionArchivoReclamos::buscarReclamo(int id)
+{
+
+    Reclamo r;
+    int pos = 0;
+
+    FILE *pfile;
+
+    pfile = fopen(_nombreArchivo.c_str(), "rb");
+
+    if (pfile == nullptr)
     {
-        if(reclamo.getIdReclamo() == idReclamo)
+        return 0;
+    }
+
+    while (fread(&r, sizeof(Reclamo), 1, pfile) == 1)
+    {
+        if (r.getIdReclamo() == id)
         {
-            fclose(pArchivo);
-            return posicion;
+            break;
         }
-        posicion++;
+        pos++;
     }
 
-    fclose(pArchivo);
+    fclose(pfile);
 
-    return -1;
-}
-
-Reclamo GestionArchivoReclamos::leerRegistroReclamo(int posicion)
-{
-    Reclamo reclamo;
-
-    FILE *pArchivo;
-
-    pArchivo = fopen(_nombreArchivo.c_str(), "rb");
-
-    if(pArchivo == nullptr)
+    if (r.getIdReclamo() == id)
     {
-        return Reclamo();
+        return pos;
     }
-
-    fseek(pArchivo, sizeof(Reclamo) * posicion, SEEK_SET);
-
-    fread(&reclamo, sizeof(Reclamo), 1, pArchivo);
-
-    fclose(pArchivo);
-
-    return reclamo;
-}
-
-int GestionArchivoReclamos::cantidadRegistrosReclamos()
-{
-    int cantidad;
-
-    FILE *pArchivo;
-
-    pArchivo = fopen(_nombreArchivo.c_str(), "rb");
-
-    if(pArchivo == nullptr)
+    else
     {
         return -1;
     }
-
-    fseek(pArchivo, 0, SEEK_END);
-
-    cantidad = ftell(pArchivo) / sizeof(Reclamo);
-
-    fclose(pArchivo);
-
-    return cantidad;
 }
 
 void GestionArchivoReclamos::leerRegistrosReclamo(int cantidadRegistros, Reclamo *vecReclamo)
@@ -177,7 +196,7 @@ int GestionArchivoReclamos::cantidadDeRegistrosPorUsuario(int cantidadRegistros,
 
 int GestionArchivoReclamos::leerRegistrosPorUsuario(int cantidadRegistros, int vectReclamos[], int tam, int idUsuario)
 {
-    int cont = 0, indice = 0;
+    int indice = 0;
     FILE *pArchivo;
 
     Reclamo reclamo;
@@ -203,3 +222,5 @@ int GestionArchivoReclamos::leerRegistrosPorUsuario(int cantidadRegistros, int v
 
     return *vectReclamos;
 }
+
+

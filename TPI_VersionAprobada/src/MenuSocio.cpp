@@ -9,8 +9,9 @@
 
 using namespace std;
 
-MenuSocio::MenuSocio(UsuarioAutenticado usuario) : _usuario(usuario), _sSocio()
+MenuSocio::MenuSocio(UsuarioAutenticado usuario) : _usuario(usuario)
 {
+    ServicioSocio _sSocio();
 }
 
 void MenuSocio::mostrarSubmenuSocio()

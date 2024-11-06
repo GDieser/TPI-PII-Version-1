@@ -10,6 +10,8 @@ public:
     ServicioSocio();
 
     void verSocios();
+    void verSociosPorApellido();
+    void verSociosPorDni();
     void agregarSocio();
     void modificarSocio(int idSocio);
     void verEntrenadorAsignado(int idSocio);

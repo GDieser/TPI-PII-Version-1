@@ -355,6 +355,80 @@ void ServicioSocio::verMembresia(int idUsuario)
     system("cls");
 }
 
+void ServicioSocio::verSociosPorApellido()
+{
+    Socio* socios;
+    int cantReg = _archivoSocio.cantidadRegistrosSocios();
+
+    socios = new Socio[cantReg];
+    if (socios == nullptr){
+        cout << "Error al leer el archivo de socios..." << endl;
+        return;
+    }
+    cout << string(78, '-') << endl;
+    cout << "Socios ordenados por apellido: " << endl;
+    cout << string(78, '-') << endl;
+    for(int i=0; i<cantReg; i++)
+    {
+        socios[i] = _archivoSocio.leerRegistroSocio(i);
+    }
+    Socio aux;
+
+    ///Ordenamiento por intercambio o SWAP, similar al burbujeo, sacado del libro pag 428
+    for(i=0; i<tam-1; i++)
+    {
+        for(int j=i+1; j<tam; j++)
+        {
+            if(strcmp(socios[i].getApellido().c_str(), socios[j].getApellido().c_str()) > 0)
+            {
+                aux = socios[i];
+                socios[i] = socios[j];
+                socios[j] = aux;
+            }
+        }
+    }
+    mostrarSocios(socios, cantReg);
+    delete[] socios;
+
+}
+
+void ServicioSocio::verSociosPorDni()
+{
+    Socio* socios;
+    int cantReg = _archivoSocio.cantidadRegistrosSocios();
+
+    socios = new Socio[cantReg];
+    if (socios == nullptr){
+        cout << "Error al leer el archivo de socios..." << endl;
+        return;
+    }
+    cout << string(78, '-') << endl;
+    cout << "Socios ordenados por DNI: " << endl;
+    cout << string(78, '-') << endl;
+    for(int i=0; i<cantReg; i++)
+    {
+        socios[i] = _archivoSocio.leerRegistroSocio(i);
+    }
+    Socio aux;
+
+    ///Ordenamiento por intercambio o SWAP, similar al burbujeo, sacado del libro pag 428
+    for(i=0; i<tam-1; i++)
+    {
+        for(int j=i+1; j<tam; j++)
+        {
+            if(socios[i].getDni() > socios[j].getDni())
+            {
+                aux = socios[i];
+                socios[i] = socios[j];
+                socios[j] = aux;
+            }
+        }
+    }
+    mostrarSocios(socios, cantReg);
+    delete[] socios;
+
+}
+
 void ServicioSocio::modificarContrasenia(int idSocio)
 {
     int pos = _archivoSocio.buscarSocio(idSocio);
@@ -416,4 +490,36 @@ void ServicioSocio::mostrarFechaVencimiento(Fecha fecha)
 
     Fecha fechaVencimiento = Fecha(dia, mes, anio);
     cout << "Su próxima cuota vence el día: " << fechaVencimiento.toString() << endl;
+}
+
+void listarSocios(Socio socios[], int cantReg)
+{
+    Socio socio;
+
+    cout << string(78, '-') << endl;
+    cout << left << setw(6) << "ID" << "|"
+         << setw(15) << "Apellido" << "|"
+         << setw(15) << "Nombre" << "|"
+         << setw(12) << "Fecha Ing." << "|"
+         << setw(10) << "Membresia" << "|"
+         << setw(14) << "Estado" << endl;
+    cout << string(78, '-') << endl;
+
+    for (int i = 0; i < cantReg; i++)
+    {
+        socio = socios[i];
+
+        cout << left << setw(6) << socio.getIdUsuario() << "|"
+             << setw(15) << socio.getApellido() << "|"
+             << setw(15) << socio.getNombre() << "|"
+             << setw(12) << socio.getFechaDeIngreso().toString() << "|"
+             << setw(10) << membresiaToStr(socio.getMembresia()).c_str() << "|"
+             << setw(14) << (socio.getEstado() ? "Habilitado" : "Deshabilitado") << endl;
+        if ((i+24)%25 == 0 && i != 1)
+        {
+            system("pause");
+        }
+    }
+    cout << string(78, '-') << endl;
+    system("pause");
 }

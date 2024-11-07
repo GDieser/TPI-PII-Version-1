@@ -91,7 +91,9 @@ void ServicioSocio::verSocios()
         cout << "Desea generar ademas un CSV? : " << endl;
         cout << "1. Si" << endl;
         cout << "2. No" << endl;
+        cin >> opc;
         system("pause");
+        system("cls");
     } while(opc < 1 || opc > 2);
 
     if (opc == 1){

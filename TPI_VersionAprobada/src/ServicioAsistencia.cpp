@@ -6,7 +6,6 @@
 
 using namespace std;
 
-
 ServicioAsistencia::ServicioAsistencia()
 {
     _archivoAsitencia = GestionArchivoAsistencias("archivoAsistencias.dat");

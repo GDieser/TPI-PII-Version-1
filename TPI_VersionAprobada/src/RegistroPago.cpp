@@ -7,7 +7,7 @@ using namespace std;
 
 RegistroPago::RegistroPago()
 {
-    //ctor
+
 }
 
 RegistroPago::RegistroPago(int idUsuario, float monto, Fecha periodo, Fecha fechaPago)

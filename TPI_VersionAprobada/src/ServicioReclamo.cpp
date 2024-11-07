@@ -1,4 +1,5 @@
 #include <iostream>
+
 #include "ServicioReclamo.h"
 #include "Reclamo.h"
 #include "Fecha.h"
@@ -101,6 +102,11 @@ void ServicioReclamo::verReclamosUsuario(int idUsuario)
 
     vectReclamos = new int[tam];
 
+    if(vectReclamos == nullptr)
+    {
+        return;
+    }
+
     *vectReclamos = _archivoReclamos.leerRegistrosPorUsuario(cantidad, vectReclamos, tam, idUsuario);
 
     cout << "+-------------------------------------------+" << endl;
@@ -126,6 +132,7 @@ void ServicioReclamo::verReclamosUsuario(int idUsuario)
     }
 
     delete[]vectReclamos;
+
     system("pause");
 }
 

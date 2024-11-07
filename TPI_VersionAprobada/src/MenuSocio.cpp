@@ -5,7 +5,6 @@
 #include "ServicioReclamo.h"
 #include "ServicioAsistencia.h"
 #include "ServicioEmpleado.h"
-//#include "GestionArchivoSocios.h"
 #include "ServicioRutina.h"
 
 using namespace std;
@@ -330,7 +329,6 @@ void MenuSocio::presentarReclamo()
         {
         case 1:
             sr.cargarReclamo(_usuario.getIdUsuario());
-            //system("pause");
             break;
         case 2:
             sr.verReclamosUsuario(_usuario.getIdUsuario());

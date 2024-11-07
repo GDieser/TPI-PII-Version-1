@@ -6,7 +6,7 @@ using namespace std;
 
 DetalleRutina::DetalleRutina()
 {
-    //ctor
+
 }
 
 DetalleRutina::DetalleRutina(int *idEjercicios, int idRutina, int *repeticiones,  float *peso)

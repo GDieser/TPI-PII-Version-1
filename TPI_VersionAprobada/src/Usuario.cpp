@@ -7,7 +7,7 @@ using namespace std;
 
 Usuario::Usuario()
 {
-    //ctor
+
 }
 
 Usuario::Usuario(string nombre, string apellido, int dni, int idUsuario, Fecha fechaNacimiento, Fecha fechaIngreso, string contrasenia, bool estado, int idRol)

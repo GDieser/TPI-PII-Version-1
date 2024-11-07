@@ -7,7 +7,7 @@ using namespace std;
 
 Socio::Socio()
 {
-    //ctor
+
 }
 
 Socio::Socio(string nombre, string apellido, int dni, int idUsuario, Fecha fechaNacimiento, Fecha fechaIngreso, string contrasenia, bool estado,

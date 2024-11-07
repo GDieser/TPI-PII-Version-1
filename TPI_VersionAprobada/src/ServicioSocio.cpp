@@ -98,12 +98,16 @@ void ServicioSocio::verSocios()
         cout << "1. Si" << endl;
         cout << "2. No" << endl;
         cin >> opc;
-        system("pause");
         system("cls");
     } while(opc < 1 || opc > 2);
 
     if (opc == 1){
         socios = new Socio[cantReg];
+
+        if(socios == nullptr)
+        {
+            return;
+        }
     }
 
     cout << string(78, '-') << endl;
@@ -131,6 +135,7 @@ void ServicioSocio::verSocios()
         if ((i+24)%25 == 0 && i != 1)
         {
             system("pause");
+            system("cls");
         }
     }
     cout << string(78, '-') << endl;
@@ -730,10 +735,6 @@ void ServicioSocio::mostrarFechaVencimiento(Fecha fechaIngreso, int idSocio)
     }
     else
     {
-        /*cout << "+---------------------------------------------+" << endl;
-        cout << "| Cuota vencida el dia: " << fechaIngreso.toString() << "           |" << endl;
-        cout << "+---------------------------------------------+" << endl;*/
-
         cout << "+-----------------------------------------------------------+" << endl;
         cout << "| Cuota vencida, debe realizar el pago para activar su pase |" << endl;
         cout << "+-----------------------------------------------------------+" << endl;
@@ -742,27 +743,6 @@ void ServicioSocio::mostrarFechaVencimiento(Fecha fechaIngreso, int idSocio)
 
     system("pause");
     return;
-
-    /*Fecha hoy = Fecha();
-    int dia = fecha.getDia();
-    int mes = fecha.getMes();
-    int anio = fecha.getAnio();
-
-    if (hoy.getDia() > dia)
-    {
-        mes++;
-    }
-
-    if (mes > 12)
-    {
-        mes = 1;
-        anio++;
-    }
-
-    Fecha fechaVencimiento = Fecha(dia, mes, anio);
-
-    */
-
 }
 
 void ServicioSocio::listarSocios(Socio socios[], int cantReg)
@@ -797,8 +777,6 @@ void ServicioSocio::listarSocios(Socio socios[], int cantReg)
     cout << string(78, '-') << endl;
     system("pause");
 }
-
-///--------------------------------------------------
 
 bool ServicioSocio::consultarEstadoDeSocio(int idSocio)
 {

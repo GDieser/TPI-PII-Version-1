@@ -8,7 +8,7 @@ using namespace std;
 
 Rutina::Rutina()
 {
-    //ctor
+
 }
 
 Rutina::Rutina(int idRutina, int frecuenciaSemanal, int idEntrenador, string nombreRutina, string descripcion)

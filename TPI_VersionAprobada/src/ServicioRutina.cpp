@@ -92,7 +92,6 @@ void ServicioRutina::verDetallesDeRutina()
             if(idEjercicios[i] != 0)
             {
                 ejercicio.verEjercicio(idEjercicios[i]);
-                //cout << " ID Ejercicio : #" << idEjercicios[i] << endl;
                 cout << " Repeticiones : " << repeticiones[i] << endl;
                 if(peso[i] != 0)
                 {

@@ -54,9 +54,6 @@ void ServicioEjercicio::verEjercicio(int IdEjercicio)
 
     cout << " ID           : #" << ejercicio.getIdEjercicio() << endl;
     cout << " Nombre       : " << ejercicio.getNombreEjercicio() << endl;
-    //cout << "   Descripcion : " << ejercicio.getDescripcion() << endl;
-
-
 }
 
 void ServicioEjercicio::agregarEjercicio()

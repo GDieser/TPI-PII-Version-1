@@ -187,6 +187,10 @@ void ServicioPago::listarTotalPagos()
 
     int cantPagos = _archivoPago.getCantidadPagos();
     vPagos = new RegistroPago[cantPagos];
+    if(vPagos == nullptr)
+    {
+        return;
+    }
 
     if (cantPagos > 0)
     {
@@ -207,6 +211,8 @@ void ServicioPago::listarTotalPagos()
         cout << "|  No se registran pagos  |" << endl;
         cout << "+-------------------------+" << endl;
     }
+
+    delete []vPagos;
 
     system("pause");
 }
@@ -464,9 +470,6 @@ void ServicioPago::verIngresosMensuales()
 
     system("pause");
 }
-
-
-///Extras
 
 int ServicioPago::cantidadDeDiasDelUltimoPago(int idSocio)
 {

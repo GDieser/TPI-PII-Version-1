@@ -6,7 +6,7 @@ using namespace std;
 
 RegistroAsistencia::RegistroAsistencia()
 {
-    //ctor
+
 }
 
 RegistroAsistencia::RegistroAsistencia(int idSocio, Fecha fecha)

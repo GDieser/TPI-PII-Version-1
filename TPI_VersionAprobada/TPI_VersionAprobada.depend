@@ -878,9 +878,12 @@
 	<cstring>
 	"UsuarioAutenticado.h"
 
-1730033967 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\main.cpp
+1730428208 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\main.cpp
 	<iostream>
 	"MenuPrincipal.h"
+	"Fecha.h"
+	"GestionArchivoEmpleados.h"
+	"ServicioActividad.h"
 
 1730034011 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\menuprincipal.h
 	"usuarioAutenticado.h"
@@ -888,7 +891,7 @@
 1730034011 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\usuarioautenticado.h
 	"Fecha.h"
 
-1730321528 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\fecha.h
+1731004826 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\fecha.h
 
 1729946108 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\actividad.cpp
 	<iostream>
@@ -897,7 +900,7 @@
 
 1729946108 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\actividad.h
 
-1730034011 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\autenticador.cpp
+1731004826 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\autenticador.cpp
 	<iostream>
 	<cstring>
 	"autenticador.h"
@@ -912,13 +915,13 @@
 1729946108 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\usuario.h
 	"Fecha.h"
 
-1730047290 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\gestionarchivoempleados.h
+1731004826 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\gestionarchivoempleados.h
 	"Empleado.h"
 
 1730034011 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\empleado.h
 	"Usuario.h"
 
-1729946108 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\gestionarchivosocios.h
+1731004826 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\gestionarchivosocios.h
 	"Socio.h"
 
 1729946108 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\socio.h
@@ -930,30 +933,30 @@
 
 1729946108 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\detallerutina.h
 
-1729946108 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\ejercicio.cpp
+1730428208 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\ejercicio.cpp
 	<iostream>
 	<cstring>
 	"Ejercicio.h"
 
 1729946108 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\ejercicio.h
 
-1730034011 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\empleado.cpp
+1730428111 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\empleado.cpp
 	<iostream>
 	"Empleado.h"
 
-1730321577 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\fecha.cpp
+1731004826 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\fecha.cpp
 	<iostream>
 	<ctime>
 	"Fecha.h"
 
-1729946108 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\gestionarchivoactividades.cpp
+1731004826 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\gestionarchivoactividades.cpp
 	<iostream>
 	"GestionArchivoActividades.h"
 
 1729946108 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\gestionarchivoactividades.h
 	"Actividad.h"
 
-1729946108 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\gestionarchivoasistencias.cpp
+1731004826 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\gestionarchivoasistencias.cpp
 	<iostream>
 	"GestionArchivoAsistencias.h"
 
@@ -963,45 +966,45 @@
 1729946108 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\registroasistencia.h
 	"Fecha.h"
 
-1729946108 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\gestionarchivodetallerutinas.cpp
+1731004826 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\gestionarchivodetallerutinas.cpp
 	<iostream>
 	"GestionArchivoDetalleRutinas.h"
 
 1729946108 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\gestionarchivodetallerutinas.h
 	"DetalleRutina.h"
 
-1729946108 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\gestionarchivoejercicios.cpp
+1731004826 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\gestionarchivoejercicios.cpp
 	<iostream>
 	"GestionArchivoEjercicios.h"
 
 1729946108 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\gestionarchivoejercicios.h
 	"Ejercicio.h"
 
-1729946108 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\gestionarchivoempleados.cpp
+1731004826 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\gestionarchivoempleados.cpp
 	<iostream>
 	"GestionArchivoEmpleados.h"
 
-1729946108 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\gestionarchivopagos.cpp
+1731004826 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\gestionarchivopagos.cpp
 	<iostream>
 	"GestionArchivoPagos.h"
 
-1729946108 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\gestionarchivopagos.h
+1731004826 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\gestionarchivopagos.h
 	"RegistroPago.h"
 
 1729946108 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\registropago.h
 	"Fecha.h"
 
-1729946108 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\gestionarchivoreclamos.cpp
+1731004826 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\gestionarchivoreclamos.cpp
 	<iostream>
 	"GestionArchivoReclamos.h"
 
-1729946108 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\gestionarchivoreclamos.h
+1731004826 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\gestionarchivoreclamos.h
 	"Reclamo.h"
 
 1729946108 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\reclamo.h
 	"Fecha.h"
 
-1729946108 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\gestionarchivorutinas.cpp
+1731004826 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\gestionarchivorutinas.cpp
 	<iostream>
 	"GestionArchivoRutinas.h"
 
@@ -1010,11 +1013,11 @@
 
 1729946108 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\rutina.h
 
-1729946108 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\gestionarchivosocios.cpp
+1731004826 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\gestionarchivosocios.cpp
 	<iostream>
 	"GestionArchivoSocios.h"
 
-1730034011 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\menuentrenador.cpp
+1731004826 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\menuentrenador.cpp
 	<iostream>
 	"MenuEntrenador.h"
 	"ServicioEmpleado.h"
@@ -1025,21 +1028,22 @@
 1730034011 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\menuentrenador.h
 	"MenuPrincipal.h"
 
-1729946108 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\servicioempleado.h
+1730428208 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\servicioempleado.h
 	"GestionArchivoEmpleados.h"
+	"Empleado.h"
 
-1729946108 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\servicioreclamo.h
+1731004826 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\servicioreclamo.h
 	"GestionArchivoReclamos.h"
 
-1729946108 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\servicioejercicio.h
+1731004826 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\servicioejercicio.h
 	"GestionArchivoEjercicios.h"
 
-1729946108 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\serviciorutina.h
+1731004826 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\serviciorutina.h
 	"GestionArchivoDetalleRutinas.h"
 	"GestionArchivoRutinas.h"
 	"DetalleRutina.h"
 
-1730034011 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\menugerente.cpp
+1731004826 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\menugerente.cpp
 	<iostream>
 	"MenuGerente.h"
 	"ServicioSocio.h"
@@ -1050,14 +1054,14 @@
 1730034011 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\menugerente.h
 	"MenuPrincipal.h"
 
-1730411359 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\serviciosocio.h
+1731005459 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\serviciosocio.h
 	"GestionArchivoSocios.h"
 	"GestionArchivoEmpleados.h"
 
-1729946108 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\serviciopago.h
+1731004826 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\serviciopago.h
 	"GestionArchivoPagos.h"
 
-1730046050 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\menuprincipal.cpp
+1731004826 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\menuprincipal.cpp
 	<iostream>
 	"MenuPrincipal.h"
 	"MenuSocio.h"
@@ -1069,14 +1073,14 @@
 	"usuarioAutenticado.h"
 	"autenticador.h"
 
-1730043495 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\menusocio.h
+1730428111 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\menusocio.h
 	"MenuPrincipal.h"
 	"ServicioSocio.h"
 
-1730425802 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\servicioasistencia.h
+1730427723 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\servicioasistencia.h
 	"GestionArchivoAsistencias.h"
 
-1730425597 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\menusocio.cpp
+1731004826 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\menusocio.cpp
 	<iostream>
 	"MenuSocio.h"
 	"ServicioPago.h"
@@ -1098,50 +1102,57 @@
 	<iostream>
 	"RegistroPago.h"
 
-1729946108 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\rutina.cpp
+1730428208 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\rutina.cpp
 	<iostream>
 	<cstring>
 	"Rutina.h"
 
-1729946108 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\servicioactividad.cpp
+1731004826 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\servicioactividad.cpp
 	<iostream>
+	<iomanip>
 	"ServicioActividad.h"
 
 1729946108 c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\include\servicioactividad.h
 	"GestionArchivoActividades.h"
 
-1730425510 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\servicioasistencia.cpp
+1730427723 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\servicioasistencia.cpp
 	<iostream>
 	<cstring>
 	"ServicioAsistencia.h"
 	"Fecha.h"
 	"RegistroAsistencia.h"
 
-1730033967 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\servicioejercicio.cpp
+1731004826 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\servicioejercicio.cpp
 	<iostream>
 	"ServicioEjercicio.h"
 	"Ejercicio.h"
 
-1729946108 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\servicioempleado.cpp
+1731004826 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\servicioempleado.cpp
 	<iostream>
 	<cstring>
+	<iomanip>
 	"ServicioEmpleado.h"
 	"ServicioSocio.h"
 	"ServicioActividad.h"
 
-1729946108 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\serviciopago.cpp
+1731004826 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\serviciopago.cpp
 	<iostream>
 	"ServicioPago.h"
+	"RegistroPago.h"
+	"GestionArchivoPagos.h"
+	"ServicioPago.h"
 
-1730033967 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\servicioreclamo.cpp
+1731004826 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\servicioreclamo.cpp
 	<iostream>
 	"ServicioReclamo.h"
 	"Reclamo.h"
 	"Fecha.h"
+	"ServicioSocio.h"
 
-1730033967 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\serviciorutina.cpp
+1731004826 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\serviciorutina.cpp
 	<iostream>
 	"ServicioRutina.h"
+	"ServicioEjercicio.h"
 	"Rutina.h"
 
 1729946108 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\socio.cpp
@@ -1159,7 +1170,7 @@
 	<cstring>
 	"UsuarioAutenticado.h"
 
-1730424372 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\serviciosocio.cpp
+1731005916 source:c:\darhie\tpi-pii-version-1\tpi-pii-version-1\tpi_versionaprobada\src\serviciosocio.cpp
 	<iostream>
 	<limits>
 	<cstring>

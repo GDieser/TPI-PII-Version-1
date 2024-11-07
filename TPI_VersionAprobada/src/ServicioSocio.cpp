@@ -404,10 +404,72 @@ void ServicioSocio::verSociosPorApellido()
             }
         }
     }
-    listarSocios(socios, cantReg);
+    int opc;
+    do{
+        cout << "Ingrese una opcion:" << endl;
+        cout << string(78, '-') << endl;
+        cout << "1. Ver lista socios" << endl;
+        cout << "2. Guardar CSV" << endl;
+        cin >> opc;
+        system("pause");
+        system("cls");
+
+    }while(opc < 0 & opc > 3);
+
+
+    switch (opc){
+        case 1:{
+            listarSocios(socios, cantReg);
+            break;
+        }
+        case 2: {
+            generarCSV(socios, cantReg);
+            break;
+        }
+    }
+
+
     delete[] socios;
 
 }
+
+void ServicioSocio::generarCSV(Socio socios[], int cantReg)
+{
+
+
+    FILE* archivo = fopen("sociosCSV.txt", "w");
+    if (archivo == nullptr) {
+        perror("Error al abrir el archivo");
+        return;
+    }
+
+    Socio socio;
+    fprintf(archivo, "Nombre,Apellido,DNI,ID Usuario,Fecha Nacimiento,Fecha Ingreso,Estado,ID Rol,ID Membresia,Estado Fisico,ID Rutina,ID Entrenador\n");
+
+    for(int i=0; i < cantReg; i++){
+        socio = socios[i];
+        fprintf(archivo, "%s,%s,%d,%d,%s,%s,%d,%d,%d,%s,%d,%d\n",
+            socio.getNombre().c_str(),
+            socio.getApellido().c_str(),
+            socio.getDni(),
+            socio.getIdUsuario(),
+            socio.getFechaNacimiento().toString().c_str(), // Necesita un método toString() en Fecha
+            socio.getFechaDeIngreso().toString().c_str(),  // Necesita un método toString() en Fecha
+            socio.getEstado(),
+            socio.getIdRol(),
+            socio.getMembresia(),
+            socio.getEstadoFisico(),
+            socio.getIdRutina(),
+            socio.getIdEntrenadorAsignado()
+        );
+
+    }
+    fclose(archivo);
+    cout << "sociosCSV.txt generado satisfactoriamente" << endl;
+    system("pause");
+    system("cls");
+}
+
 
 void ServicioSocio::verSociosPorDni()
 {
@@ -440,7 +502,30 @@ void ServicioSocio::verSociosPorDni()
             }
         }
     }
-    listarSocios(socios, cantReg);
+
+    do{
+        cout << "Ingrese una opcion:" << endl;
+        cout << string(78, '-') << endl;
+        cout << "1. Ver lista socios" << endl;
+        cout << "2. Guardar CSV" << endl;
+        cin >> opc;
+        system("pause");
+        system("cls");
+
+    }while(opc < 0 & opc > 3);
+
+
+    switch (opc){
+        case 1:{
+            listarSocios(socios, cantReg);
+            break;
+        }
+        case 2: {
+            generarCSV(socios, cantReg);
+            break;
+        }
+    }
+
     delete[] socios;
 
 }

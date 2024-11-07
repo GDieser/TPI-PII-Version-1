@@ -31,6 +31,8 @@ public:
 
     void listarSocios(Socio socios[], int cantReg);
 
+    void generarCSV(Socio socios[], int cantReg);
+
 private:
 
     GestionArchivoSocios  _archivoSocio;

@@ -114,6 +114,7 @@ void ServicioSocio::verSocios()
         if ((i+24)%25 == 0 && i != 1)
         {
             system("pause");
+            system("cls");
         }
     }
     cout << string(78, '-') << endl;
@@ -581,9 +582,9 @@ void ServicioSocio::modificarContrasenia(int idSocio)
     Socio soc = _archivoSocio.leerRegistroSocio(pos);
     char contra1[50], contra2[50];
 
-    cout << "Ingrese su nueva contraseña: ";
+    cout << "Ingrese su nueva contrasenia: ";
     cin >> contra1;
-    cout << "Repita nuevamente su contraseña: ";
+    cout << "Repita nuevamente su contrasenia: ";
     cin >> contra2;
 
     contra1[sizeof(contra1)-1] = '\0';
@@ -594,7 +595,7 @@ void ServicioSocio::modificarContrasenia(int idSocio)
         soc.setContrasenia(contra1);
         if (_archivoSocio.guardarSocio(soc, pos))
         {
-            cout << "Contraseña modificada y guardada correctamente." << endl;
+            cout << "Contrasenia modificada y guardada correctamente." << endl;
         }
         else
         {
@@ -603,7 +604,7 @@ void ServicioSocio::modificarContrasenia(int idSocio)
     }
     else
     {
-        cout << "Contraseñas no coinciden, intente nuevamente ..." << endl;
+        cout << "Contrasenias no coinciden, intente nuevamente ..." << endl;
     }
     system("pause");
 }
@@ -687,6 +688,7 @@ void ServicioSocio::listarSocios(Socio socios[], int cantReg)
         if ((i+24)%25 == 0 && i != 1)
         {
             system("pause");
+            system("cls");
         }
     }
     cout << string(78, '-') << endl;
@@ -805,6 +807,8 @@ void ServicioSocio::verListaDeSociosSinEntrenador()
         if ((i+24)%25 == 0 && i != 1)
         {
             system("pause");
+            system("cls");
+
         }
     }
     cout << string(63, '-') << endl;

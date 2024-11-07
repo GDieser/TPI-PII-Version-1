@@ -2,9 +2,6 @@
 
 #include "MenuPrincipal.h"
 
-#include "Fecha.h"
-#include "GestionArchivoEmpleados.h"
-#include "ServicioActividad.h"
 
 using namespace std;
 

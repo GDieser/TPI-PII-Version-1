@@ -85,6 +85,18 @@ void ServicioSocio::verSocios()
 {
     int cantReg = _archivoSocio.cantidadRegistrosSocios();
     Socio socio;
+    Socio* socios;
+    int opc;
+    do {
+        cout << "Desea generar ademas un CSV? : " << endl;
+        cout << "1. Si" << endl;
+        cout << "2. No" << endl;
+        system("pause");
+    } while(opc < 1 || opc > 2);
+
+    if (opc == 1){
+        socios = new Socio[cantReg];
+    }
 
     cout << string(78, '-') << endl;
     cout << left << setw(6) << "ID" << "|"
@@ -98,6 +110,9 @@ void ServicioSocio::verSocios()
     for (int i = 0; i < cantReg; i++)
     {
         socio = _archivoSocio.leerRegistroSocio(i);
+        if(opc == 1){
+            socios[i] = socio;
+        }
 
         cout << left << setw(6) << socio.getIdUsuario() << "|"
              << setw(15) << socio.getApellido() << "|"
@@ -111,7 +126,12 @@ void ServicioSocio::verSocios()
         }
     }
     cout << string(78, '-') << endl;
+    if(opc == 1){
+        generarCSV(socios, cantReg);
+        delete[] socios;
+    }
     system("pause");
+
 }
 
 int ServicioSocio::autoGenerarId()
@@ -414,7 +434,7 @@ void ServicioSocio::verSociosPorApellido()
         system("pause");
         system("cls");
 
-    }while(opc < 0 & opc > 3);
+    }while(opc < 0 || opc > 2);
 
 
     switch (opc){
@@ -502,7 +522,7 @@ void ServicioSocio::verSociosPorDni()
             }
         }
     }
-
+    int opc;
     do{
         cout << "Ingrese una opcion:" << endl;
         cout << string(78, '-') << endl;
@@ -512,7 +532,7 @@ void ServicioSocio::verSociosPorDni()
         system("pause");
         system("cls");
 
-    }while(opc < 0 & opc > 3);
+    }while(opc < 0 || opc > 2);
 
 
     switch (opc){

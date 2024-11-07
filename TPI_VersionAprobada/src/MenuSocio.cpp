@@ -4,26 +4,26 @@
 #include "ServicioPago.h"
 #include "ServicioReclamo.h"
 #include "ServicioAsistencia.h"
-#include "GestionArchivoSocios.h"
+#include "ServicioEmpleado.h"
+//#include "GestionArchivoSocios.h"
 #include "ServicioRutina.h"
 
 using namespace std;
 
-<<<<<<< HEAD
 MenuSocio::MenuSocio(UsuarioAutenticado usuario) : _usuario(usuario)
 {
     ServicioSocio _sSocio();
-=======
-MenuSocio::MenuSocio(UsuarioAutenticado usuario) : _usuario(usuario), _sSocio()
-{
->>>>>>> 61682c56dbefe582e24cfc300e37a2353cffb607
 }
 
 void MenuSocio::mostrarSubmenuSocio()
 {
     system("cls");
     int opcion;
-<<<<<<< HEAD
+
+    if(!_sSocio.consultarEstadoDeSocio(_usuario.getIdUsuario()))
+    {
+        _usuario.setEstadoHabilitado(false);
+    }
 
     cout << "+--------------------------------------+" << endl;
     cout << "       BIENVENIDO "<< _usuario.getNombre() << endl;
@@ -31,9 +31,6 @@ void MenuSocio::mostrarSubmenuSocio()
     cout << "| 1 - INGRESO AL GIMNASIO              |" << endl;
     cout << "| 2 - INGRESO AL MENU SOCIO            |" << endl;
     cout << "+--------------------------------------+" << endl;
-=======
-    cout << " -- BIENVENIDO "<< _usuario.getNombre() << " -- " << endl;
->>>>>>> 61682c56dbefe582e24cfc300e37a2353cffb607
     cout << endl;
     cout << " Su seleccion: ";
     cin >> opcion;
@@ -50,13 +47,29 @@ void MenuSocio::mostrarSubmenuSocio()
 
 void MenuSocio::mostrarMenuIngresoSocio()
 {
-
-    ServicioSocio socio;
-    ServicioAsistencia asistencia;
-
     system("cls");
-    cout << "Bienvenido" << _usuario.getNombre() << endl;
-    asistencia.registrarAsistencia(_usuario.getIdUsuario());
+    if(_usuario.estaHabilitado())
+    {
+        ServicioSocio socio;
+        ServicioAsistencia asistencia;
+
+        cout << "+---------------------------------------+" << endl;
+        cout << "|  - Bienvenido" << _usuario.getNombre() << endl;
+        cout << "+---------------------------------------+" << endl;
+
+        asistencia.registrarAsistencia(_usuario.getIdUsuario());
+    }
+    else
+    {
+        cout << "+--------------------------------------------------------------+" << endl;
+        cout << "| Actualmente no se encuentra habilitado para ingresar al GYM  |" << endl;
+        cout << "|   Comuniquese con un gerente para regularizar su estado.     |" << endl;
+        cout << "|                                                              |" << endl;
+        cout << "|                   EQUIPO DE METALGYM                         |" << endl;
+        cout << "+--------------------------------------------------------------+" << endl;
+    }
+    system("pause");
+
     mostrarSubmenuSocio();
 }
 
@@ -119,13 +132,10 @@ void MenuSocio::mostrarMenuSocio()
 void MenuSocio::gestionarPagos()
 {
     int opcion;
-<<<<<<< HEAD
-    Socio socio;
-    ServicioPago sp;
-=======
-    ServicioSocio socio;
-    ServicioPago sPago;
->>>>>>> 61682c56dbefe582e24cfc300e37a2353cffb607
+    ServicioSocio servicioSocio;
+    ServicioPago pago;
+
+    Socio socio = servicioSocio.buscarSocioId(_usuario.getIdUsuario());
 
     do
     {
@@ -150,27 +160,24 @@ void MenuSocio::gestionarPagos()
         switch(opcion)
         {
         case 1:
-<<<<<<< HEAD
-            sp.registrarPago(_usuario.getIdUsuario(), socio.getMembresia(), socio.getFechaDeIngreso());
-            system("pause");
+            if(pago.registrarPago(_usuario.getIdUsuario(), socio.getMembresia(), socio.getFechaDeIngreso()))
+            {
+                servicioSocio.actualizarEstadoDelSocio(_usuario.getIdUsuario(), true);
+            }
             break;
         case 2:
-            sp.verPago(_usuario.getIdUsuario());
-=======
-            //sPago.registrarPago();
-            break;
-        case 2:
-            //sPago.mostrarRegistroPagos(int idSocio);
->>>>>>> 61682c56dbefe582e24cfc300e37a2353cffb607
+            pago.verPago(_usuario.getIdUsuario());
             break;
         case 3:
-            //chequar con german
+            servicioSocio.mostrarFechaVencimiento(socio.getFechaDeIngreso(), _usuario.getIdUsuario());
             break;
         case 4:
             mostrarPreciosDePases();
             break;
         case 5:
             _sSocio.verMembresia(_usuario.getIdUsuario());
+            break;
+        case 0:
             break;
         default:
             cout << "Opcion incorrecta, proba de nuevo." << endl;
@@ -183,10 +190,6 @@ void MenuSocio::gestionarPagos()
 
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 61682c56dbefe582e24cfc300e37a2353cffb607
 void MenuSocio::mostrarPreciosDePases()
 {
     system("cls");
@@ -203,12 +206,10 @@ void MenuSocio::mostrarPreciosDePases()
 void MenuSocio::verRutina()
 {
     int opcion;
-    ServicioSocio socio;
 
     do
     {
         system("cls");
-<<<<<<< HEAD
         cout << "+--------------------------------------+" << endl;
         cout << "|               RUTINAS                |" << endl;
         cout << "+--------------------------------------+" << endl;
@@ -216,13 +217,6 @@ void MenuSocio::verRutina()
         cout << "+--------------------------------------+" << endl;
         cout << "| 0 - VOLVER ATRAS                     |" << endl;
         cout << "+--------------------------------------+" << endl;
-=======
-        cout << " RUTINAS " << endl;
-        cout << "-------------------------------" << endl;
-        cout << " 1 - VER MI RUTINA " << endl;
-        cout << "-------------------------------" << endl;
-        cout << " 0 - VOLVER ATRAS " << endl;
->>>>>>> 61682c56dbefe582e24cfc300e37a2353cffb607
         cout << endl;
         cout << " Su seleccion: ";
         cin >> opcion;
@@ -232,21 +226,13 @@ void MenuSocio::verRutina()
         switch(opcion)
         {
         case 1:
-<<<<<<< HEAD
         {
             ServicioRutina sRutina;
             Socio socio = _sSocio.buscarSocioId(_usuario.getIdUsuario());
-            //serRutina.verDetallesDeRutina(_usuario.getIdRutina());
-            break;
+
+            sRutina.verRutinaAsignada(socio.getIdRutina());
         }
-=======
-            {
-                ServicioRutina sRutina;
-                Socio socio = _sSocio.buscarSocioId(_usuario.getIdUsuario());
-                //serRutina.verDetallesDeRutina(_usuario.getIdRutina());
-                break;
-            }
->>>>>>> 61682c56dbefe582e24cfc300e37a2353cffb607
+        break;
 
         default:
             cout << "ERROR" << endl;
@@ -262,19 +248,20 @@ void MenuSocio::consultarHorarios()
 {
     int opcion;
     ServicioSocio socio;
+    ServicioEmpleado entrenador;
 
     do
     {
         system("cls");
-        cout << "+--------------------------------------+" << endl;
-        cout << "|              HORARIOS                |" << endl;
-        cout << "+--------------------------------------+" << endl;
-        cout << "| 1 - VER HORARIOS DE ENTRENAMIENTOS   |" << endl;
-        cout << "| 2 - VER MIS INSCRIPCIONES            |" << endl;
-        cout << "| 3 - VER HORARIOS DE APERTURA Y CIERRE|" << endl;
-        cout << "+--------------------------------------+" << endl;
-        cout << "| 0 - VOLVER ATRAS                     |" << endl;
-        cout << "+--------------------------------------+" << endl;
+        cout << "+----------------------------------------+" << endl;
+        cout << "|                HORARIOS                |" << endl;
+        cout << "+----------------------------------------+" << endl;
+        cout << "| 1 - VER HORARIOS DE ENTRENADORES       |" << endl;
+        cout << "| 2 - VER HORARIO DE MI ENTRENADOR       |" << endl;
+        cout << "| 3 - VER HORARIOS DE APERTURA Y CIERRE  |" << endl;
+        cout << "+----------------------------------------+" << endl;
+        cout << "| 0 - VOLVER ATRAS                       |" << endl;
+        cout << "+----------------------------------------+" << endl;
         cout << endl;
         cout << " Su seleccion: ";
         cin >> opcion;
@@ -284,10 +271,10 @@ void MenuSocio::consultarHorarios()
         switch(opcion)
         {
         case 1:
-
+            entrenador.mostrarHorariosDeEntrenadores();
             break;
         case 2:
-
+            socio.verEntrenadorAsignado(_usuario.getIdUsuario());
             break;
         case 3:
             verHorariosGimnasio();

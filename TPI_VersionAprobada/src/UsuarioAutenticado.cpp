@@ -23,6 +23,11 @@ UsuarioAutenticado::UsuarioAutenticado()
     _apellido[0] = '\0';
 }
 
+void UsuarioAutenticado::setEstadoHabilitado(bool estado)
+{
+    _estaHabilitado = estado;
+}
+
 int UsuarioAutenticado::getIdUsuario() const
 {
     return _idUsuario;

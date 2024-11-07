@@ -2,10 +2,7 @@
 #include <limits>
 #include <cstring>
 #include <iomanip>
-<<<<<<< HEAD
 
-=======
->>>>>>> 61682c56dbefe582e24cfc300e37a2353cffb607
 #include "ServicioSocio.h"
 #include "Socio.h"
 #include "Fecha.h"
@@ -23,7 +20,6 @@ ServicioSocio::ServicioSocio()
     _archivoEmpleado = GestionArchivoEmpleados("archivoEmpleados.dat");
 }
 
-<<<<<<< HEAD
 string ServicioSocio::membresiaToStr(int id)
 {
     string memb;
@@ -31,7 +27,7 @@ string ServicioSocio::membresiaToStr(int id)
     {
     case 0:
     {
-        memb = "FULL";
+        memb = "FULL ";
         break;
     }
     case 1:
@@ -41,7 +37,7 @@ string ServicioSocio::membresiaToStr(int id)
     }
     case 2:
     {
-        memb = "FIT";
+        memb = "FIT  ";
         break;
     }
     }
@@ -50,32 +46,6 @@ string ServicioSocio::membresiaToStr(int id)
 
 void ServicioSocio::mostrarSociosPorEntrenador(int idEntrenador)
 {
-=======
-string ServicioSocio::membresiaToStr(int id){
-    string memb;
-    switch (id)
-        {
-            case 0:
-                {
-                    memb = "FULL";
-                    break;
-                }
-            case 1:
-                {
-                    memb = "SMART";
-                    break;
-                }
-            case 2:
-                {
-                    memb = "FIT";
-                    break;
-                }
-        }
-    return memb;
-}
-
-void ServicioSocio::mostrarSociosPorEntrenador(int idEntrenador){
->>>>>>> 61682c56dbefe582e24cfc300e37a2353cffb607
     int cantReg = _archivoSocio.cantidadRegistrosSocios();
     Socio socio;
     cout << "Socios encontrados: " << cantReg << " socios." << endl;
@@ -88,29 +58,19 @@ void ServicioSocio::mostrarSociosPorEntrenador(int idEntrenador){
          << setw(14) << "Estado" << endl;
     cout << string(78, '-') << endl;
     int j = 0;
-<<<<<<< HEAD
     for (int i = 0; i < cantReg; i++)
     {
         socio = _archivoSocio.leerRegistroSocio(i);
         if(socio.getIdEntrenadorAsignado() == idEntrenador)
         {
-=======
-    for (int i = 0; i < cantReg; i++) {
-        socio = _archivoSocio.leerRegistroSocio(i);
-        if(socio.getIdEntrenadorAsignado() == idEntrenador){
->>>>>>> 61682c56dbefe582e24cfc300e37a2353cffb607
             cout << left << setw(8) <<"#"<< j << " - " << socio.getIdUsuario() << "|"
                  << setw(15) << socio.getApellido() << "|"
                  << setw(15) << socio.getNombre() << "|"
                  << setw(12) << socio.getFechaDeIngreso().toString() << "|"
                  << setw(10) << membresiaToStr(socio.getMembresia()).c_str() << "|"
                  << setw(14) << (socio.getEstado() ? "Habilitado" : "Deshabilitado") << endl;
-<<<<<<< HEAD
             if ((i+24)%25 == 0 && i != 1)
             {
-=======
-            if ((i+24)%25 == 0 && i != 1){
->>>>>>> 61682c56dbefe582e24cfc300e37a2353cffb607
                 system("pause");
             }
             j++;
@@ -135,12 +95,8 @@ void ServicioSocio::verSocios()
          << setw(14) << "Estado" << endl;
     cout << string(78, '-') << endl;
 
-<<<<<<< HEAD
     for (int i = 0; i < cantReg; i++)
     {
-=======
-    for (int i = 0; i < cantReg; i++) {
->>>>>>> 61682c56dbefe582e24cfc300e37a2353cffb607
         socio = _archivoSocio.leerRegistroSocio(i);
 
         cout << left << setw(6) << socio.getIdUsuario() << "|"
@@ -149,12 +105,8 @@ void ServicioSocio::verSocios()
              << setw(12) << socio.getFechaDeIngreso().toString() << "|"
              << setw(10) << membresiaToStr(socio.getMembresia()).c_str() << "|"
              << setw(14) << (socio.getEstado() ? "Habilitado" : "Deshabilitado") << endl;
-<<<<<<< HEAD
         if ((i+24)%25 == 0 && i != 1)
         {
-=======
-        if ((i+24)%25 == 0 && i != 1){
->>>>>>> 61682c56dbefe582e24cfc300e37a2353cffb607
             system("pause");
         }
     }
@@ -162,7 +114,6 @@ void ServicioSocio::verSocios()
     system("pause");
 }
 
-<<<<<<< HEAD
 int ServicioSocio::autoGenerarId()
 {
     return 1000 + _archivoSocio.cantidadRegistrosSocios() + _archivoEmpleado.cantidadRegistrosEmpleados();
@@ -180,32 +131,20 @@ int ServicioSocio::seleccionarMembresia()
     return opc;
 }
 
-bool ServicioSocio::buscarSocioPorDni(int dni){
+bool ServicioSocio::buscarSocioPorDni(int dni)
+{
 
     int cantReg = _archivoSocio.cantidadRegistrosSocios();
-    for(int i = 0; i < cantReg; i++){
-        if(_archivoSocio.leerRegistroSocio(i).getDni() == dni){
+    for(int i = 0; i < cantReg; i++)
+    {
+        if(_archivoSocio.leerRegistroSocio(i).getDni() == dni)
+        {
             return true;
         }
     }
     return false;
 }
 
-=======
-int ServicioSocio::autoGenerarId(){
-    return 1000 + _archivoSocio.cantidadRegistrosSocios() + _archivoEmpleado.cantidadRegistrosEmpleados();
-}
-
-int ServicioSocio::seleccionarMembresia(){
-    int opc;
-    do{
-        cout << "Ingrese 0 para FULL, 1 para SMART, 2 para FIT"<< endl;
-        cin >> opc;
-    } while (opc > 2 || opc < 0);
-    return opc;
-}
-
->>>>>>> 61682c56dbefe582e24cfc300e37a2353cffb607
 void ServicioSocio::agregarSocio()
 {
     string nombre;
@@ -228,11 +167,11 @@ void ServicioSocio::agregarSocio()
 
     cout << "A continuacion lo guiaremos en el proceso para agregar un nuevo socio..." << endl;
     cout << string(70, '-') << endl;
-<<<<<<< HEAD
 
     cout << "Dni: ";
     cin >> dni;
-    if(buscarSocioPorDni(dni)){
+    if(buscarSocioPorDni(dni))
+    {
         cout << "El usuario con DNI " << dni << " ya existe..." << endl;
         system("pause");
         return;
@@ -246,24 +185,10 @@ void ServicioSocio::agregarSocio()
     cout << "Apellido: ";
     cin >> apellido;
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
-=======
-    cout << "Nombre: ";
-    cin >> nombre;
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Para limpiar buffer de cin
-
-    cout << "Apellido: ";
-    cin >> apellido;
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Para limpiar buffer de cin
-
-    cout << "Dni: ";
-    cin >> dni;
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Para limpiar buffer de cin
->>>>>>> 61682c56dbefe582e24cfc300e37a2353cffb607
 
     cout << "Ingrese fecha nacimiento: " << endl;
     fechaNacimiento = Fecha::crearFecha();
 
-<<<<<<< HEAD
     cout << "Contrasenia: ";
     cin >> contrasenia;
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -271,28 +196,15 @@ void ServicioSocio::agregarSocio()
     cout << "Pin: ";
     cin >> pinIngreso;
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
-=======
-    cout << "Contraseña: ";
-    cin >> contrasenia;
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Para limpiar buffer de cin
-
-    cout << "Pin: ";
-    cin >> pinIngreso;
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Para limpiar buffer de cin
->>>>>>> 61682c56dbefe582e24cfc300e37a2353cffb607
 
     idMembresia = seleccionarMembresia();
 
     cout << "Estado fisico: ";
     cin >> estadoFisico;
-<<<<<<< HEAD
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
-=======
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Para limpiar buffer de cin
->>>>>>> 61682c56dbefe582e24cfc300e37a2353cffb607
 
-    idRutina = 1; //servicioRutina.elegirRutina();
-    idEntrenadorAsignado = 1; //servicioEmpleado.elegirEntrenador();
+    idRutina = 0; //servicioRutina.elegirRutina();
+    idEntrenadorAsignado = 0; //servicioEmpleado.elegirEntrenador();
 
     cout << string(78, '-') << endl;
 
@@ -306,43 +218,54 @@ void ServicioSocio::agregarSocio()
     system("pause");
 }
 
-void ServicioSocio::modificarSocio(int idSocio)
+void ServicioSocio::modificarSocio()
 {
+    system("cls");
+    ServicioRutina rutina;
+    ServicioEmpleado entrenador;
+
+    int idSocio;
+    int opc;
+
+    cout << "+-----------------------------------------+" << endl;
+    cout << "|             MODIFICAR SOCIO             |" << endl;
+    cout << "+-----------------------------------------+" << endl;
+    cout << endl;
+    cout << " Ingrese ID: ";
+    cin >> idSocio;
+
     int pos = _archivoSocio.buscarSocio(idSocio);
 
-<<<<<<< HEAD
     if (pos == -1)
     {
-=======
-    if (pos == -1) {
->>>>>>> 61682c56dbefe582e24cfc300e37a2353cffb607
-        cout << "Socio con id #" << idSocio << " no encontrado." << endl;
+        cout << endl;
+        cout << " Socio con id #" << idSocio << " no encontrado." << endl;
         system("pause");
-        system("cls");
         return;
     }
 
     Socio soc = _archivoSocio.leerRegistroSocio(pos);
-    cout << "A continuacion ingrese la opcion deseada: "<< endl;
-    int opc;
-<<<<<<< HEAD
+
     do
     {
-=======
-    do {
->>>>>>> 61682c56dbefe582e24cfc300e37a2353cffb607
-        cout << string(78, '-') << endl;
+        system("cls");
+        cout << "+-----------------------------------------+" << endl;
+        cout << "|             MODIFICAR SOCIO             |" << endl;
+        cout << "+-----------------------------------------+" << endl;
+        cout << endl;
+        cout << " A continuacion ingrese la opcion deseada: "<< endl;
+
+        cout << string(43, '-') << endl;
         cout << "1. Modificar membresia" << endl;
         cout << "2. Cambiar rutina" << endl;
         cout << "3. Cambiar entrenador designado" << endl;
-        cout << "4. Dar de baja usuario" << endl;
-        cout << "0. Volver" << endl;
+        cout << "4. Cambiar estado de un Socio" << endl;
+        cout << "0. Volver/Guardar" << endl;
         cout << string(78, '-') << endl;
         cout << "Ingrese una opcion: ";
         cin >> opc;
 
 
-<<<<<<< HEAD
         switch(opc)
         {
         case 1:
@@ -352,26 +275,56 @@ void ServicioSocio::modificarSocio(int idSocio)
         }
         case 2:
         {
-            soc.setIdRutina(1); //Se debe utilizar servicioRutina.elegirRutina())
+            if(soc.getIdEntrenadorAsignado() < 1000)
+            {
+                cout << endl;
+                cout << "+------------------------------------------+" << endl;
+                cout << "|  Primero se debe asignar un entrenador.  |" << endl;
+                cout << "+------------------------------------------+" << endl;
+            }
+            else
+            {
+                int idRutina = rutina.elegirRutina(soc.getIdEntrenadorAsignado());
+                soc.setIdRutina(idRutina);
+            }
+
             break;
         }
         case 3:
         {
-            soc.setIdEntrenadorAsignado(1); //Se debe utilizar servicioEmpleado.elegirEntrenador())
+            int idEntrenador = entrenador.elegirEntrenador();
+            soc.setIdEntrenadorAsignado(idEntrenador);
             break;
         }
         case 4:
         {
-            cout << "¿Está seguro de cambiar el estado de este usuario? (S/N): ";
+            if(soc.getEstado())
+            {
+                cout << " Esta seguro de cambiar el estado a Inhabilitado? (S/N): ";
+            }
+            else
+            {
+                cout << " Esta seguro de cambiar el estado a Habilitado? (S/N): ";
+            }
+
             char confirmacion;
             cin >> confirmacion;
             if (confirmacion == 'S' || confirmacion == 's')
             {
-                soc.setEstado(!soc.getEstado());
+                if(soc.getEstado())
+                {
+                    soc.setEstado(false);
+                }
+                else
+                {
+                    soc.setEstado(true);
+                }
+                cout << endl;
                 cout << "Estado de usuario cambiado." << endl;
             }
             else
             {
+                cout << endl;
                 cout << "Cambio de estado cancelado." << endl;
             }
             break;
@@ -386,101 +339,94 @@ void ServicioSocio::modificarSocio(int idSocio)
             break;
         }
         }
+        system("pause");
     }
     while (opc != 0);
-=======
-        switch(opc){
-            case 1:
-                {
-                    soc.setMembresia(seleccionarMembresia());
-                    break;
-                }
-            case 2:
-                {
-                    soc.setIdRutina(1); //Se debe utilizar servicioRutina.elegirRutina())
-                    break;
-                }
-            case 3:
-                {
-                    soc.setIdEntrenadorAsignado(1); //Se debe utilizar servicioEmpleado.elegirEntrenador())
-                    break;
-                }
-            case 4:
-                {
-                    cout << "¿Está seguro de cambiar el estado de este usuario? (S/N): ";
-                    char confirmacion;
-                    cin >> confirmacion;
-                    if (confirmacion == 'S' || confirmacion == 's') {
-                        soc.setEstado(!soc.getEstado());
-                        cout << "Estado de usuario cambiado." << endl;
-                    } else {
-                        cout << "Cambio de estado cancelado." << endl;
-                    }
-                    break;
-                }
-            case 0:
-                {
-                    break;
-                }
-            default:
-                {
-                    cout << "Debe ingresar una opcion valida" << endl;
-                    break;
-                }
-        }
-    } while (opc != 0);
->>>>>>> 61682c56dbefe582e24cfc300e37a2353cffb607
-}
 
-void ServicioSocio::verEntrenadorAsignado(int idEntrenador)
-{
-    system("cls");
-    int pos = _archivoEmpleado.buscarEmpleado(idEntrenador);
-<<<<<<< HEAD
-    if (pos == -1)
+    cout << " Confirmar Cambios? 1 - SI | 0 - NO" << endl;
+    cout << " Su eleccion: ";
+    cin >> opc;
+
+    if(opc == 1 && _archivoSocio.guardarSocio(soc, pos))
     {
-=======
-    if (pos == -1){
->>>>>>> 61682c56dbefe582e24cfc300e37a2353cffb607
-        cout << "No se encuentra entrenador con ID #" << idEntrenador << endl;
-        system("pause");
-        return;
+        cout << endl;
+        cout << "Cambios guardado con exito" << endl;
     }
-    ServicioActividad sActividad;
-    Empleado emp = _archivoEmpleado.leerRegistroEmpleado(pos);
-    cout << "+ -------t SU ENTRENADOR \t------- +" << endl;
-    cout << "| Nombre: \t" << emp.getNombre() <<"\t|" <<  endl;
-    cout << "| Apellido: \t" << emp.getApellido()<<"\t|" << endl;
-    //cout << " Actividad: \t" << sActividad.verActividad(emp.getIdActividadPrincipal()) << endl; -- DESCOMENTAR una vez finalizado
-    cout << "| Dias: " << emp.getDiaSem()<<"\t|" << endl;
-    cout << "+ -------\t ------- \t------- +" << endl;
-
-    mostrarTurno(emp.getIdTurno());
 
     system("pause");
 }
 
-<<<<<<< HEAD
+void ServicioSocio::verEntrenadorAsignado(int idSocio)
+{
+    system("cls");
+    string horarios;
+
+    int pos = _archivoSocio.buscarSocio(idSocio);
+    Socio socio = _archivoSocio.leerRegistroSocio(pos);
+
+
+    pos = _archivoEmpleado.buscarEmpleado(socio.getIdEntrenadorAsignado());
+
+    if (pos == -1)
+    {
+        cout << "+--------------------------------------------------------------------------------+"<< endl;
+        cout << "| Aun no se le ha asignado un entrenador, en la brevedad se le estara asignando. |"<< endl;
+        cout << "+--------------------------------------------------------------------------------+"<< endl;
+        system("pause");
+        return;
+    }
+
+    ServicioActividad sActividad;
+
+    Empleado emp = _archivoEmpleado.leerRegistroEmpleado(pos);
+
+    switch(emp.getIdTurno())
+    {
+    case 0:
+        horarios = "08hs a 13hs";
+        break;
+    case 1:
+        horarios = "13hs a 18hs";
+        break;
+    case 2:
+        horarios = "18hs a 23hs";
+        break;
+    }
+
+    cout << "+-----------------------------------------+" << endl;
+    cout << "|           ENTRENADOR ASIGNADO           |" << endl;
+    cout << "+-----------------------------------------+" << endl;
+    cout << endl;
+    cout << "- Nombre: " << emp.getNombre() <<  endl;
+    cout << "- Apellido: " << emp.getApellido() << endl;
+    cout << "- Actividad: ";
+    sActividad.buscarActividad(emp.getIdActividadPrincipal());
+    cout << "- Horario: " << horarios << endl;
+    cout << endl;
+    cout << "+-----------------------------------------+" << endl;
+
+    //mostrarTurno(emp.getIdTurno());
+
+    system("pause");
+}
+
+
 Socio ServicioSocio::buscarSocioId(int idUsuario)
 {
 
     int pos = _archivoSocio.buscarSocio(idUsuario);
-    if (pos = -1)
-    {
-=======
-Socio ServicioSocio::buscarSocioId(int idUsuario){
 
-    int pos = _archivoSocio.buscarSocio(idUsuario);
-    if (pos = -1){
->>>>>>> 61682c56dbefe582e24cfc300e37a2353cffb607
+    if (pos == -1)
+    {
         cout << "Socio con ID #" << idUsuario << " no encontrado..." << endl;
         return Socio();
     }
     Socio socio = _archivoSocio.leerRegistroSocio(pos);
+
     return socio;
 }
 
-<<<<<<< HEAD
+
 void ServicioSocio::mostrarTurno(int idTurno)
 {
     cout << " Turno: ";
@@ -501,26 +447,6 @@ void ServicioSocio::mostrarTurno(int idTurno)
         cout << "Noche";
         break;
     }
-=======
-void ServicioSocio::mostrarTurno(int idTurno){
-    cout << " Turno: ";
-    switch(idTurno){
-    case 0:
-        {
-            cout << "Mañana";
-            break;
-        }
-    case 1:
-        {
-            cout << "Tarde";
-            break;
-        }
-    case 2:
-        {
-            cout << "Noche";
-            break;
-        }
->>>>>>> 61682c56dbefe582e24cfc300e37a2353cffb607
     }
     cout << endl;
 }
@@ -533,24 +459,19 @@ void ServicioSocio::verHorarios()
 void ServicioSocio::verMembresia(int idUsuario)
 {
     int pos = _archivoSocio.buscarSocio(idUsuario);
-<<<<<<< HEAD
     if (pos == -1)
     {
-=======
-    if (pos == -1){
->>>>>>> 61682c56dbefe582e24cfc300e37a2353cffb607
         cout <<"Usuario no existe, intente nuevamente... " << endl;
         system("pause");
         return;
     }
     Socio socio = _archivoSocio.leerRegistroSocio(pos);
 
+    cout << "+----------------------------------+" << endl;
+    cout << "| Tu membresia actual es: " << membresiaToStr(socio.getIdRol()) <<  "    |" << endl;
+    cout << "+----------------------------------+" << endl;
 
-    system("cls");
-    cout << "Tu membresia actual es: " << membresiaToStr(socio.getIdRol()) << endl;
     system("pause");
-    system("cls");
-<<<<<<< HEAD
 }
 
 void ServicioSocio::verSociosPorApellido()
@@ -559,7 +480,8 @@ void ServicioSocio::verSociosPorApellido()
     int cantReg = _archivoSocio.cantidadRegistrosSocios();
 
     socios = new Socio[cantReg];
-    if (socios == nullptr){
+    if (socios == nullptr)
+    {
         cout << "Error al leer el archivo de socios..." << endl;
         return;
     }
@@ -595,7 +517,8 @@ void ServicioSocio::verSociosPorDni()
     int cantReg = _archivoSocio.cantidadRegistrosSocios();
 
     socios = new Socio[cantReg];
-    if (socios == nullptr){
+    if (socios == nullptr)
+    {
         cout << "Error al leer el archivo de socios..." << endl;
         return;
     }
@@ -623,19 +546,13 @@ void ServicioSocio::verSociosPorDni()
     listarSocios(socios, cantReg);
     delete[] socios;
 
-=======
->>>>>>> 61682c56dbefe582e24cfc300e37a2353cffb607
 }
 
 void ServicioSocio::modificarContrasenia(int idSocio)
 {
     int pos = _archivoSocio.buscarSocio(idSocio);
-<<<<<<< HEAD
     if (pos == -1)
     {
-=======
-    if (pos == -1) {
->>>>>>> 61682c56dbefe582e24cfc300e37a2353cffb607
         cout << "Socio con id #" << idSocio << " no encontrado." << endl;
         return;
     }
@@ -651,7 +568,6 @@ void ServicioSocio::modificarContrasenia(int idSocio)
     contra1[sizeof(contra1)-1] = '\0';
     contra2[sizeof(contra2)-1] = '\0';
 
-<<<<<<< HEAD
     if (strcmp(contra1, contra2)==0)
     {
         soc.setContrasenia(contra1);
@@ -661,42 +577,52 @@ void ServicioSocio::modificarContrasenia(int idSocio)
         }
         else
         {
-=======
-    if (strcmp(contra1, contra2)==0){
-        soc.setContrasenia(contra1);
-         if (_archivoSocio.guardarSocio(soc, pos)) {
-            cout << "Contraseña modificada y guardada correctamente." << endl;
-        } else {
->>>>>>> 61682c56dbefe582e24cfc300e37a2353cffb607
             cout << "Error al guardar los cambios. Contacte al administrador del sistema..." << endl;
         }
-    } else {
-        cout << "Contraseñas no coinciden, intente nuevamente ..." << endl;
     }
-<<<<<<< HEAD
     else
     {
         cout << "Contraseñas no coinciden, intente nuevamente ..." << endl;
     }
-=======
->>>>>>> 61682c56dbefe582e24cfc300e37a2353cffb607
     system("pause");
-    system("cls");
 }
 
-<<<<<<< HEAD
-void ServicioSocio::mostrarFechaVencimiento(Fecha fecha)
+void ServicioSocio::mostrarFechaVencimiento(Fecha fechaIngreso, int idSocio)
 {
-=======
-void ServicioSocio::mostrarFechaVencimiento(Fecha fecha) {
->>>>>>> 61682c56dbefe582e24cfc300e37a2353cffb607
+    Fecha fecha, fechaActual;
+    ServicioPago pago;
 
-    Fecha hoy = Fecha();
+
+    if(pago.verificarUltimoPago(idSocio))
+    {
+        fechaIngreso.setMes(fechaActual.getMes());
+        fecha = fecha.sumarDiasParaVencimiento(fechaIngreso);
+
+        cout << "+---------------------------------------------+" << endl;
+        cout << "| Su proxima cuota vence el dia: " << fecha.toString() << "   |" << endl;
+        cout << "+---------------------------------------------+" << endl;
+
+    }
+    else
+    {
+        /*cout << "+---------------------------------------------+" << endl;
+        cout << "| Cuota vencida el dia: " << fechaIngreso.toString() << "           |" << endl;
+        cout << "+---------------------------------------------+" << endl;*/
+
+        cout << "+-----------------------------------------------------------+" << endl;
+        cout << "| Cuota vencida, debe realizar el pago para activar su pase |" << endl;
+        cout << "+-----------------------------------------------------------+" << endl;
+
+    }
+
+    system("pause");
+    return;
+
+    /*Fecha hoy = Fecha();
     int dia = fecha.getDia();
     int mes = fecha.getMes();
     int anio = fecha.getAnio();
 
-<<<<<<< HEAD
     if (hoy.getDia() > dia)
     {
         mes++;
@@ -704,21 +630,15 @@ void ServicioSocio::mostrarFechaVencimiento(Fecha fecha) {
 
     if (mes > 12)
     {
-=======
-    if (hoy.getDia() > dia) {
-        mes++;
-    }
-
-    if (mes > 12) {
->>>>>>> 61682c56dbefe582e24cfc300e37a2353cffb607
         mes = 1;
         anio++;
     }
 
     Fecha fechaVencimiento = Fecha(dia, mes, anio);
-    cout << "Su próxima cuota vence el día: " << fechaVencimiento.toString() << endl;
+
+    */
+
 }
-<<<<<<< HEAD
 
 void ServicioSocio::listarSocios(Socio socios[], int cantReg)
 {
@@ -730,7 +650,7 @@ void ServicioSocio::listarSocios(Socio socios[], int cantReg)
          << setw(15) << "Nombre" << "|"
          << setw(12) << "Fecha Ing." << "|"
          << setw(10) << "Membresia" << "|"
-         << setw(14) << "Estado" << endl;
+         << setw(14) << "DNI" << endl;
     cout << string(78, '-') << endl;
 
     for (int i = 0; i < cantReg; i++)
@@ -742,7 +662,7 @@ void ServicioSocio::listarSocios(Socio socios[], int cantReg)
              << setw(15) << socio.getNombre() << "|"
              << setw(12) << socio.getFechaDeIngreso().toString() << "|"
              << setw(10) << membresiaToStr(socio.getMembresia()).c_str() << "|"
-             << setw(14) << (socio.getEstado() ? "Habilitado" : "Deshabilitado") << endl;
+             << setw(14) << socio.getDni() << endl;
         if ((i+24)%25 == 0 && i != 1)
         {
             system("pause");
@@ -751,5 +671,83 @@ void ServicioSocio::listarSocios(Socio socios[], int cantReg)
     cout << string(78, '-') << endl;
     system("pause");
 }
-=======
->>>>>>> 61682c56dbefe582e24cfc300e37a2353cffb607
+
+///--------------------------------------------------
+
+bool ServicioSocio::consultarEstadoDeSocio(int idSocio)
+{
+    int pos = _archivoSocio.buscarSocio(idSocio);
+
+    Socio socio = _archivoSocio.leerRegistroSocio(pos);
+
+    ServicioPago pago;
+
+
+    if(!pago.verificarUltimoPago(idSocio) && pago.cantidadDeDiasDelUltimoPago(idSocio) < 0)
+    {
+        socio.setEstado(false);
+
+        _archivoSocio.guardarSocio(socio, pos);
+
+        return false;
+
+    }
+
+    return true;
+
+}
+
+void ServicioSocio::actualizarEstadoDelSocio(int idSocio, bool estado)
+{
+    int pos = _archivoSocio.buscarSocio(idSocio);
+
+    Socio socio = _archivoSocio.leerRegistroSocio(pos);
+
+    socio.setEstado(estado);
+
+    _archivoSocio.guardarSocio(socio, pos);
+}
+
+void ServicioSocio::buscarSocioPorId()
+{
+    system("cls");
+
+    int idSocio;
+
+    cout << "+----------------------------------------------------------------------------+" << endl;
+    cout << "|                                  BUSCAR SOCIO                              |" << endl;
+    cout << "+----------------------------------------------------------------------------+" << endl;
+    cout << endl;
+    cout << " Ingrese ID: ";
+    cin >> idSocio;
+
+    int pos = _archivoSocio.buscarSocio(idSocio);
+
+    if (pos == -1)
+    {
+        cout << "Socio con ID #" << idSocio << " no encontrado..." << endl;
+        system("pause");
+        return;
+    }
+    Socio socio = _archivoSocio.leerRegistroSocio(pos);
+
+    cout << string(78, '-') << endl;
+    cout << left << setw(6) << "ID" << "|"
+         << setw(15) << "Apellido" << "|"
+         << setw(15) << "Nombre" << "|"
+         << setw(12) << "Fecha Ing." << "|"
+         << setw(10) << "Membresia" << "|"
+         << setw(14) << "Estado" << endl;
+    cout << string(78, '-') << endl;
+
+    cout << left << setw(6) << socio.getIdUsuario() << "|"
+         << setw(15) << socio.getApellido() << "|"
+         << setw(15) << socio.getNombre() << "|"
+         << setw(12) << socio.getFechaDeIngreso().toString() << "|"
+         << setw(10) << membresiaToStr(socio.getMembresia()).c_str() << "|"
+         << setw(14) << (socio.getEstado() ? "Habilitado" : "Deshabilitado") << endl;
+    cout << string(78, '-') << endl;
+
+    system("pause");
+}
+

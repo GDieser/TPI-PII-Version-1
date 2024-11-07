@@ -8,7 +8,7 @@ using namespace std;
 
 Actividad::Actividad()
 {
-    //ctor
+
 }
 
 Actividad::Actividad(int idActividad, string nombre)

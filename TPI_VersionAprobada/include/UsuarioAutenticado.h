@@ -20,6 +20,8 @@ public:
     int getRol() const;
     bool estaHabilitado() const;
 
+    void setEstadoHabilitado(bool estado);
+
 private:
 
     int _idUsuario;

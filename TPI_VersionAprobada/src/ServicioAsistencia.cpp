@@ -93,3 +93,5 @@ void ServicioAsistencia::verAsistenciasEnAnio(int anio){
         cout << reg.getFecha().toString() << "\t" << reg.getIdSocio() << " \t|"<<endl;
     }
 }
+
+

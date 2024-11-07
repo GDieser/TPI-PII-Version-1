@@ -238,7 +238,6 @@ void ServicioRutina::mostrarRutinasPorEntrenador(int idEntrenador)
     system("pause");
 }
 
-///Que arranque en 1 y sea autonumerico
 int ServicioRutina::obtenerUltimoIdRutina()
 {
     int cantidad = _archivoRutina.cantidadRegistrosRutinas();
@@ -281,6 +280,7 @@ void ServicioRutina::verRutinaAsignada(int idRutina)
         cout << " Rutina no asignada, comuniquese con su entrenador..." << endl;
     }
 
+    cout << endl;
     system("pause");
 }
 
@@ -372,8 +372,6 @@ int ServicioRutina::elegirRutina(int idEntrenador)
     int idRutina = rutina.getIdRutina();
 
     delete []vectRutinas;
-
-    system("pause");
 
     return idRutina;
 }

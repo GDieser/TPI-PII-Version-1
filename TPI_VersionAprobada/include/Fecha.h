@@ -30,9 +30,7 @@ public:
 
     static Fecha crearFecha();
 
-    Fecha calcularFechaVencimientoPorMeses();
-
-    static Fecha crearFecha();
+    Fecha sumarDiasParaVencimiento(Fecha fechaVencimiento);
 
     std::string toString();
 

@@ -41,7 +41,7 @@ bool GestionArchivoPagos::modificarPago(RegistroPago &pago, int pos)
         return false;
     }
 
-    fseek(pfile, sizeof(RegistroPago) * pos, SEEK_SET);///falta sizeof
+    fseek(pfile, sizeof(RegistroPago) * pos, SEEK_SET);
 
     result = fwrite(&pago, sizeof(RegistroPago), 1, pfile) == 1;
 
@@ -109,7 +109,6 @@ void GestionArchivoPagos::leerTodosPagos(RegistroPago *vPagos, int cantPagos)
     fclose(pfile);
 }
 
-
 ///filtros
 int GestionArchivoPagos::buscarPago(int id)
 {
@@ -135,11 +134,11 @@ int GestionArchivoPagos::buscarPago(int id)
 
     fclose(pfile);
 
-    if (pago.getIdUsuario() == id)   // dos posibilidades, o que haya llegado al final porque lo encontro e hizo el break o porque trato de leer y no pudo
+    if (pago.getIdUsuario() == id)
     {
         return pos;
     }
-    else   // no lo encontro
+    else
     {
         return -1;
     }

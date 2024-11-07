@@ -24,8 +24,9 @@ class ServicioEmpleado
         int comprobarDniEmpleado(int dni);
         void mostrarHorariosDeEntrenadores();
 
-        void listarEmpleadoPorApellido(int idRol);
+        void listarEmpleadoOrdenados(int idRol, int lista);
         void ordenarPorApellido(Empleado empleado[], int tam);
+        void ordenarPorDni(Empleado empleado[], int tam);
 
     private:
 

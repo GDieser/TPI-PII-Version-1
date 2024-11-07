@@ -35,7 +35,9 @@ public:
     bool buscarSocioPorDni(int dni);
 
     void listarSocios(Socio socios[], int cantReg);
-
+    void verListaDeSociosSinEntrenador();
+    void verListaDeSociosSinRutina(int idEntrenador);
+    void asignarUnaRutina(int idEntrenador);
 
 
 private:

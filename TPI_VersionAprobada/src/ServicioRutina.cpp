@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstring>
 
 #include "ServicioRutina.h"
 #include "ServicioEjercicio.h"
@@ -107,6 +108,52 @@ void ServicioRutina::verDetallesDeRutina()
     else
     {
         cout << "No se encontraron registros con es ID" << endl;
+    }
+
+    system("pause");
+}
+
+void ServicioRutina::verDetallesDeRutina(int idRutina)
+{
+    system("cls");
+
+    DetalleRutina detalle;
+    ServicioEjercicio ejercicio;
+
+    cout << "+--------------------------------------+" << endl;
+    cout << "|          DETALLES DE RUTINA          |" << endl;
+    cout << "+--------------------------------------+" << endl;
+
+    int pos = _archivoDetallesRutina.buscarDetalleRutina(idRutina);
+
+    if(pos != -1)
+    {
+        detalle = _archivoDetallesRutina.leerRegistroDetalleRutina(pos);
+
+        int *idEjercicios = detalle.getIdEjercicios();
+        int *repeticiones = detalle.getRepeticiones();
+        float *peso = detalle.getPeso();
+
+        for(int i=0; i<10; i++)
+        {
+            if(idEjercicios[i] != 0)
+            {
+                ejercicio.verEjercicio(idEjercicios[i]);
+                cout << " Repeticiones : " << repeticiones[i] << endl;
+                if(peso[i] != 0)
+                {
+                    cout << " Peso         : " << peso[i] << endl;
+                }
+                cout << "+--------------------------------------+" << endl;
+            }
+
+
+
+        }
+    }
+    else
+    {
+        cout << " Rutina aun no asignada, comuniquese con su entrenador" << endl;
     }
 
     system("pause");
@@ -517,10 +564,63 @@ DetalleRutina ServicioRutina::modificarDetalleRutina(DetalleRutina detalle)
     return detalle;
 }
 
-void ServicioRutina::asignarRutina()
+void ServicioRutina::mostrarRutinaPorNombre()
 {
     system("cls");
 
+    Rutina *vecRutina;
+    int indice = 1;
+
+    int cantidad = _archivoRutina.cantidadRegistrosRutinas();
+
+    vecRutina = new Rutina[cantidad];
+
+    if(vecRutina == nullptr)
+    {
+        return;
+    }
+    for(int j=0; j<cantidad; j++)
+    {
+        vecRutina[j] = _archivoRutina.leerRegistroRutina(j);
+    }
+
+    ordenarRutinaPorNombre(vecRutina, cantidad);
+    cout << "+-------------------------------------------------------------------------------------------------------+" << endl;
+    cout << "|                                          RUTINAS ORDENADAS                                            |" << endl;
+    cout << "+-------------------------------------------------------------------------------------------------------+" << endl;
+    cout << endl;
+
+    for(int i=0; i<cantidad; i++)
+    {
+        cout << "  " << indice << ". Nombre             : " << vecRutina[i].getNombreRutina() << endl;
+            cout << "     ID                 : #" << vecRutina[i].getIdRutina() << endl;
+            cout << "     Descripcion        : " << vecRutina[i].getDescripcion() << endl;
+            cout << "     Frecuencia Semanal : " << vecRutina[i].getFrecuenciaSemanal()<< endl;
+            cout << "+-------------------------------------------------------------------------------------------------------+" << endl;;
+            indice++;
+    }
+
+    delete []vecRutina;
 
     system("pause");
+}
+
+void ServicioRutina::ordenarRutinaPorNombre(Rutina vectRutina[], int tam)
+{
+    Rutina aux;
+
+    ///Ordenamiento por intercambio o SWAP, similar al burbujeo, sacado del libro pag 428
+    for(int i=0; i<tam-1; i++)
+    {
+        for(int j=i+1; j<tam; j++)
+        {
+            if(strcmp(vectRutina[i].getNombreRutina().c_str(), vectRutina[j].getNombreRutina().c_str()) > 0)
+            {
+                aux = vectRutina[i];
+                vectRutina[i] = vectRutina[j];
+                vectRutina[j] = aux;
+            }
+        }
+    }
+
 }

@@ -6,10 +6,28 @@
 #include "ServicioEmpleado.h"
 #include "ServicioReclamo.h"
 #include "ServicioPago.h"
+#include "ServicioRutina.h"
 
 using namespace std;
 
 MenuGerente::MenuGerente(UsuarioAutenticado usuario) : _usuario(usuario) {}
+
+void MenuGerente::comprobarEstadoDeGerente()
+{
+    system("cls");
+    if(!_usuario.estaHabilitado())
+    {
+        cout << "+--------------------------------------------------------------+" << endl;
+        cout << "| Actualmente no se encuentra habilitado para ingresar al Menu |" << endl;
+        cout << "|   Comuniquese con un gerente para regularizar su estado.     |" << endl;
+        cout << "|                                                              |" << endl;
+        cout << "|                   EQUIPO DE METALGYM                         |" << endl;
+        cout << "+--------------------------------------------------------------+" << endl;
+        return;
+    }
+
+    mostrarMenuGerente();
+}
 
 void MenuGerente::mostrarMenuGerente()
 {
@@ -87,6 +105,7 @@ void MenuGerente::gestionarSocios()
         cout << "| 2 - AGREGAR NUEVO SOCIO                |" << endl;
         cout << "| 3 - MODIFICAR SOCIO                    |" << endl;
         cout << "| 4 - BUSCAR SOCIO                       |" << endl;
+        cout << "| 5 - SOCIOS SIN ENTRENADOR              |" << endl;
         cout << "+----------------------------------------+" << endl;
         cout << "| 0 - VOLVER ATRAS                       |" << endl;
         cout << "+----------------------------------------+" << endl;
@@ -108,6 +127,9 @@ void MenuGerente::gestionarSocios()
             break;
         case 4:
             socio.buscarSocioPorId();
+            break;
+            case 5:
+            socio.verListaDeSociosSinEntrenador();
             break;
         case 0:
             break;
@@ -171,6 +193,7 @@ void MenuGerente::gestionarEntrenadores()
 {
     int opcion;
     ServicioEmpleado entrenador;
+    ServicioRutina rutina;
 
     do
     {
@@ -184,6 +207,7 @@ void MenuGerente::gestionarEntrenadores()
         cout << "| 4 - BUSCAR ENTRENADOR                      |" << endl;
         cout << "| 5 - RESTAURAR ENTRENADOR                   |" << endl;
         cout << "| 6 - ASIGNAR HORARIOS                       |" << endl;
+        cout << "| 7 - LISTA DE TODAS LAS RUTINAS ORDENADAS   |" << endl;
         cout << "+--------------------------------------------+" << endl;
         cout << "| 0 - VOLVER ATRAS                           |" << endl;
         cout << "+--------------------------------------------+" << endl;
@@ -212,6 +236,9 @@ void MenuGerente::gestionarEntrenadores()
             break;
         case 6:
             entrenador.asignarHorarios();
+            break;
+            case 7:
+            rutina.mostrarRutinaPorNombre();
             break;
         case 0:
             break;

@@ -98,8 +98,10 @@ void ServicioEmpleado::agregarEmpleado(int idRol)
 
     if(servicio.comprobarDniEmpleado(dni) != -1)
     {
+        cout << endl;
         cout << " DNI ya ingresado, ID #" << servicio.comprobarDniEmpleado(dni) << endl;
         cout << " Compruebe su estado en apartado <BUSCAR> " << endl;
+        cout << endl;
         system("pause");
         return;
     }
@@ -130,7 +132,7 @@ void ServicioEmpleado::agregarEmpleado(int idRol)
     cout << " 1 - 13hs a 18hs " << endl;
     cout << " 2 - 18hs a 23hs " << endl;
     cout << endl;
-    cout << " Su Selecion: ";
+    cout << " Su Seleccion: ";
     cin >> idTurno;
 
     do
@@ -388,6 +390,10 @@ void ServicioEmpleado::asignarHorarios()
 
 
     system("cls");
+    cout << "+------------------------------------------+" << endl;
+    cout << "|            ASIGNAR HORARIOS              |" << endl;
+    cout << "+------------------------------------------+" << endl;
+    cout << endl;
     cout << " Ingrese ID del entrenador: ";
     cin >> idUsuario;
 
@@ -418,9 +424,10 @@ void ServicioEmpleado::asignarHorarios()
     }
 
     system("cls");
-    cout << "+--------------------------+" << endl;
-    cout << "|     ASIGNAR HORARIOS     |" << endl;
-    cout << "+--------------------------+" << endl;
+    cout << "+------------------------------------------+" << endl;
+    cout << "|            ASIGNAR HORARIOS              |" << endl;
+    cout << "+------------------------------------------+" << endl;
+    cout << endl;
 
     for(int i=0; i<7; i++)
     {
@@ -453,7 +460,7 @@ void ServicioEmpleado::asignarHorarios()
 
             cout << " Agregar? 1 - SI || 0 - NO: ";
             cin >> agregar;
-            cout << "+-------------------------------+" << endl;
+            cout << "+------------------------------------------+" << endl;
             diaSemana[i] = agregar;
         }
     }
@@ -468,7 +475,7 @@ void ServicioEmpleado::asignarHorarios()
         if(_archivoEmpleado.guardarEmpleado(empleado, pos))
         {
             system("cls");
-            cout << "Cambios realizados con exito" << endl;
+            cout << " Cambios realizados con exito" << endl;
         }
     }
 
@@ -535,9 +542,45 @@ void ServicioEmpleado::verHorariosAsignados(int idUsuario)
                     break;
                 }
                 cout << "+-------------------------------+" << endl;
-
             }
         }
+        cout << "+-------------------------------+" << endl;
+        cout << "|            FRANCO/S            |" << endl;
+        cout << "+-------------------------------+" << endl;
+
+        for(int j=0; j<7; j++)
+        {
+            diaSemana = empleado.getDiaSem();
+            if(!diaSemana[j])
+            {
+                switch(j)
+                {
+                case 0:
+                    cout << "           Lunes  " << endl;
+                    break;
+                case 1:
+                    cout << "           Martes  " << endl;
+                    break;
+                case 2:
+                    cout << "           Miercoles " << endl;
+                    break;
+                case 3:
+                    cout << "           Jueves " << endl;
+                    break;
+                case 4:
+                    cout << "           Viernes " << endl;
+                    break;
+                case 5:
+                    cout << "           Sabado " << endl;
+                    break;
+                case 6:
+                    cout << "           Domingo " << endl;
+                    break;
+                }
+                cout << "+-------------------------------+" << endl;
+            }
+        }
+
     }
     system("pause");
 
@@ -663,6 +706,9 @@ void ServicioEmpleado::buscarUnEmpleado(int idRol)
 
         if(empleado.getIdRol() == idRol)
         {
+            cout << "+----------------------------------------------------+" << endl;
+            cout << "|                 BUSCAR UN EMPLEADO                 |" << endl;
+            cout << "+----------------------------------------------------+" << endl;
             cout << endl;
             cout << " Nombre          : " << empleado.getNombre() << endl;
             cout << " Apellido        : " << empleado.getApellido() << endl;
@@ -698,6 +744,7 @@ void ServicioEmpleado::buscarUnEmpleado(int idRol)
                 cout << " Id ingresado corresponde a un Gerente..." << endl;
             }
         }
+        cout << "+----------------------------------------------------+" << endl;
 
     }
     else
@@ -802,13 +849,13 @@ void ServicioEmpleado::verSociosAsignados(int idEntrenador)
         break;
     }
 
-    cout << "+--------------------------------------------+" << endl;
-    cout << "|    ENTRENADOR: " << entrenador.getNombre() << " " << entrenador.getApellido() << endl;
-    cout << "+--------------------------------------------+" << endl;
-    cout << "|             HORARIO: " << horarios << "           |" << endl;
-    cout << "+--------------------------------------------+" << endl;
+    cout << "+-----------------------------------------------------------------------------+" << endl;
+    cout << "|                        ENTRENADOR: " << entrenador.getNombre() << " " << entrenador.getApellido() << endl;
+    cout << "+-----------------------------------------------------------------------------+" << endl;
+    cout << "|                        HORARIO: " << horarios << "                                 |" << endl;
+    cout << "+-----------------------------------------------------------------------------+" << endl;
     socio.mostrarSociosPorEntrenador(idEntrenador);
-    cout << "+--------------------------------------------+" << endl;
+    cout << "+-----------------------------------------------------------------------------+" << endl;
 
     system("pause");
 }

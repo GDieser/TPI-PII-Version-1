@@ -18,12 +18,17 @@ void ServicioAsistencia::registrarAsistencia(int idSocio)
     if(validarRegistroDeAsistencia(idSocio, hoy)){
         RegistroAsistencia reg = RegistroAsistencia(idSocio, hoy);
         _archivoAsitencia.guardarAsistencia(reg);
-        cout << "Asistencia registrada correctamente!"<< endl;
+
+        cout << "+--------------------------------------+" << endl;
+        cout << "| Asistencia registrada correctamente! |"<< endl;
+        cout << "+--------------------------------------+" << endl;
+
     } else {
-        cout << "Usted ya registro su asistencia para el dia de la fecha" << endl;
+        cout << "+----------------------------------------------------------+" << endl;
+        cout << "| Usted ya registro su asistencia para el dia de la fecha  |" << endl;
+        cout << "+----------------------------------------------------------+" << endl;
     }
-    system("pause");
-    system("cls");
+
 }
 
 bool ServicioAsistencia::validarRegistroDeAsistencia(int idSocio, Fecha fechaActual)

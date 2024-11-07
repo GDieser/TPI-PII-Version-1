@@ -2,6 +2,7 @@
 
 #include "MenuEntrenador.h"
 #include "ServicioEmpleado.h"
+#include "ServicioSocio.h"
 #include "ServicioReclamo.h"
 #include "ServicioEjercicio.h"
 #include "ServicioRutina.h"
@@ -9,12 +10,30 @@
 using namespace std;
 
 
-MenuEntrenador::MenuEntrenador(UsuarioAutenticado usuario) : _usuario(usuario){}
+MenuEntrenador::MenuEntrenador(UsuarioAutenticado usuario) : _usuario(usuario) {}
+
+void MenuEntrenador::comprobarEstadoDeEntrenador()
+{
+    system("cls");
+    if(!_usuario.estaHabilitado())
+    {
+        cout << "+--------------------------------------------------------------+" << endl;
+        cout << "| Actualmente no se encuentra habilitado para ingresar al Menu |" << endl;
+        cout << "|   Comuniquese con un gerente para regularizar su estado.     |" << endl;
+        cout << "|                                                              |" << endl;
+        cout << "|                   EQUIPO DE METALGYM                         |" << endl;
+        cout << "+--------------------------------------------------------------+" << endl;
+        return;
+    }
+
+    mostrarMenuEntrenador();
+}
 
 void MenuEntrenador::mostrarMenuEntrenador()
 {
     int opcion;
     ServicioEmpleado entrenador;
+
 
     do
     {
@@ -23,7 +42,7 @@ void MenuEntrenador::mostrarMenuEntrenador()
         cout << "+-----------------------------+" << endl;
         cout << "|        MENU ENTRENADOR      |" << endl;
         cout << "+-----------------------------+" << endl;
-        cout << "| 1 - HORARIOS                |" << endl;
+        cout << "| 1 - HORARIOS Y SOCIOS       |" << endl;
         cout << "| 2 - RUTINAS Y EJERCICIOS    |" << endl;
         cout << "| 3 - RECLAMOS                |" << endl;
         cout << "| 4 - CAMBIAR CONTRASENIA     |" << endl;
@@ -64,19 +83,22 @@ void MenuEntrenador::mostrarMenuEntrenador()
 void MenuEntrenador::verHorariosYSociosAsignados()
 {
     ServicioEmpleado entrenador;
+    ServicioSocio socio;
     int opcion;
 
     do
     {
         system("cls");
-        cout << "+-----------------------------------+" << endl;
-        cout << "|              HORARIOS             |" << endl;
-        cout << "+-----------------------------------+" << endl;
-        cout << "| 1 - VER HORARIOS ASIGNADOS        |" << endl;
-        cout << "| 2 - VER SOCIOS ASIGNADOS          |" << endl;
-        cout << "+-----------------------------------+" << endl;
-        cout << "| 0 - VOLVER ATRAS                  |" << endl;
-        cout << "+-----------------------------------+" << endl;
+        cout << "+-------------------------------------+" << endl;
+        cout << "|           HORARIOS Y SOCIOS         |" << endl;
+        cout << "+-------------------------------------+" << endl;
+        cout << "| 1 - VER HORARIOS ASIGNADOS          |" << endl;
+        cout << "| 2 - VER SOCIOS ASIGNADOS            |" << endl;
+        cout << "| 3 - VER SOCIOS SIN RUTINA ASIGNADA  |" << endl;
+        cout << "| 4 - ASIGNAR UNA RUTINA              |" << endl;
+        cout << "+-------------------------------------+" << endl;
+        cout << "| 0 - VOLVER ATRAS                    |" << endl;
+        cout << "+-------------------------------------+" << endl;
         cout << endl;
         cout << " Su seleccion: ";
         cin >> opcion;
@@ -90,6 +112,12 @@ void MenuEntrenador::verHorariosYSociosAsignados()
             break;
         case 2:
             entrenador.verSociosAsignados(_usuario.getIdUsuario());
+            break;
+        case 3:
+            socio.verListaDeSociosSinRutina(_usuario.getIdUsuario());
+            break;
+        case 4:
+            socio.asignarUnaRutina(_usuario.getIdUsuario());
             break;
         case 0:
             break;

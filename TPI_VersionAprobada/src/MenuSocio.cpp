@@ -206,6 +206,8 @@ void MenuSocio::mostrarPreciosDePases()
 void MenuSocio::verRutina()
 {
     int opcion;
+    ServicioRutina sRutina;
+    Socio socio = _sSocio.buscarSocioId(_usuario.getIdUsuario());
 
     do
     {
@@ -214,6 +216,7 @@ void MenuSocio::verRutina()
         cout << "|               RUTINAS                |" << endl;
         cout << "+--------------------------------------+" << endl;
         cout << "| 1 - VER MI RUTINA                    |" << endl;
+        cout << "| 2 - VER DETALLES DE RUTINA           |" << endl;
         cout << "+--------------------------------------+" << endl;
         cout << "| 0 - VOLVER ATRAS                     |" << endl;
         cout << "+--------------------------------------+" << endl;
@@ -226,14 +229,13 @@ void MenuSocio::verRutina()
         switch(opcion)
         {
         case 1:
-        {
-            ServicioRutina sRutina;
-            Socio socio = _sSocio.buscarSocioId(_usuario.getIdUsuario());
-
             sRutina.verRutinaAsignada(socio.getIdRutina());
-        }
-        break;
-
+            break;
+        case 2:
+            sRutina.verDetallesDeRutina(socio.getIdRutina());
+            break;
+        case 0:
+            break;
         default:
             cout << "ERROR" << endl;
             break;
@@ -332,6 +334,8 @@ void MenuSocio::presentarReclamo()
             break;
         case 2:
             sr.verReclamosUsuario(_usuario.getIdUsuario());
+            break;
+        case 0:
             break;
         default:
             cout << " Opcion incorrecta, proba de nuevo" << endl;

@@ -14,6 +14,8 @@ public:
     void verReclamos();
     void modificarContrasenia();
 
+    void comprobarEstadoDeEntrenador();
+
 private:
 
     UsuarioAutenticado _usuario;

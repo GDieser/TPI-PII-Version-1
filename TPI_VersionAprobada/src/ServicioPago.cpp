@@ -23,7 +23,7 @@ bool ServicioPago::verificarUltimoPago(int idSocio)
     int cantPagos = _archivoPago.getCantidadPagos();
     int pos = _archivoPago.ultimoPagoSocio(cantPagos, idSocio);
 
-    if (pos != -1)  // chequeo si existe un pago
+    if (pos != -1)
     {
         pago = _archivoPago.leerPago(pos);
         if (pago.getPeriodo().getMes() > fechaActual.getMes())
@@ -52,11 +52,12 @@ bool ServicioPago::registrarPago(int idSocio, int idMembresia, Fecha periodo)
         cout << "+-----------------------------------+" << endl;
         cout << "|  El Pago del Periodo esta al Dia  |" << endl;
         cout << "+-----------------------------------+" << endl;
+        system("pause");
         return false;
     }
 
     int mes = fechaActual.getMes();
-    periodo.setMes(mes + 1); // al mes que traigo por parametro le sumo 1.
+    periodo.setMes(mes + 1);
 
     cout << "+-------------------------------------------------+" << endl;
     cout << "|                REGISTRO DE PAGOS                |" << endl;
@@ -145,9 +146,14 @@ void ServicioPago::verPago(int idSocio)
     int cantPagos = _archivoPago.getCantidadPagos();
     int cantPagosSocio = _archivoPago.cantidadPagosXSocio(cantPagos, idSocio);
 
-    if (cantPagos > 0)
+    if (cantPagosSocio > 0)
     {
         vPagos = new int[cantPagosSocio];
+        if(vPagos == nullptr)
+        {
+            return;
+        }
+
         *vPagos = _archivoPago.leerPagosXSocio(cantPagos, vPagos, cantPagosSocio, idSocio);
 
         for (int i = 0; i < cantPagosSocio; i++)
@@ -169,7 +175,7 @@ void ServicioPago::verPago(int idSocio)
         cout << "+-------------------------+" << endl;
     }
 
-    //delete[]vPagos;
+
     system("pause");
 }
 
@@ -241,6 +247,8 @@ void ServicioPago::verPagosPorMes()
                 cout << " Siguiente pagina...." << endl;
                 system("pause");
                 system("cls");
+
+                contador=0;
             }
         }
     }
@@ -290,6 +298,8 @@ void ServicioPago::verPagosPorAnio()
                 cout << " Siguiente pagina...." << endl;
                 system("pause");
                 system("cls");
+
+                contador=0;
             }
         }
     }
@@ -318,7 +328,10 @@ void ServicioPago::verIngresosAnuales()
 
     int contador = 0;
 
-    cout << "------------------------------------" << endl;
+    cout << "+-------------------------------------+" << endl;
+    cout << "|         ESTADISTICAS ANUALES        |" << endl;
+    cout << "+-------------------------------------+" << endl;
+    cout << endl;
     cout << " Ingrese Anio de consulta: ";
     cin >> anio;
 
@@ -412,7 +425,10 @@ void ServicioPago::verIngresosMensuales()
 
     int contador = 0;
 
-    cout << "---------------------------" << endl;
+    cout << "+------------------------------------------+" << endl;
+    cout << "|           ESTADISTICAS MENSUALES         |" << endl;
+    cout << "+------------------------------------------+" << endl;
+    cout << endl;
     cout << " Ingrese Anio: ";
     cin >> anio;
     cout << " Ingrese mes: ";
@@ -442,9 +458,9 @@ void ServicioPago::verIngresosMensuales()
     }
 
     cout << endl;
-    cout << "--------------------------------------------" << endl;
+    cout << "+------------------------------------------+" << endl;
     cout << " MES: " << mes << " || INGRESOS: $" << montoTotal << endl;
-    cout << "--------------------------------------------" << endl;
+    cout << "+------------------------------------------+" << endl;
 
     system("pause");
 }
@@ -593,6 +609,7 @@ void ServicioPago::verIngresosAnualesPorSocios()
         contador++;
 
     }
+    cout << "+-------------------------------------------------------------------------+" << endl;
 
     if (contador == 0)
     {
@@ -604,6 +621,6 @@ void ServicioPago::verIngresosAnualesPorSocios()
         return;
     }
 
-
+    cout << endl;
     system("pause");
 }

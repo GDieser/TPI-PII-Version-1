@@ -10,50 +10,65 @@ using namespace std;
 
 UsuarioAutenticado Autenticador::autenticar()
 {
+    Usuario usuario;
     int idUsuario;
     string pass;
     char _pass[50];
+    int contador = 0;
 
-    system("cls");
-
-    cout << "+--------------------------------------+" << endl;
-    cout << "|         Bienvenido a MetalGYM        |" << endl;
-    cout << "|      El Camino a tu mejor version    |" << endl;
-    cout << "+--------------------------------------+" << endl;
-    cout << endl;
-
-    cout << "       Ingrese sus datos de acceso     " << endl;
-    cout << "+--------------------------------------+" << endl;
-
-    cout << " INGRESE ID: ";
-    cin >> idUsuario;
-
-    cout << " INGRESE PASS: ";
-    cin >> pass;
-
-    cout << "+--------------------------------------+" << endl;
-    cout << "|   Gracias por ingresar, cargando...  |" << endl;
-    cout << "+--------------------------------------+" << endl;
-    system("pause");
-
-    strncpy(_pass, pass.c_str(), 49);
-
-    Usuario usuario = buscarUsuario(idUsuario, _pass);
-
-    if (usuario.getEstado() || !usuario.getEstado())///Jeje
+    do
     {
-        UsuarioAutenticado authUs(
-            usuario.getIdUsuario(),
-            usuario.getNombre(),
-            usuario.getApellido(),
-            usuario.getDni(),
-            usuario.getFechaNacimiento(),
-            usuario.getFechaDeIngreso(),
-            usuario.getIdRol(),
-            usuario.getEstado()
-        );
-        return authUs;
+        system("cls");
+
+        cout << "+--------------------------------------+" << endl;
+        cout << "|         Bienvenido a MetalGYM        |" << endl;
+        cout << "|      El Camino a tu mejor version    |" << endl;
+        cout << "+--------------------------------------+" << endl;
+        cout << endl;
+
+        cout << "       Ingrese sus datos de acceso     " << endl;
+        cout << endl;
+
+        cout << " INGRESE ID: ";
+        cin >> idUsuario;
+
+        cout << " INGRESE PASS: ";
+        cin >> pass;
+
+        cout << endl;
+        cout << "+--------------------------------------+" << endl;
+        cout << "|   Gracias por ingresar, cargando...  |" << endl;
+        cout << "+--------------------------------------+" << endl;
+        system("pause");
+
+        strncpy(_pass, pass.c_str(), 49);
+
+        usuario = buscarUsuario(idUsuario, _pass);
+        contador++;
     }
+    while(contador < 3 && usuario.getIdUsuario() != idUsuario );
+
+    if(contador == 3)
+    {
+        system("cls");
+        cout << "+--------------------------------------+" << endl;
+        cout << "|    Limites de intentos alcanzado     |" << endl;
+        cout << "|  Intente nuevamente en unos minutos  |" << endl;
+        cout << "+--------------------------------------+" << endl;
+    }
+
+    UsuarioAutenticado authUs(
+        usuario.getIdUsuario(),
+        usuario.getNombre(),
+        usuario.getApellido(),
+        usuario.getDni(),
+        usuario.getFechaNacimiento(),
+        usuario.getFechaDeIngreso(),
+        usuario.getIdRol(),
+        usuario.getEstado()
+    );
+    return authUs;
+
 
     return UsuarioAutenticado();
 }
@@ -82,8 +97,13 @@ Usuario Autenticador::buscarUsuario(const int idUsuario, const char* pass)
         }
     }
 
-    cout << endl;
-    cout << "Contrasenia o usuario incorrectos..." << endl;
+    system("cls");
+    cout << "+--------------------------------------+" << endl;
+    cout << "|   Contrasenia o usuario incorrectos  |" << endl;
+    cout << "|          Pruebe nuevamente           |" << endl;
+    cout << "+--------------------------------------+" << endl;
+    system("pause");
+
 
     return Usuario();
 }

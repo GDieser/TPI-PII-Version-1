@@ -15,6 +15,7 @@ class ServicioRutina
         void mostrarOpcionesModificarRutina(int idEntrenador);
         void asignarRutina();
         void verDetallesDeRutina();
+        void verDetallesDeRutina(int idRutina);
         void mostrarRutinasPorEntrenador(int idEntrenador);
         int obtenerUltimoIdRutina();
         DetalleRutina crearDetalleRutina(int idRutina);
@@ -24,6 +25,8 @@ class ServicioRutina
         DetalleRutina modificarDetalleRutina(DetalleRutina detalle);
 
         int elegirRutina(int idEntrenador);
+        void ordenarRutinaPorNombre(Rutina vectRutina[], int tam);
+        void mostrarRutinaPorNombre();
 
     private:
 

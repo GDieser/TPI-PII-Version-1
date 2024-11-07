@@ -20,9 +20,14 @@ void ServicioReclamo::cargarReclamo(int idUsuario)
     Fecha fechaActual;
     string detalle;
 
-    cout << "           ||| NUEVO RECLAMO |||           " << endl;
-    cout << "    --- Por favor ingrese su reclamo ---     " << endl;
-    cout << "" << endl;
+    cout << "+-------------------------------------------+" << endl;
+    cout << "|           ||| NUEVO RECLAMO |||           |" << endl;
+    cout << "+-------------------------------------------+" << endl;
+    cout << "|                                           |" << endl;
+    cout << "|    --- Por favor ingrese su reclamo ---   | " << endl;
+    cout << "+-------------------------------------------+" << endl;
+    cout << endl;
+    cout << " Detalles: ";
 
     cin.ignore();
     getline(cin, detalle);
@@ -33,14 +38,17 @@ void ServicioReclamo::cargarReclamo(int idUsuario)
 
     if(_archivoReclamos.guardarReclamo(reclamo))
     {
-        cout << "----------------------------------------"<< endl;
+        cout << "+-------------------------------------------+" << endl;
         cout << "   Reclamo realizado con exito, ID #" << idReclamo << " --- " << endl;
         cout << "   Fecha: " << fechaActual.toString() << endl;
-        cout << "----------------------------------------"<< endl;
+        cout << "+-------------------------------------------+" << endl;
     }
     else
     {
-        cout << " --- No se pudo guardar su reclamo, intentelo mas tarde. --- ";
+        system("cls");
+        cout << "+---------------------------------------------------------------+" << endl;
+        cout << "| --- No se pudo registrar su reclamo, intentelo mas tarde. --- |";
+        cout << "+---------------------------------------------------------------+" << endl;
     }
 
     system("pause");
@@ -95,13 +103,15 @@ void ServicioReclamo::verReclamosUsuario(int idUsuario)
 
     *vectReclamos = _archivoReclamos.leerRegistrosPorUsuario(cantidad, vectReclamos, tam, idUsuario);
 
+    cout << "+-------------------------------------------+" << endl;
+    cout << "|                   RECLAMOS                |" << endl;
+    cout << "+-------------------------------------------+" << endl;
 
     for(int i=0; i<tam; i++)
     {
 
         reclamo = _archivoReclamos.leerReclamo(vectReclamos[i]);
 
-        cout << "-------------------------------------------" << endl;
         if(reclamo.getEstaResuelto())
         {
             cout << " Estado del reclamo: RESUELTO" << endl;
@@ -112,6 +122,7 @@ void ServicioReclamo::verReclamosUsuario(int idUsuario)
         }
         cout << " ID #" << reclamo.getIdReclamo() << endl;
         cout << " Detalle: " << reclamo.getDetalle() << endl;
+        cout << "+-------------------------------------------+" << endl;
     }
 
     delete[]vectReclamos;
@@ -124,6 +135,11 @@ void ServicioReclamo::cambiarEstadoReclamo()
     system("cls");
     int idReclamo, opcion;
     Reclamo reclamo;
+
+    cout << "+-------------------------------------------+" << endl;
+    cout << "|              MODIFICAR RECLAMO            |" << endl;
+    cout << "+-------------------------------------------+" << endl;
+    cout << endl;
 
     cout << " Ingrese ID de Reclamo: ";
     cin >> idReclamo;
@@ -161,7 +177,9 @@ void ServicioReclamo::cambiarEstadoReclamo()
     }
     else
     {
-        cout << " --- El ID no existe --- " << endl;
+        cout << "+---------------------------+" << endl;
+        cout << "|  --- El ID no existe ---  |" << endl;
+        cout << "+---------------------------+" << endl;
     }
 
     cout << endl;

@@ -31,7 +31,7 @@ void MenuPrincipal::mostrarMenuInicio()
     {
         cout << "Menu Gerente" << endl;
         MenuGerente menuGerente(_usuario);
-        menuGerente.mostrarMenuGerente();
+        menuGerente.comprobarEstadoDeGerente();
         break;
 
     }
@@ -39,7 +39,7 @@ void MenuPrincipal::mostrarMenuInicio()
     {
         cout << "Menu Entrenador" << endl;
         MenuEntrenador menuEntrenador(_usuario);
-        menuEntrenador.mostrarMenuEntrenador();
+        menuEntrenador.comprobarEstadoDeEntrenador();
         break;
     }
     case 2:

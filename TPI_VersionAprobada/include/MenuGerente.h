@@ -20,6 +20,8 @@ public:
     void verOpcionesDeListasSocios();
     void verOpcionesDeListasEntrenadores();
 
+    void comprobarEstadoDeGerente();
+
 private:
 
     UsuarioAutenticado _usuario;

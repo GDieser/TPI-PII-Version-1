@@ -39,6 +39,8 @@ public:
     void verListaDeSociosSinRutina(int idEntrenador);
     void asignarUnaRutina(int idEntrenador);
 
+    void generarCSV(Socio socios[], int cantReg);
+
 
 private:
 

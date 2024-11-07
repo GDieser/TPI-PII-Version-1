@@ -83,12 +83,59 @@ void MenuGerente::gestionarSocios()
         cout << "+----------------------------------------+" << endl;
         cout << "|                SOCIOS                  |" << endl;
         cout << "+----------------------------------------+" << endl;
-        cout << "| 1 - VER LISTA DE SOCIOS ACTIVOS        |" << endl;
+        cout << "| 1 - VER LISTA DE SOCIOS                |" << endl;
         cout << "| 2 - AGREGAR NUEVO SOCIO                |" << endl;
         cout << "| 3 - MODIFICAR SOCIO                    |" << endl;
         cout << "| 4 - BUSCAR SOCIO                       |" << endl;
-        cout << "| 5 - RESTAURAR SOCIO                    |" << endl;///Dentro de modificar?
-        cout << "| 6 - ASIGNAR ENTRENADOR                 |" << endl;
+        cout << "+----------------------------------------+" << endl;
+        cout << "| 0 - VOLVER ATRAS                       |" << endl;
+        cout << "+----------------------------------------+" << endl;
+        cout << endl;
+        cout << " Su seleccion: ";
+        cin >> opcion;
+
+        system("cls");
+        switch(opcion)
+        {
+        case 1:
+            verOpcionesDeListasSocios();
+            break;
+        case 2:
+            socio.agregarSocio();
+            break;
+        case 3:
+            socio.modificarSocio();
+            break;
+        case 4:
+            socio.buscarSocioPorId();
+            break;
+        case 0:
+            break;
+        default:
+            cout << "Opcion incorrecta" << endl;
+            system("pause");
+            break;
+        }
+
+    }
+    while(opcion != 0);
+
+}
+
+void MenuGerente::verOpcionesDeListasSocios()
+{
+    int opcion;
+    ServicioSocio socio;
+
+    do
+    {
+        system("cls");
+        cout << "+----------------------------------------+" << endl;
+        cout << "|           LISTAS DE SOCIOS             |" << endl;
+        cout << "+----------------------------------------+" << endl;
+        cout << "| 1 - VER LISTA ORDENADA POR ID          |" << endl;
+        cout << "| 2 - VER LISTA ORDENADA POR DNI         |" << endl;
+        cout << "| 3 - VER LISTA ORDENADA POR APELLIDO    |" << endl;
         cout << "+----------------------------------------+" << endl;
         cout << "| 0 - VOLVER ATRAS                       |" << endl;
         cout << "+----------------------------------------+" << endl;
@@ -103,19 +150,10 @@ void MenuGerente::gestionarSocios()
             socio.verSocios();
             break;
         case 2:
-            socio.agregarSocio();
+            socio.verSociosPorDni();
             break;
         case 3:
-            ///socio.modificarSocio(); //Deberia pedir el ID dentro
-            break;
-        case 4:
-            ///socio.buscarSocioId(); //Deberia pedir el ID dentro
-            break;
-        case 5:
-            ///Dentro de modificar?
-            break;
-        case 6:
-
+            socio.verSociosPorApellido();
             break;
         case 0:
             break;
@@ -127,8 +165,8 @@ void MenuGerente::gestionarSocios()
 
     }
     while(opcion != 0);
-
 }
+
 void MenuGerente::gestionarEntrenadores()
 {
     int opcion;
@@ -140,7 +178,7 @@ void MenuGerente::gestionarEntrenadores()
         cout << "+--------------------------------------------+" << endl;
         cout << "|                ENTRENADORES                |" << endl;
         cout << "+--------------------------------------------+" << endl;
-        cout << "| 1 - VER LISTA DE ENTRENADORES ACTIVOS      |" << endl;
+        cout << "| 1 - VER LISTAS DE ENTRENADORES             |" << endl;
         cout << "| 2 - AGREGAR NUEVO ENTRENADOR               |" << endl;
         cout << "| 3 - MODIFICAR ENTRENADOR                   |" << endl;
         cout << "| 4 - BUSCAR ENTRENADOR                      |" << endl;
@@ -158,9 +196,7 @@ void MenuGerente::gestionarEntrenadores()
         switch(opcion)
         {
         case 1:
-            //entrenador.listarEmpleadoPorApellido(1);
-            //entrenador.mostrarHorariosDeEntrenadores();
-            entrenador.verEmpleados(1);
+            verOpcionesDeListasEntrenadores();
             break;
         case 2:
             entrenador.agregarEmpleado(1);
@@ -189,6 +225,52 @@ void MenuGerente::gestionarEntrenadores()
     while(opcion != 0);
 
 }
+
+void MenuGerente::verOpcionesDeListasEntrenadores()
+{
+    int opcion;
+    ServicioEmpleado entrenador;
+
+    do
+    {
+        system("cls");
+        cout << "+----------------------------------------+" << endl;
+        cout << "|         LISTAS DE ENTRENADORES         |" << endl;
+        cout << "+----------------------------------------+" << endl;
+        cout << "| 1 - VER LISTA ORDENADA POR ID          |" << endl;
+        cout << "| 2 - VER LISTA ORDENADA POR DNI         |" << endl;
+        cout << "| 3 - VER LISTA ORDENADA POR APELLIDO    |" << endl;
+        cout << "+----------------------------------------+" << endl;
+        cout << "| 0 - VOLVER ATRAS                       |" << endl;
+        cout << "+----------------------------------------+" << endl;
+        cout << endl;
+        cout << " Su seleccion: ";
+        cin >> opcion;
+
+        system("cls");
+        switch(opcion)
+        {
+        case 1:
+            entrenador.verEmpleados(1);
+            break;
+        case 2:
+            entrenador.listarEmpleadoOrdenados(1, 1);
+            break;
+        case 3:
+            entrenador.listarEmpleadoOrdenados(1, 0);
+            break;
+        case 0:
+            break;
+        default:
+            cout << "Opcion incorrecta" << endl;
+            system("pause");
+            break;
+        }
+
+    }
+    while(opcion != 0);
+}
+
 void MenuGerente::gestionarGerentes()
 {
     int opcion;
@@ -258,11 +340,10 @@ void MenuGerente::gestionarPagos()
         cout << "+----------------------------------------+" << endl;
         cout << "|            PAGOS DE SOCIOS             |" << endl;
         cout << "+----------------------------------------+" << endl;
-        ///cout << "| 1 - VER LISTA DE PAGOS PENDIENTES      |" << endl; /// Capaz volar
         cout << "| 1 - VER LISTA DE PAGOS POR MES         |" << endl;
         cout << "| 2 - VER LISTA DE PAGOS POR ANIO        |" << endl;
         cout << "| 3 - VER LISTA POR TIPOS DE PASES       |" << endl;
-        ///cout << "| 5 - LISTA DE DEUDORES                  |" << endl; /// Capaz volar
+        cout << "| 4 - VER LISTA ANUAL POR SOCIO          |" << endl;
         cout << "+----------------------------------------+" << endl;
         cout << "| 0 - VOLVER ATRAS                       |" << endl;
         cout << "+----------------------------------------+" << endl;
@@ -274,19 +355,16 @@ void MenuGerente::gestionarPagos()
         switch(opcion)
         {
         case 1:
-
+            pago.verPagosPorMes();
             break;
         case 2:
-
+            pago.verPagosPorAnio();
             break;
         case 3:
-
+            pago.mostrarListaDePagosPorTipoDePase();
             break;
         case 4:
-
-            break;
-        case 5:
-
+            pago.verIngresosAnualesPorSocios();
             break;
         case 0:
             break;

@@ -22,6 +22,8 @@ public:
     void mostrarPreciosDePases();
     void verHorariosGimnasio();
 
+    void mostrarSubMenuAsistencia(int idUsuario);
+
 private:
 
     UsuarioAutenticado _usuario;

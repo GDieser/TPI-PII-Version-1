@@ -134,24 +134,26 @@ bool Fecha::compararSiFechasSonIguales(Fecha fecha)
     return (_anio == fecha.getAnio() && _mes == fecha.getMes() && _dia == fecha.getDia());
 }
 
-Fecha  Fecha::calcularFechaVencimientoPorMeses()
+
+Fecha Fecha::sumarDiasParaVencimiento(Fecha fechaVencimiento)
 {
-    int nuevoMes = _mes + 1;
-    int nuevoAnio = _anio;
-    int nuevoDia = _dia;
+    int dia = fechaVencimiento.getDia() + 35;
+    int mes = fechaVencimiento.getMes();
+    int anio = fechaVencimiento.getAnio();
 
-    if (nuevoMes > 12)
+    while (dia > diasPorMes(mes, anio))
     {
-        nuevoMes = 1;
-        nuevoAnio++;
+
+        dia -= diasPorMes(mes, anio);
+        mes++;
+
+
+        if (mes > 12)
+        {
+            mes = 1;
+            anio++;
+        }
     }
 
-    int diasEnNuevoMes = diasPorMes(nuevoMes, nuevoAnio);
-
-    if (_dia > diasEnNuevoMes)
-    {
-        nuevoDia = diasEnNuevoMes;
-    }
-
-    return Fecha(nuevoDia, nuevoMes, nuevoAnio);
+    return Fecha(dia, mes, anio);
 }

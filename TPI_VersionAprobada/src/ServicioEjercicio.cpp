@@ -155,7 +155,6 @@ void ServicioEjercicio::modificarEjercicio()
     system("pause");
 }
 
-///Que arranque en 1 y sea autonumerico
 int ServicioEjercicio::obtenerUltimoIdEjercicio()
 {
     int cantidad = _archivoEjercicio.cantidadRegistrosEjercicios();

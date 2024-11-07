@@ -55,6 +55,48 @@ void ServicioAsistencia::verAsistenciaPorSocio(int idSocio)
     }
 }
 
+void ServicioAsistencia::verAsistenciaPorSocioPorMes(int idSocio, int mes)
+{
+    system("cls");
+    RegistroAsistencia reg;
+    int contadorMes = 0;
+
+    int cant = _archivoAsitencia.cantidadRegistrosAsistencias();
+
+    for (int i = 0; i < cant; i++)
+    {
+        reg = _archivoAsitencia.leerRegistroAsistencia(i);
+        if(idSocio == reg.getIdSocio() && mes == reg.getFecha().getMes())
+        {
+            contadorMes++;
+        }
+    }
+
+    cout << " Cantidad de asistencias en un mes: " << contadorMes << endl;
+    system("pause");
+}
+
+void ServicioAsistencia::verAsistenciaPorSocioPorAnio(int idSocio, int anio)
+{
+    system("cls");
+    RegistroAsistencia reg;
+    int contadorAnio = 0;
+
+    int cant = _archivoAsitencia.cantidadRegistrosAsistencias();
+
+    for (int i = 0; i < cant; i++)
+    {
+        reg = _archivoAsitencia.leerRegistroAsistencia(i);
+        if(idSocio == reg.getIdSocio() && anio == reg.getFecha().getAnio())
+        {
+            contadorAnio++;
+        }
+    }
+
+    cout << " Cantidad de asistencias en un anio: " << contadorAnio << endl;
+    system("pause");
+}
+
 void ServicioAsistencia::verTodasLasAsistencia(){
     system("cls");
     RegistroAsistencia reg;
@@ -67,6 +109,7 @@ void ServicioAsistencia::verTodasLasAsistencia(){
         cout << reg.getFecha().toString() << "\t" << reg.getIdSocio() << " \t|"<<endl;
     }
 }
+
 void ServicioAsistencia::verAsistenciasEnPeriodo(int mes, int anio){
     system("cls");
     RegistroAsistencia reg;
@@ -80,6 +123,7 @@ void ServicioAsistencia::verAsistenciasEnPeriodo(int mes, int anio){
         cout << reg.getFecha().toString() << "\t" << reg.getIdSocio() << " \t|"<<endl;
     }
 }
+
 void ServicioAsistencia::verAsistenciasEnAnio(int anio){
     system("cls");
     RegistroAsistencia reg;
@@ -93,3 +137,5 @@ void ServicioAsistencia::verAsistenciasEnAnio(int anio){
         cout << reg.getFecha().toString() << "\t" << reg.getIdSocio() << " \t|"<<endl;
     }
 }
+
+

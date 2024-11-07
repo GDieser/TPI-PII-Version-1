@@ -757,7 +757,6 @@ int ServicioEmpleado::elegirEntrenador()
 
     return idSeleccionado;
 
-    system("pause");
 }
 
 int ServicioEmpleado::comprobarDniEmpleado(int dni)
@@ -821,12 +820,13 @@ void ServicioEmpleado::mostrarHorariosDeEntrenadores()
     string horarios;
     char nombreCompleto[30];
     Empleado entrenador;
+    ServicioActividad actividad;
 
     int cantidad = _archivoEmpleado.cantidadRegistrosEmpleados();
 
-    cout << "+--------------------------------------------------+" << endl;
-    cout << "|            HORARIOS DE ENTREENADORES             |" << endl;
-    cout << "+--------------------------------------------------+" << endl;
+    cout << "+----------------------------------------------------------------------------+" << endl;
+    cout << "|                           HORARIOS DE ENTREENADORES                        |" << endl;
+    cout << "+----------------------------------------------------------------------------+" << endl;
 
     for(int i=0; i<cantidad; i++)
     {
@@ -866,16 +866,18 @@ void ServicioEmpleado::mostrarHorariosDeEntrenadores()
                 cout << " ";
             }
 
-            cout << "| Horario: " << horarios << endl;
+            cout << "| Horario: " << horarios << " | ";
+            actividad.buscarActividad(entrenador.getIdActividadPrincipal());
+
             indice++;
         }
     }
-    cout << "+--------------------------------------------------+" << endl;
+    cout << "+----------------------------------------------------------------------------+" << endl;
     cout << endl;
     system("pause");
 }
 
-void ServicioEmpleado::listarEmpleadoPorApellido(int idRol)
+void ServicioEmpleado::listarEmpleadoOrdenados(int idRol, int lista)
 {
     system("cls");
     Empleado *empleado;
@@ -900,16 +902,28 @@ void ServicioEmpleado::listarEmpleadoPorApellido(int idRol)
         empleado[i] = _archivoEmpleado.leerRegistroEmpleado(posEmpleado[i]);
     }
 
-    ordenarPorApellido(empleado, cantActivos);
+    if(lista == 0)
+    {
+        ordenarPorApellido(empleado, cantActivos);
+        cout << "+------------------------------------------------------+" << endl;
+        cout << "|              LISTA ORDENADA POR APELLIDO             |" << endl;
+        cout << "+------------------------------------------------------+" << endl;
+    }
+    else
+    {
+        ordenarPorDni(empleado, cantActivos);
+        cout << "+------------------------------------------------------+" << endl;
+        cout << "|                 LISTA ORDENADA POR DNI               |" << endl;
+        cout << "+------------------------------------------------------+" << endl;
+    }
 
-    cout << "+---------------------------------------+" << endl;
-    cout << "|      LISTA ORDENADA POR APELLIDO      |" << endl;
-    cout << "+---------------------------------------+" << endl;
+
+
 
     for(int i=0; i<cantActivos; i++)
     {
-        cout << " " << indice << ". " << empleado[i].getApellido() << ", " << empleado[i].getNombre() << "   ID #" << empleado[i].getIdUsuario() << endl;
-        cout << "+---------------------------------------+" << endl;
+        cout << " " << indice << ". DNI: " << empleado[i].getDni() << ", " << empleado[i].getApellido() << ", " << empleado[i].getNombre() << "   ID #" << empleado[i].getIdUsuario() << endl;
+        cout << "+------------------------------------------------------+" << endl;
         indice++;
     }
 
@@ -931,6 +945,24 @@ void ServicioEmpleado::ordenarPorApellido(Empleado empleado[], int tam)
         for(int j=i+1; j<tam; j++)
         {
             if(strcmp(empleado[i].getApellido().c_str(), empleado[j].getApellido().c_str()) > 0)
+            {
+                aux = empleado[i];
+                empleado[i] = empleado[j];
+                empleado[j] = aux;
+            }
+        }
+    }
+}
+
+void ServicioEmpleado::ordenarPorDni(Empleado empleado[], int tam)
+{
+    Empleado aux;
+
+    for(int i=0; i<tam-1; i++)
+    {
+        for(int j=i+1; j<tam; j++)
+        {
+            if(empleado[i].getDni() > empleado[j].getDni())
             {
                 aux = empleado[i];
                 empleado[i] = empleado[j];

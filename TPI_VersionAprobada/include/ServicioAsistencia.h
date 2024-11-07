@@ -14,6 +14,8 @@ class ServicioAsistencia
         void verAsistenciasEnAnio(int anio);
         void registrarAsistencia(int idSocio);
         void verAsistenciaPorSocio(int idSocio);
+        void verAsistenciaPorSocioPorMes(int idSocio, int mes);
+        void verAsistenciaPorSocioPorAnio(int idSocio, int anio);
 
     private:
 

@@ -126,8 +126,7 @@ void ServicioActividad::buscarActividad(int idActividad)
     {
         actividad = _archivoActividad.leerRegistroActividad(pos);
 
-        cout << setw(19) << " Nombre Actividad: " << actividad.getNombre() << endl;
-        // cout << setw(18) << " ID Actividad:" << "#" << actividad.getIdActividad() << endl;
+        cout << " Actividad:      " << actividad.getNombre() << endl;
     }
     else
     {

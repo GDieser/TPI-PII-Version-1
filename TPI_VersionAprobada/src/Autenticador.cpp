@@ -40,7 +40,7 @@ UsuarioAutenticado Autenticador::autenticar()
 
     Usuario usuario = buscarUsuario(idUsuario, _pass);
 
-    if (usuario.getEstado())
+    if (usuario.getEstado() || !usuario.getEstado())///Jeje
     {
         UsuarioAutenticado authUs(
             usuario.getIdUsuario(),

@@ -17,6 +17,9 @@ public:
     void verEstadisticas();
     void modificarContrasenia();
 
+    void verOpcionesDeListasSocios();
+    void verOpcionesDeListasEntrenadores();
+
 private:
 
     UsuarioAutenticado _usuario;
